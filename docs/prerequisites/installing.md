@@ -1,4 +1,4 @@
-# Install
+# Installing
 
 Before installing sharkC64, check that you have installed compatible Java Runtime
 environment (or development kit) and VICE emulator, see [setup](setup.md).
