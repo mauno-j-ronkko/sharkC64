@@ -9,7 +9,7 @@ var  a, b, c : byte
 ```
 
 Each variable must have a unique name, and it must also be given a valid type.
-In _sharkC64_, all the names are case-sensitive. 
+In sharkC64, all the names are case-sensitive. 
 Currently, there is only one data type: `byte`.
 It defines a variable with an 8-bit value. Thus, its value must be in the range
 `[$00 .. $FF]`.
