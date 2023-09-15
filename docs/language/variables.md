@@ -1,0 +1,45 @@
+# Variables
+Variables are listed in a `var` section. Variables with the same type can
+be listed together by separating them with a comma.
+A variable can also be given a static address and an initial value.
+```
+var  a, b, c : byte
+     zero : byte := $00
+     corner : byte at $400 := zero + $01
+```
+
+Each variable must have a unique name, and it must also be given a valid type.
+In _sharkC64_, all the names are case-sensitive. 
+Currently, there is only one data type: `byte`.
+It defines a variable with an 8-bit value. Thus, its value must be in the range
+`[$00 .. $FF]`.
+
+### Memory allocation
+
+Variables are normally allocated memory based on the type. Allocation is dynamic.
+It is, however, possible to give a static address to a variable.
+Such an address must reside within the memory address range `[$0000 .. $FFFF]`.
+Two or more variables may refer to the same memory location.
+Then, however, the compiler issues a warning.
+If there are several variables referring to the same memory location,
+special care must be taken in assigning values to those variables.
+Assigning a value to one variable with a static address is immediately reflected
+in the value of the other variable with the same static address.
+
+### Initial value
+
+A variable can be given an initial value. The initial value must conform to
+the data type of the variable. The initial value can be an expression, as long as it
+simplifies to a constant value with a correct data type. The expression may also
+refer to previously declared variables that have initial values.
+
+If an initial value is not given, the variable is initialized a "zero" value. 
+In the case of a byte, for instance, the zero value is `0`.
+There is one exception to initialization, however.
+If the variable is given a static address without an initial value,
+the variable will not be initialized at all.
+Then, the initial value of the variable is whatever value happens to be in that
+memory location when the program starts.
+
+<br /><br />
+:leftwards_arrow_with_hook: [Back to index](../index.md)
