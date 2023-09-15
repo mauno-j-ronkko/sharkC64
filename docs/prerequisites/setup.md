@@ -1,12 +1,12 @@
 # Setup
 
-To set up your working environment to run _sharkC64_, you'll need Java Runtime
+To set up your working environment to run sharkC64, you'll need Java Runtime
 environment (or development kit) and VICE emulator.
-Java environment is needed to run the _sharkC64_ compiler.
+Java environment is needed to run the sharkC64 compiler.
 VICE emulator is needed to run the compiled program.
 For compatibility, it is recommended that you install the latest version
 of the Java environment. For instance, Java Temurin-17 JDK is used for the development of
-_sharkC64_. 
+sharkC64. 
 
 
 1. To install the latest version of Java Temurin JDK [^1], 
