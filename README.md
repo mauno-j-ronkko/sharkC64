@@ -1,8 +1,9 @@
 # sharkC64
 
-sharkC64 is a compiler for the Commodore C64. It is published under MIT license.
+sharkC64 is a compiler for the Commodore C64. It is published under
+[MIT License](../LICENSE).
 This is a work in progress, and the plan is to publish frequent updates.
-The most recent release is version 0.1. It is available in 
+The most recent release is available in 
 [Releases](https://github.com/mauno-j-ronkko/sharkC64/releases).
 
 If you wish to try out sharkC64, there are guides for
@@ -11,11 +12,9 @@ If you wish to try out sharkC64, there are guides for
 3. Compiling a source file with the compiler, [compiling](docs/use/compiling.md)
 4. Running the compiled program, [running](docs/use/running.md)
 5. More about the sharkC64 programming language, [index](docs/index.md) 
- 
 
 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ![sharkC64.png](docs/images/sharkC64.png)
+<p align="right">
+<img src="https://github.com/mauno-j-ronkko/sharkC64/blob/main/docs/images/sharkC64.png" />
+</p>
 
-sharkC64 version 0.1  -  (C) 2023 [MIT License](../LICENSE)
-
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
