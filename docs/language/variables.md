@@ -4,21 +4,23 @@ be listed together by separating them with a comma.
 A variable can also be given a static address and an initial value.
 ```
 var  a, b, c : byte
-     zero : byte := $00
+     zero := $00
      corner : byte at $400 := zero + $01
 ```
 
-Each variable must have a unique name, and it must also be given a valid type.
-In sharkC64, all the names are case-sensitive. 
-Currently, there is only one data type: `byte`.
-It defines a variable with an 8-bit value. Thus, its value must be in the range
-`[$00 .. $FF]`.
+Each variable must have a unique name. In sharkC64, all the names are case-sensitive.
+The type of the variable must also be given, unless the type of the variable 
+can be inferred from its initial value. For instance, above, the type of the
+variable `zero` is `byte` as that is the type of the initial value `$00`.
+
 
 ### Memory allocation
 
 Variables are normally allocated memory based on the type. Allocation is dynamic.
-It is, however, possible to give a static address to a variable.
-Such an address must reside within the memory address range `[$0000 .. $FFFF]`.
+It is, however, possible to give a static address to a variable,
+see the variable `corner` in the example above.
+The static address must reside within the memory address range `[$0000 .. $FFFF]`.
+
 Two or more variables may refer to the same memory location.
 Then, however, the compiler issues a warning.
 If there are several variables referring to the same memory location,

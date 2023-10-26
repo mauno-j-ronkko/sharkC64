@@ -1,9 +1,7 @@
 # Future plans
 
 ### Work in progress
-- Single line comments
-- Type inference in variable declaration
-- Initialization section for modules
+- Initialization section for modules (target version 0.2)
 
 ### Backlog
 - Module dependencies

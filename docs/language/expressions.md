@@ -41,9 +41,9 @@ it can be achieved by using parentheses:
 `a + (b or -c) + d`
 
 ### Type inference
-Shark has bottom-up type inference. 
-The type of operator or its result is equal to the type of its operands. 
-When operands have a different type, the lowest common type is used for
+sharkC64 has a bottom-up type inference. 
+The type of the operator or its result is equal to the type of its operands. 
+When operands have different types, the lowest common type is used for
 both of the operands, and for the result.
 Type mismatch occurs if there is no lowest common type for the operands.
 

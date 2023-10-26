@@ -13,6 +13,8 @@ If you wish to try out sharkC64, there are guides for
 4. Running the compiled program, [running](docs/use/running.md)
 5. More about the sharkC64 programming language, [index](docs/index.md) 
 
+You can find videos about sharkC64 compiler, its design, construction, and use in
+YouTube, in the [Programming Redux](https://www.youtube.com/@programmingredux6211) channel. 
 
 <p align="right">
 <img src="https://github.com/mauno-j-ronkko/sharkC64/blob/main/docs/images/sharkC64.png" />
