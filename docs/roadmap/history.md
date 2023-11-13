@@ -1,6 +1,6 @@
 # Release history
 
-### Version 0.2
+### Version 0.2 published November 13,2023
 - assignment statements
 - module initialization
 
