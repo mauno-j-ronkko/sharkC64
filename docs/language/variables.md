@@ -1,4 +1,5 @@
 # Variables
+
 Variables are listed in a `var` section. Variables with the same type can
 be listed together by separating them with a comma.
 A variable can also be given a static address and an initial value.

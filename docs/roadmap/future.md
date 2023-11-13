@@ -1,18 +1,19 @@
 # Future plans
 
-### Work in progress
-- Initialization section for modules (target version 0.2)
+### Next release
+- integrated, simple editor
 
 ### Backlog
+- Boolean data type
+- Control structures
 - Module dependencies
   - Module inclusion in another module
   - Referencing elements in another module
 - More data types
   - word 
-  - boolean
   - records
   - arrays
-- Functions and control statements
+- Functions
 - Computational operators including multiplication and division
 - ... and much more!
 

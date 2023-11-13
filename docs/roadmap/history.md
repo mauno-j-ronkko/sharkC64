@@ -1,5 +1,9 @@
 # Release history
 
+### Version 0.2
+- assignment statements
+- module initialization
+
 ### Version 0.1.1 published October 26, 2023
 - Single-line comments
 - Inferred variable types

@@ -1,4 +1,5 @@
 # Types
+
 Currently, there is only one data type: `byte`.
 It defines a variable with an 8-bit value. Thus, its value must be in the range
 `[$00 .. $FF]`.

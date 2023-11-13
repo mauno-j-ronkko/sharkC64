@@ -1,0 +1,14 @@
+//
+// example02
+// Print letter 'A' and 'C' to the upper left corner of the screen.
+//
+
+module example02
+    var letterA := $01
+        screenA : byte at $400
+        screenC : byte at $401
+
+begin
+    screenA := letterA
+    screenC := letterA + 2
+end

@@ -4,13 +4,18 @@ The syntax of sharkC64 is as follows
 
 ```
 <module>      ::= "module" <LABEL> <module-body>
-<module-body> ::= [<var-section>]
+<module-body> ::= [<var-section>] [<initialization>]
 
-<var-section>     ::= "var" <var-body>
-<var-body>        ::= <var-declaration> [<var-body>]
-<var-declaration> ::= <labels> ":" [<type>] [<var-address>] [<var-assignment>]
-<var-address>     ::= "at" <WORD-VALUE>
-<var-assignment>  ::= ":=" <expression>  (1)
+<var-section>      ::= "var" <var-declarations>
+<var-declarations> ::= <var-declaration> [<var-declarations>]
+<var-declaration>  ::= <labels> ":" [<type>] [<var-address>] [<var-assignment>]
+<var-address>      ::= "at" <WORD-VALUE>
+<var-assignment>   ::= ":=" <expression>  (1)
+
+<initialization> ::= "begin" <statements> "end"
+<statements>     ::= <statement> [<statements>]
+<statement>      ::= <assignment>
+<assignment>     ::= <LABEL> ":=" <expression>
 
 <type> ::= "byte"
 

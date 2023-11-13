@@ -4,9 +4,14 @@ A module is defined in a file, and it has the structure shown below.
 In particular, a module consists of sections that start with a section keyword.
 ```
 module UniqueName01
- 
     var  a,b : byte
          corner : byte at $400 := $01
+         result : byte
+         
+begin
+    a := $10
+    result := corner + a
+end
 ```
 
 ### Module name
@@ -27,6 +32,17 @@ A variable can also be given a static address and an initial value.
 ```
 var  a, b : byte
      corner : byte at $400 := $01
+```
+
+### Module initialization
+Module initialization is defined within a `begin` ... `end` block.
+It acts as the main function of the module. The statements are executed 
+right after the module variables are initialized.
+```
+begin
+    a := $10
+    result := corner + a
+end
 ```
 
 <br /><br />
