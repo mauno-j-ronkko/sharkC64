@@ -1,7 +1,7 @@
 # Release history
 
 ### Version 0.3 published December 29, 2023
-- Very first version of an IDE
+- The very first version of an IDE
 - The `path` parameter in the command line mode has been deprecated;
   use `home` parameter instead
 
