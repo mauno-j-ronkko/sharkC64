@@ -1,8 +1,13 @@
 # Release history
 
-### Version 0.2 published November 13,2023
-- assignment statements
-- module initialization
+### Version 0.3 published December 29, 2023
+- Very first version of an IDE
+- The `path` parameter in the command line mode has been deprecated;
+  use `home` parameter instead
+
+### Version 0.2 published November 13, 2023
+- Assignment statements
+- Module initialization
 
 ### Version 0.1.1 published October 26, 2023
 - Single-line comments

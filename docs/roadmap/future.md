@@ -1,7 +1,7 @@
 # Future plans
 
 ### Next release
-- integrated, simple editor
+- Constant values
 
 ### Backlog
 - Boolean data type
@@ -15,6 +15,7 @@
   - arrays
 - Functions
 - Computational operators including multiplication and division
+- Support for floating point values
 - ... and much more!
 
 <br /><br />
