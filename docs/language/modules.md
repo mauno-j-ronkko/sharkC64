@@ -4,9 +4,10 @@ A module is defined in a file, and it has the structure shown below.
 In particular, a module consists of sections that start with a section keyword.
 ```
 module UniqueName01
-    var  a,b : byte
-         corner : byte at $400 := $01
-         result : byte
+    const one : byte := $01
+    var   a,b : byte
+          corner : byte at $400 := one
+          result : byte
          
 begin
     a := $10
@@ -25,13 +26,20 @@ lower case letters followed by digits. However, as the name of the module must m
 the filename, module names should differ in some other ways than by letter case.
 Otherwise, operating systems that are case-insensitive cannot distinguish them.
 
+### Constants
+Constants are listed in a `const` section. Each constant must be given a 
+fixed value.
+```
+const one : byte := $01
+```
+
 ### Variables
 Variables are listed in a `var` section. Variables with the same type can
 be listed together by separating them with a comma.
 A variable can also be given a static address and an initial value.
 ```
-var  a, b : byte
-     corner : byte at $400 := $01
+var a, b : byte
+    corner : byte at $400 := $01
 ```
 
 ### Module initialization

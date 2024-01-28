@@ -1,5 +1,9 @@
 # Release history
 
+### Version 0.3.1 published January 28, 2024
+- Constant values
+- A newly created module opens with a named module body 
+
 ### Version 0.3 published December 29, 2023
 - The very first version of an IDE
 - The `path` parameter in the command line mode has been deprecated;

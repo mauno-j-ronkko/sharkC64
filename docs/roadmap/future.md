@@ -1,19 +1,16 @@
 # Future plans
 
 ### Next release
-- Constant values
+- Boolean data type
 
 ### Backlog
-- Boolean data type
 - Control structures
 - Module dependencies
-  - Module inclusion in another module
-  - Referencing elements in another module
+- Functions
 - More data types
   - word 
   - records
   - arrays
-- Functions
 - Computational operators including multiplication and division
 - Support for floating point values
 - ... and much more!

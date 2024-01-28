@@ -1,0 +1,16 @@
+//
+// example03
+// Print white letter 'S' to the top left corner of the screen.
+//
+
+module example03
+    const letterS := $13  // code for letter 'S'
+          white   := $01  // code for white color
+
+    var character  : byte at $400   // character memory for top left corner of the screen
+        foreground : byte at $D800  // color memory for top left corner of the screen
+
+begin
+    character := letterS
+    foreground := white
+end
