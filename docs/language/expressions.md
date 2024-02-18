@@ -1,8 +1,12 @@
 # Expressions
 
+### Boolean values
+A Boolean value can be either `false` or `true`.
+
 ### Numbers
-Shark recognizes decimal values, hexadecimal values, and binary values.
+The sharkC64 language recognizes decimal values, hexadecimal values, and binary values.
 Hexadecimal values start with `$`, and binary values start with `%`.
+At the moment, a number can only be a byte value in the range [`$00` .. `$FF`]
 
 ### Operators
 Shark supports all standard operators that are also supported by the processor.
@@ -11,15 +15,15 @@ An operator belonging to a precedence higher group in the table binds
 stronger than an operator belonging to a lower precedence group in the table.
   
 
-| Operator | Precedence group | Type    | Description                   |
-|:---------|:-----------------|:--------|:------------------------------|
-| not      | 1                | unary   | Bitwise negation              |
-| -        | 1                | unary   | Arithmetic negation           |
-| +        | 2                | binary  | Arithmetic sum                |
-| -        | 2                | binary  | Arithmetic subtraction        |
-| and      | 3                | binary  | Bitwise conjunction           |
-| or       | 4                | binary  | Bitwise disjunction           |
-| xor      | 4                | binary  | Bitwise exclusive disjunction |
+| Operator | Precedence | Type    | Boolean                     | Number                 |
+|:---------|:-----------|:--------|-----------------------------|:-----------------------|
+| not      | 1          | unary   | Logical negation            | Bitwise negation       |
+| -        | 1          | unary   | N/A                         | Arithmetic negation    |
+| +        | 2          | binary  | N/A                         | Arithmetic sum         |
+| -        | 2          | binary  | N/A                         | Arithmetic subtraction |
+| and      | 3          | binary  | Logical conjunct            | Bitwise "and"          |
+| or       | 4          | binary  | Logical disjunct            | Bitwise "or"           |
+| xor      | 4          | binary  | Logical exclusive disjunct  | Bitwise "exclusive or" |
 
 <br />
 
@@ -41,15 +45,8 @@ it can be achieved by using parentheses:
 `a + (b or -c) + d`
 
 ### Type inference
-sharkC64 has a bottom-up type inference. 
-The type of the operator or its result is equal to the type of its operands. 
-When operands have different types, the lowest common type is used for
-both of the operands, and for the result.
-Type mismatch occurs if there is no lowest common type for the operands.
-
-> :warning: &nbsp; Type inference is very limited at the moment,
-> because `byte` is the only data type.
->
+The sharkC64 compiler has a bottom-up type inference.
+You can read more about the type inference in [Types](types.md) section. 
 
 <br /><br />
 :leftwards_arrow_with_hook: [Back to index](../index.md)

@@ -1,7 +1,7 @@
 # Future plans
 
 ### Next release
-- Boolean data type
+- Comparison operators
 
 ### Backlog
 - Control structures

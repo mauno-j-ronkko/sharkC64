@@ -23,34 +23,36 @@ The syntax of sharkC64 is as follows
 <statement>      ::= <assignment>
 <assignment>     ::= <LABEL> ":=" <expression>
 
-<type> ::= "byte"
+<type> ::= "byte" | "boolean"
 
 <expression>      ::= <operand> [<rhs-expression>]
 <rhs-expression>  ::= <binary-operator> <operand> [<rhs-expression>]
-<operand>         ::= "(" <expression> ")" | <LABEL> | <VALUE> | <unary-operator> <expression>
-<binary-operator> ::= "-" | "+" | "and" | "or" | "xor"  (2) 
-<unary-operator>  ::= "-" | "not"                       (2)
+<operand>         ::= "(" <expression> ")" | <unary-operator> <expression> | 
+                      <LABEL> | <boolean> | <BYTE-VALUE>  (2)
+<binary-operator> ::= "-" | "+" | "and" | "or" | "xor"    (3) 
+<unary-operator>  ::= "-" | "not"                         (3)
     
-<labels> ::= <LABEL> ["," <labels>] 
+<labels>  ::= <LABEL> ["," <labels>]
+<boolean> ::= "true" | "false" 
 
-<LABEL>        is a letter followed by a sequence of letetrs and digits  (3) 
-<VALUE>        is some constant value                                    (4)
+<LABEL>        is a letter followed by a sequence of letetrs and digits  (4) 
+<BYTE-VALUE>   is an 8-bit value   
 <WORD-VAULUE>  is a 16-bit value
 ```
 
 1. Expression must match with the contextual type. 
    For instance, if the contextual type is `byte`, the expression must have an 8-bit value.
    Furthermore, the expression must resolve into a constant value.
-2. Operator must match with the contextual type.
-3. Context may limit possible label values. For instance, in variable declaration, 
+2. Operand must match with the contextual type.
+3. Operator must match with the contextual type.
+4. Context may limit possible label values. For instance, in variable declaration, 
    each label must be unique within the defining scope. Also, a label denoting a variable
    in an expression must refer to a variable that matches with the contextual type. 
-4. Constant must match with the contextual type.
 
 ### Notes
-1. Single-line comment starting with `//` is not part of the language syntax.
-   Lexer uses it to remove characters till the end of the line when tokenizing
-   the source code.
+- Single-line comment starting with `//` is not part of the language syntax.
+  Lexer uses it to remove characters till the end of the line when tokenizing
+  the source code.
 
 <br /><br />
 :leftwards_arrow_with_hook: [Back to index](../index.md)

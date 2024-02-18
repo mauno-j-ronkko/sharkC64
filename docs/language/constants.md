@@ -15,8 +15,7 @@ Constants are treated as literal values. No fixed memory is allocated for them.
 ### Fixed value
 
 The fixed value must conform to the data type of the constant. 
-The fixed value can be an expression, as long as it
-simplifies to a fixed value with a correct data type. 
+The fixed value can be an expression, as long as it simplifies to a fixed value with a correct data type. 
 The expression may also refer to previously declared identifiers that have fixed values.
 
 <br /><br />

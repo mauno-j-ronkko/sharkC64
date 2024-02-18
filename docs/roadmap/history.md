@@ -1,5 +1,11 @@
 # Release history
 
+### Version 0.3.2 published February 18, 2024
+- Boolean types with true and false values
+- Logical expression (not, and, or, xor) for booleans
+- Build and run module in edit view (Compiler > Build and run / F10)
+- Rephrased confirmation dialog when closing the editor without saving changes
+
 ### Version 0.3.1 published January 28, 2024
 - Constant values
 - A newly created module opens with a named module body 

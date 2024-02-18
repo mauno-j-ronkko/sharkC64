@@ -1,25 +1,27 @@
 # Types
 
-Currently, there is only one data type: `byte`.
-It defines a variable with an 8-bit value. Thus, its value must be in the range
-`[$00 .. $FF]`.
+Currently, there are two data types: `boolean` and `byte`.
+
+| Type       | Description    | Range             | Default initial value |
+|------------|----------------|-------------------|-----------------------|
+| `boolean`  | A truth value  | {`false`, `true`} | `false`               |
+| `byte`     | An 8-bit value | [`$00` .. `$FF`]  | `0`                   |
+
+
 
 ### Type inference
+Type inference is used with expressions. 
+It is also used when declaring a constant or a variable with an initial value.
+Then, the type of the identifier can be inferred from the initial value.
 
-sharkC64 has a bottom-up type inference.
-The type of the operator or its result is equal to the type of its operands.
-When operands have different types, the lowest common type is used for
-both of the operands, and for the result.
+The sharkC64 compiler has a bottom-up type inference. When analyzing the syntax tree of an expression,
+there are always operands at the bottom of the expression tree. 
+Operands always have either a predetermined type, or their type can be inferred from the value.
+Therefore, the type of the operator is determined by the type of its operands.
+If the operands have different types, the lowest common type is used for the operator.
 Type mismatch occurs if there is no lowest common type for the operands.
-
-> :warning: &nbsp; Type inference is very limited at the moment,
-> because `byte` is the only data type.
->
-
-Type inference is used with expressions. It is also used in variable declaration, 
-where the type of the variable can be omitted if there is an initial value. 
-The variable is then assigned the type inferred from the initial value.
-
+Moreover, the expression is considered illegal 
+if the operator does not apply to the type of the operators.
 
 <br /><br />
 :leftwards_arrow_with_hook: [Back to index](../index.md)

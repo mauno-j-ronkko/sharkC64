@@ -36,15 +36,15 @@ Here is a list of the editor menu actions:
 | Copy selected to clipboard              | Selection.. > Copy          | ctrl + c          | command + c             |
 | Paste from clipboard                    | Selection.. > Paste         | ctrl + v          | command + v             |
 | Delete selection                        | Selection.. > Delete        | Delete            | Delete                  |
-| Compile module source code              | Compile.. > Compile         | ctrl + F9         | command + F9            |
-| Show next compilation error             | Compile.. > Show next error | F9                | F9                      |
+| Compile module source code              | Compile.. > Compile         | F9                | F9                      |
+| Show next compilation error             | Compile.. > Show next error | ctrl + F9         | command + F9            |
+| Build and run module                    | Compile.. > Build and run   | F10               | F10                     |
 | Show editor Help (this page)            | Help                        | F1                | F1                      |
 | Quit sharkC64                           | Quit                        | ctrl + q          | command + q             |
 
 Note that compiling in the editor view is literally just the compilation action.
-It will not produce any executable prg file. To produce an executable prg file, 
-and to run it, close first the editor view to get back to the home screen.
-You can then select build or run action from the home screen to build or run the module.
+It will not produce any executable prg file. 
+To produce an executable prg file and to run it, select build and run module from the menu. 
 
 To read more about the programming language and its syntax, see the language [index](../index.md) .
 

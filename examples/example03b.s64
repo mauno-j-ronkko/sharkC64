@@ -1,0 +1,13 @@
+//
+// example03b
+// Showing boolean value on screen.
+// The computed "true" value shows as a checkerboard character.
+//
+
+module example03b
+    var result : boolean at $400   // showing boolean value on screen
+        truth := false
+
+begin
+    result := truth xor true
+end
