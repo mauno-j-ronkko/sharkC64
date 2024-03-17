@@ -23,5 +23,10 @@ Type mismatch occurs if there is no lowest common type for the operands.
 Moreover, the expression is considered illegal 
 if the operator does not apply to the type of the operators.
 
+Some operators may have a result type that is different form the type of the operands.
+For instance, comparisons result always in a boolean type.
+As an example, when byte values are compared, the result is a boolean value indicating
+if the comparison holds between the byte values.
+
 <br /><br />
 :leftwards_arrow_with_hook: [Back to index](../index.md)

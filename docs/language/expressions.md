@@ -11,19 +11,25 @@ At the moment, a number can only be a byte value in the range [`$00` .. `$FF`]
 ### Operators
 Shark supports all standard operators that are also supported by the processor.
 Supported operators are listed below. 
-An operator belonging to a precedence higher group in the table binds 
+An operator belonging to a higher precedence group in the table binds 
 stronger than an operator belonging to a lower precedence group in the table.
   
 
-| Operator | Precedence | Type    | Boolean                     | Number                 |
-|:---------|:-----------|:--------|-----------------------------|:-----------------------|
-| not      | 1          | unary   | Logical negation            | Bitwise negation       |
-| -        | 1          | unary   | N/A                         | Arithmetic negation    |
-| +        | 2          | binary  | N/A                         | Arithmetic sum         |
-| -        | 2          | binary  | N/A                         | Arithmetic subtraction |
-| and      | 3          | binary  | Logical conjunct            | Bitwise "and"          |
-| or       | 4          | binary  | Logical disjunct            | Bitwise "or"           |
-| xor      | 4          | binary  | Logical exclusive disjunct  | Bitwise "exclusive or" |
+| Operator  | Description              | Precedence | Arity   | Commutative | Operand type  | Result type  |
+|:----------|--------------------------|:-----------|:--------|-------------|:--------------|:-------------|
+| not       | Logical/bitwise negation | 4          | unary   | no          | boolean, byte | boolean/byte |
+| -         | Negation                 | 4          | unary   | no          | byte          | byte         |
+| +         | Sum                      | 3          | binary  | yes         | byte          | byte         |
+| -         | Subtraction              | 3          | binary  | no          | byte          | byte         |
+| <         | Less than                | 2          | binary  | no          | boolean, byte | boolean      |
+| <=        | Less or equal to         | 2          | binary  | no          | boolean, byte | boolean      |
+| =         | Equal to                 | 2          | binary  | no          | boolean, byte | boolean      |
+| <>        | Not equal to             | 2          | binary  | no          | boolean, byte | boolean      |
+| >=        | Greater or equal to      | 2          | binary  | no          | boolean, byte | boolean      |
+| >         | Greater than             | 2          | binary  | no          | boolean, byte | boolean      |
+| and       | Logical/bitwise and      | 1          | binary  | yes         | boolean, byte | boolean/byte |
+| or        | Logical/bitwise or       | 0          | binary  | yes         | boolean, byte | boolean/byte |
+| xor       | Logical/bitwise xor      | 0          | binary  | yes         | boolean, byte | boolean/byte |
 
 <br />
 
@@ -32,17 +38,30 @@ stronger than an operator belonging to a lower precedence group in the table.
 
 
 ### Evaluation order
-Expressions are evaluated from left to right. There are two exceptions to this:
-1. Operators that bind stronger are evaluated first
-2. Expression in parentheses is evaluated before the binding operator
+Generally, the evaluation order for the operators in an expression is from left to right.
+However, there are exceptions to this:
+1. Operators that bind stronger are evaluated first.
+2. Expression in parentheses is evaluated before the binding operator.
 
-For instance, 
+For instance,
 `a + b or -c + d`
-is equal to an expression 
-`(a + b) or ((-c) + d)`. 
-If, however, disjunction needs to be evaluated before the sums, 
+is equal to an expression
+`(a + b) or ((-c) + d)`.
+If, however, disjunction needs to be evaluated before the sums,
 it can be achieved by using parentheses:
 `a + (b or -c) + d`
+
+Although sharkC64 follows the left-to-right evaluation order for expressions while parsing them,
+the optimization and simplification rules most likely change the computation order at run-time.
+As long as expression operands have no side effects, the computation result is equivalent to
+that computed using a strict left-to-right evaluation order.
+
+The goal of the sharkC64 compiler is to produce compact and efficient byte code.
+To do this, it first tries to simplify the expression by using static values and constants.
+After that, the compiler compiles byte code instructions for the right-hand side expression 
+before the left-hand side expression. This produces fewer instructions in general, 
+as intermediate results can be used more effectively.
+
 
 ### Type inference
 The sharkC64 compiler has a bottom-up type inference.

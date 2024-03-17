@@ -28,9 +28,10 @@ The syntax of sharkC64 is as follows
 <expression>      ::= <operand> [<rhs-expression>]
 <rhs-expression>  ::= <binary-operator> <operand> [<rhs-expression>]
 <operand>         ::= "(" <expression> ")" | <unary-operator> <expression> | 
-                      <LABEL> | <boolean> | <BYTE-VALUE>  (2)
-<binary-operator> ::= "-" | "+" | "and" | "or" | "xor"    (3) 
-<unary-operator>  ::= "-" | "not"                         (3)
+                      <LABEL> | <boolean> | <BYTE-VALUE>    (2)
+<binary-operator> ::= "-" | "+" | "and" | "or" | "xor"      (3)
+                      "<=" | "<" | "=" | "<>" | ">=" | ">"  (3) 
+<unary-operator>  ::= "-" | "not"                           (3)
     
 <labels>  ::= <LABEL> ["," <labels>]
 <boolean> ::= "true" | "false" 

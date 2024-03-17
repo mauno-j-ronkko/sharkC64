@@ -1,5 +1,12 @@
 # Release history
 
+### Version 0.3.3 published March 17, 2024
+- Added comparison operators
+- Fixed precedence issue in parser
+- Added an indicator showing that building and/or running has started
+- Added scroll bar to edit view
+- Simplified translation for commutative operators
+
 ### Version 0.3.2 published February 18, 2024
 - Boolean types with true and false values
 - Logical expression (not, and, or, xor) for booleans

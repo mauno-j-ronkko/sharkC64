@@ -1,16 +1,15 @@
 # Future plans
 
 ### Next release
-- Comparison operators
+- Refactor lexer, parser, and binder
 
 ### Backlog
-- Control structures
+- If statement
+- Loop statement
+- Word data type: variables, constants, assignment, operators
 - Module dependencies
 - Functions
-- More data types
-  - word 
-  - records
-  - arrays
+- More data types: records, arrays, etc
 - Computational operators including multiplication and division
 - Support for floating point values
 - ... and much more!
