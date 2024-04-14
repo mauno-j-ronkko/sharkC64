@@ -1,10 +1,15 @@
 # Release history
 
+### Version 0.3.4 published April 14, 2024
+- Refactored expression parsing and binding
+- Improved boolean constant definitions; comparison expressions are now supported
+- Added scroll-wheel support to editor view
+
 ### Version 0.3.3 published March 17, 2024
 - Added comparison operators
 - Fixed precedence issue in parser
-- Added an indicator showing that building and/or running has started
-- Added scroll bar to edit view
+- Added an indicator for building and running
+- Added a scroll bar to edit view
 - Simplified translation for commutative operators
 
 ### Version 0.3.2 published February 18, 2024

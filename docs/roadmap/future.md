@@ -1,10 +1,9 @@
 # Future plans
 
 ### Next release
-- Refactor lexer, parser, and binder
+- If statement
 
 ### Backlog
-- If statement
 - Loop statement
 - Word data type: variables, constants, assignment, operators
 - Module dependencies
