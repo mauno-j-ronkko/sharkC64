@@ -10,15 +10,19 @@ sharkC64 is a compiler for the Commodore C64. It is published under MIT license.
    1. [Setup](prerequisites/setup.md)
    2. [Installing sharkC64 compiler and examples](prerequisites/installing.md)
 2. Language structures
-   1. [Modules](language/modules.md)
-   2. [Types](language/types.md)
-   3. [Constants](language/constants.md)
-   3. [Variables](language/variables.md)
-   4. [Expressions](language/expressions.md)
-   5. [Assignment statements](language/assignments.md)
-   6. [Module initialization](language/initialization.md)
-   7. [Comments](language/comments.md)
-   8. [Language syntax](language/syntax.md)
+   1. Expressions
+      1. [Types](language/expressions/types.md)
+      2. [Constants](language/expressions/constants.md)
+      3. [Variables](language/expressions/variables.md)
+      4. [Expressions](language/expressions/expressions.md)
+   2. Statements
+      1. [Assignment statements](language/statements/assignments.md)
+      2. [If statements](language/statements/ifs.md)
+   3. Modules
+      1. [Modules](language/modules/modules.md)
+      2. [Module initialization](language/modules/initialization.md)
+   4. [Comments](language/comments.md)
+   5. [Language syntax](language/syntax.md)
 3. Using sharkC64
    1. [Starting sharkC64](ide/starting.md)
    2. [Home screen](ide/homescreen.md)

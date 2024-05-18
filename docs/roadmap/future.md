@@ -1,12 +1,12 @@
 # Future plans
 
 ### Next release
-- If statement
+- Loop statement
 
 ### Backlog
-- Loop statement
-- Word data type: variables, constants, assignment, operators
 - Module dependencies
+- Extending IDE with new features
+- Word data type: variables, constants, assignment, operators
 - Functions
 - More data types: records, arrays, etc
 - Computational operators including multiplication and division

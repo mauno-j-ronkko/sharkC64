@@ -1,5 +1,9 @@
 # Release history
 
+### Version 0.4 published May 18, 2024
+- Added If statements
+- Fixed an issue in the editor when deleting selection with backspace
+
 ### Version 0.3.4 published April 14, 2024
 - Refactored expression parsing and binding
 - Improved boolean constant definitions; comparison expressions are now supported

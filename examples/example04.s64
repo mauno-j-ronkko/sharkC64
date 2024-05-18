@@ -1,0 +1,27 @@
+//
+// example04
+// Simple one digit counter on the screen.
+// The digit on the screen will increment from 0 to 9 each time the program is run.
+// After reaching the value 9, the digit value will reset back to 0.
+//
+
+module example04
+    const value0 := $30
+          value9 := $39
+          white  := $01
+
+    var digit      : byte at $400
+        foreground : byte at $D800
+
+begin
+    foreground := white
+    if digit < value0 then
+        digit := value0
+    else
+        if digit >= value9 then
+            digit := value0
+        else
+            digit := digit + 1
+        end
+    end
+end
