@@ -18,6 +18,7 @@ sharkC64 is a compiler for the Commodore C64. It is published under MIT license.
    2. Statements
       1. [Assignment statements](language/statements/assignments.md)
       2. [If statements](language/statements/ifs.md)
+      3. [While statements](language/statements/whiles.md)
    3. Modules
       1. [Modules](language/modules/modules.md)
       2. [Module initialization](language/modules/initialization.md)

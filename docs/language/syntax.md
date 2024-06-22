@@ -19,9 +19,10 @@ The syntax of sharkC64 is as follows
 
 <body>         ::= "begin" <statements> "end"
 <statements>   ::= <statement> [<statements>]
-<statement>    ::= <assignment> | <if-then-else>
+<statement>    ::= <assignment> | <if-then-else> | <while-do>
 <assignment>   ::= <LABEL> ":=" <expression>
 <if-then-else> ::= "if" <expression> "then" <statements> ["else" <statements>] "end"  (2)
+<while-do>     ::= "while" <expression> "do" <statements> "end"                       (2)
 
 <type> ::= "byte" | "boolean"
 

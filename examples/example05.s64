@@ -1,0 +1,54 @@
+//
+// example05
+// A busy loop that changes the border color and the background color for a region of the screen.
+// The program ends, when some key is pressed.
+//
+// Note that there are some artifacts on the screen, as the execution of the statements in
+// busy loops are hardly ever in sync with the video update.
+// Still, disabling interrupts helps in removing most of the flickering from the screen.
+//
+
+module example05
+    const blue       := $06
+          darkGrey   := $0B
+          grey       := $0C
+          lightBlue  := $0E
+          noKey      := $40
+          rasterHigh := $80
+          disable    := $7F
+          enable     := $FF
+
+    var keyPress    : byte at $CB
+        IRQ         : byte at $DC0D
+        scrRegister : byte at $D011
+        rasterLine  : byte at $D012
+        backColor   : byte at $D021
+        borderColor : byte at $D020
+
+
+begin
+    // Wait till no key is pressed
+    while keyPress <> noKey do end
+
+    // Repeat as long as some key is pressed
+    while keyPress = noKey do
+
+        // Disable interrupts and wait for the raster line to return back to the top of the screen
+        IRQ := disable
+        while scrRegister >= rasterHigh do end
+
+        // Wait for the raster line to reach row $44 and set colors
+        while rasterLine < $44 do end
+        borderColor := grey
+        backColor := darkGrey
+
+        // Wait for the raster line to reach row $EA and reset colors
+        while rasterLine < $EA do end
+        backColor := blue
+        borderColor := lightBlue
+
+        // Wait for the raster line to reach the bottom part of the screen and enable interrupts
+        while scrRegister < rasterHigh do end
+        IRQ := enable
+    end
+end

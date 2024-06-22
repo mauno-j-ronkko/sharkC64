@@ -1,5 +1,11 @@
 # Release history
 
+### Version 0.5 published June 22, 2024
+- Added While statements
+- Improved optimization of If statements
+- Fixed issue with pressing delete and backspace keys after pressing a shift key
+- Removed support for the old "path" attribute when compiling from command line
+
 ### Version 0.4 published May 18, 2024
 - Added If statements
 - Fixed an issue in the editor when deleting selection with backspace

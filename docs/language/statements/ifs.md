@@ -15,8 +15,10 @@ end
 ```
 
 In the if statement, the expression after the `if` keyword must evaluate to a boolean value.
-The else-branch is optional in an if statement. Then, the if-branch is executed only if the
-expression evaluates to `true`.
+The expression is then followed by the `then` keyword that indicates the start of the if-branch.
+The else-branch is optional in an if statement, and it starts with the `else` keyword. 
+The if-branch is executed only if the expression evaluates to `true`,
+and the else-branch is executed only if the expression evaluates to `false`. 
 In any case, an if statement ends always with the `end` keyword.
 
 The if-branch and the else-branch may have multiple statements, thus, forming blocks of statements.
