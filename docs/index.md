@@ -35,6 +35,7 @@ sharkC64 is a compiler for the Commodore C64. It is published under MIT license.
    8. [Running the active module](ide/running.md)
    9. [Compiling a module from the command line](ide/cli-compiling.md)
    10. [Running a built program from the command line](ide/cli-running.md)
+   11. [List of examples](ide/examples.md)
 4. Roadmap
    1. [Release history](roadmap/history.md)
    2. [Future plans](roadmap/future.md)

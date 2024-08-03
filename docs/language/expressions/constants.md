@@ -10,7 +10,7 @@ Each constant must also have a unique name. In sharkC64, all the names are case-
 The type of the constant must also be given, unless the type
 can be inferred from the fixed value. For instance, above, the type of the
 constant `one` is `byte` as that is the type of the value `zero + $01`.
-Constants are treated as literal values. No fixed memory is allocated for them.
+Constants are treated as literal values during the compile time. No fixed memory is allocated for them.
 
 ### Fixed value
 

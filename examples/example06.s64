@@ -1,0 +1,20 @@
+//
+// example06
+// Illustrating the use of the word data type by printing 'HI' to the screen with distinct colors.
+// This example also shows how to use type casting between the byte and the word data types.
+//
+
+module example06
+    const colors  := $0301  // distinct colors as a word value
+          letterH := $08    // code for letter 'H'
+          letterI := $09    // code for letter 'I'
+
+    var foreground1 : byte at $D800  // color memory location for the top left corner of the screen
+        foreground2 : byte at $D801  // the next color memory location
+        letters     : word at $400   // character memory location for the top left corner of the screen
+
+begin
+    letters := (word.lo)letterH + (word.hi)letterI
+    foreground1 := (byte.lo)colors
+    foreground2 := (byte.hi)colors
+end

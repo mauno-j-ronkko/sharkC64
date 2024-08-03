@@ -35,7 +35,7 @@ Here are steps to start sharkC64.
 5. Click the OK button, and you should see the home screen (captured on version 0.3)
    ![Home screen](../images/home-screen.png)
 
-SharkC64 comes bundled with examples. When you start sharkC64 for the first time, it will
+The sharkC64 compiler comes bundled with examples. When you start sharkC64 for the first time, it will
 extract the example files to an examples folder and create a file with initial settings. 
 Therefore, the folder structure should now look as follows:
 ```

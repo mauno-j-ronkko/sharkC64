@@ -1,5 +1,10 @@
 # Release history
 
+### Version 0.6 published August 3, 2024
+- Added the word data type with type casting operators
+- Refined intermediate representation language and its translation
+- Refined bytecode generation
+
 ### Version 0.5 published June 22, 2024
 - Added While statements
 - Improved optimization of If statements
