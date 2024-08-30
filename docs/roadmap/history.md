@@ -1,5 +1,8 @@
 # Release history
 
+### Version 0.7 published August 30, 2024
+- Added byte arrays
+
 ### Version 0.6 published August 3, 2024
 - Added the word data type with type casting operators
 - Refined intermediate representation language and its translation

@@ -1,0 +1,33 @@
+//
+// example07
+// Switching to lower case letters and changing each word to start with a capital letter
+// for the first 4 lines on the screen.
+//
+
+module example07
+    const blockMask      := $F0  // mask for the char block selection
+          lowerCaseBlock := $06  // char block for lower cae characters
+          letterZ        := $1A  // code for a lower case letter Z
+          spaceChar      := $20  // code for a space char
+          upperCase      := $40  // offset for upper case letters
+          fourRows       := 160  // number of chars for four rows on the screen
+
+    var screen    : byte[fourRows] at $400  // byte array for four rows on the screen
+        charBlock : byte at $D018            // char block selector
+        i         : byte                     // index variable
+
+begin
+    // select the char block for thet lower case chars
+    charBlock := (charBlock and blockMask) + lowerCaseBlock
+
+    // loop for four rows on the screen
+    i := 1
+    while (i < fourRows) do
+        // update a char to an upper case letter,
+        // if the char is a letter and there is a space char before it
+        if screen[i] <= letterZ and screen[i-1] = spaceChar then
+            screen[i] := screen[i] + upperCase
+        end
+        i := i + 1
+    end
+end

@@ -1,9 +1,10 @@
 # Future plans
 
 ### Next release
-- Support for indexed addressing
+- More byte array features
 
 ### Backlog
+- Indirect indexing
 - Extending IDE with new features
 - Module dependencies
 - Functions

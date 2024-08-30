@@ -15,6 +15,7 @@ sharkC64 is a compiler for the Commodore C64. It is published under MIT license.
       2. [Constants](language/expressions/constants.md)
       3. [Variables](language/expressions/variables.md)
       4. [Expressions](language/expressions/expressions.md)
+      5. [Byte arrays](language/expressions/arrays.md)
    2. Statements
       1. [Assignment statements](language/statements/assignments.md)
       2. [If statements](language/statements/ifs.md)
