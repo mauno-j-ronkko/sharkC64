@@ -1,6 +1,6 @@
 # Running the active module
 
-The home screen of sharkC64 looks as follows (captured on version 0.3):
+The home screen of the sharkC64 IDE looks as follows (captured on version 0.3):
 ![Selecting active module](../images/running.png)
 
 To run the active module, click the Run action in the Module section.

@@ -1,13 +1,12 @@
 # Future plans
 
 ### Next release
-- More byte array features
+- Improving IDE
 
 ### Backlog
-- Indirect indexing
-- Extending IDE with new features
 - Module dependencies
 - Functions
+- Indirect indexing
 - More data types: records, arrays, etc
 - Computational operators including multiplication and division
 - Support for floating point values

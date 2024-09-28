@@ -8,7 +8,7 @@ var  a, b, c : byte
      corner : byte at $400 := zero + $01
 ```
 
-Each variable must have a unique name. In sharkC64, all the names are case-sensitive.
+Each variable must have a unique name. In the sharkC64 language, all the names are case-sensitive.
 The type of the variable must also be given, unless the type of the variable 
 can be inferred from its initial value. For instance, above, the type of the
 variable `zero` is `byte` as that is the type of the initial value `$00`.

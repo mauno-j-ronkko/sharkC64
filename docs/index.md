@@ -1,6 +1,8 @@
 # sharkC64
 
-sharkC64 is a compiler for the Commodore C64. It is published under MIT license.
+The sharkC64 programming language is designed to be used for the development of computer programs 
+for the Commodore C64. The sharkC64 IDE comes bundled with a compiler and a bunch of example programs.
+The sharkC64 IDE is published under MIT license.
 
 
 ## Index
@@ -20,13 +22,14 @@ sharkC64 is a compiler for the Commodore C64. It is published under MIT license.
       1. [Assignment statements](language/statements/assignments.md)
       2. [If statements](language/statements/ifs.md)
       3. [While statements](language/statements/whiles.md)
+      4. [Empty statements](language/statements/empty.md)
    3. Modules
       1. [Modules](language/modules/modules.md)
       2. [Module initialization](language/modules/initialization.md)
    4. [Comments](language/comments.md)
    5. [Language syntax](language/syntax.md)
-3. Using sharkC64
-   1. [Starting sharkC64](ide/starting.md)
+3. Using the sharkC64 IDE
+   1. [Starting sharkC64 IDE](ide/starting.md)
    2. [Home screen](ide/homescreen.md)
    3. [Setting the home folder](ide/setting-home.md)
    4. [Setting the runner command](ide/setting-runner.md)

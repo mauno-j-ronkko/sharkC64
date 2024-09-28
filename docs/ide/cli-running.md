@@ -6,7 +6,7 @@ If you have not compiled the sharkC64 program, see instructions for [compiling](
 
 Steps to run a compiled sharkC64 program:
 1. Open command prompt or a terminal window on your computer.
-2. Move to the folder where you have installed sharkC64;
+2. Move to the folder where you have installed the sharkC64 IDE;
    for instance,
    ```
    cd C:\SHARKC64
@@ -16,7 +16,7 @@ Steps to run a compiled sharkC64 program:
    ```
    C:\APP\GTK3VICE-3.7-win64
    ```
-4. Check where the compiled sharkC64 program is in the folder structure:
+4. Check that the compiled sharkC64 program is in the folder structure:
    ```
    C:\SHARKC64
    |

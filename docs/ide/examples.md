@@ -13,6 +13,7 @@ The sharkC64 compiler comes bundled with example programs.
 | [example05](../../examples/example05.s64)   | use while statements (busy-loop raster lines) | 0.5   |
 | [example06](../../examples/example06.s64)   | use `word` data type                          | 0.6   |
 | [example07](../../examples/example07.s64)   | declare and use `byte` arrays                 | 0.7   |
+| [example07b](../../examples/example07b.s64) | use array assignment                          | 0.7.1 |
 
 <br /><br />
 :leftwards_arrow_with_hook: [Back to index](../index.md)

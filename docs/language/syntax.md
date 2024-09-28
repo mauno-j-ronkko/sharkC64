@@ -1,63 +1,81 @@
 # Language syntax
 
-The syntax of sharkC64 is as follows
+The syntax of the sharkC64 language is as follows
 
 ```
-<module>      ::= "module" <LABEL> [<const-section>] [<var-section>] [<body>]
+<module>             ::= "module" <LABEL> [<const-section>] [<var-section>] [<body>]
 
 <const-section>      ::= "const" <const-declarations>
 <const-declarations> ::= <const-declaration> [<const-declarations>]
-<const-declaration>  ::= <LABEL> [":" <type>] <const-assignment>
-<const-assignment>   ::= ":=" <expression>  (1)
+<const-declaration>  ::= <LABEL> [":" <type>] <intial-value>
 
-<var-section>      ::= "var" <var-declarations>
-<var-declarations> ::= <var-declaration> [<var-declarations>]
-<var-declaration>  ::= <labels> ":" <byte-array> [<var-address>] |
-                       <labels> ":" <type> [<var-address>] [<var-assignment>] |
-                       <labels> [":" <var-address>] [<var-assignment>]
-<byte-array>       ::= "byte" "[" <expression> "]"  (2) 
-<var-address>      ::= "at" <expression>            (3)
-<var-assignment>   ::= ":=" <expression>            (1)
+<var-section>        ::= "var" <var-declarations>
+<var-declarations>   ::= <var-declaration> [<var-declarations>]
+<var-declaration>    ::= <var-labels> <var-type>
+<var-labels>         ::= <LABEL> ["," <var-labels>]
+<var-type>           ::= <type-primitive> | <type-array>
 
-<body>         ::= "begin" <statements> "end"
-<statements>   ::= <statement> [<statements>]
-<statement>    ::= <assignment> | <if-then-else> | <while-do>
-<assignment>   ::= <byte-array-element> ":=" <expression> | 
-                   <LABEL> ":=" <expression>
-<if-then-else> ::= "if" <expression> "then" <statements> ["else" <statements>] "end"  (4)
-<while-do>     ::= "while" <expression> "do" <statements> "end"                       (4)
+<type-primitive>     ::= ":" <type-primitive> [<type-address>] [<intial-value>] |
+                         [":" <type-address>] <intial-value>
+<type-array>         ::= ":" <type-byte-array> [<type-address>] |
+                         [":" <type-byte-array>] <intial-values>  
+<type-address>       ::= "at" <expression>                      (1)
+<type-byte-array>    ::= <type-byte> "[" <expression> "]"       (2) 
+<type-primitive>     ::= <type-boolean> |                       (3) 
+                         <type-byte> |                          (4)
+                         <type-word>                            (5)
+<type-boolean>       ::= "boolean"
+<type-byte>          ::= "byte"
+<type-word>          ::= "word"
+
+<intial-values>      ::= ":=" "{" <initial-sequence> "}"        (6)
+<intial-value>       ::= ":=" <expression>                      (6)
+<initial-sequence>   ::= <expression> ["," <initial-sequence>]  (6)
+
+<body>               ::= "begin" <statements> "end"
+<statements>         ::= <statement> [<statements>]
+<statement>          ::= <assignment> | <if-then-else> | <while-do> | ";"
+<assignment>         ::= <LABEL> ":=" <expression> |
+                         <byte-array-element> ":=" <expression>
+                         <byte-array> ":=" [<array-modifiers>] <byte-array>
+<if-then-else>       ::= "if" <expression> "then" <statements> ["else" <statements>] "end"  (7)
+<while-do>           ::= "while" <expression> "do" <statements> "end"                       (7)
 
 <expression>         ::= <operand> [<rhs-expression>]
 <rhs-expression>     ::= <binary-operator> <unary-expression> [<rhs-expression>]
 <unary-expression>   ::= "(" <expression> ")" | <unary-operator> <expression> | <operand> 
-<operand>            ::= <byte-array-element> | <boolean> |       (5)
-                         <LABEL> | <BYTE-VALUE> | <WORD-VALUE>    (5)
-<byte-array-element> ::= <LABEL> "[" <expression> "]"             (6) 
-<binary-operator>    ::= "-" | "+" | "and" | "or" | "xor" |       (7)
-                         "<=" | "<" | "=" | "<>" | ">=" | ">"     (7) 
-<unary-operator>     ::= "-" | "not" |                            (7)
-                         "(byte)" | "(byte.lo)" | "(byte.hi)"     (7)
-                         "(word)" | "(word.lo)" | "(word.hi)"     (7)
+<operand>            ::= <byte-array-element> | <BOOLEAN-VALUE> |  (8)
+                         <LABEL> | <BYTE-VALUE> | <WORD-VALUE>     (8)
+<byte-array-element> ::= <byte-array> "[" <expression> "]"         (9)
+<byte-array>         ::= <LABEL>                                   (10) 
+<binary-operator>    ::= "-" | "+" | "and" | "or" | "xor" |        (11)
+                         "<=" | "<" | "=" | "<>" | ">=" | ">"      (11) 
+<unary-operator>     ::= "-" | "not" |                             (11)
+                         "(byte)" | "(byte.lo)" | "(byte.hi)" |    (11)
+                         "(word)" | "(word.lo)" | "(word.hi)" |    (11)
+                         "(.length)"                               (11)
+<array-modifiers>    ::= "(.up)" | "(.down)"                         
     
-<labels>  ::= <LABEL> ["," <labels>]
-<boolean> ::= "true" | "false" 
-<type>    ::= "byte" | "boolean" | "word"
-
-<LABEL>        is a letter followed by a sequence of letetrs and digits  (8) 
-<BYTE-VALUE>   is an 8-bit unsigned value   
-<WORD-VAULUE>  is a 16-bit unsigned value
+    
+<LABEL>         is a letter followed by a sequence of letetrs and digits  (12) 
+<BOOLEAN-VALUE> is a binary truth value {false, true}
+<BYTE-VALUE>    is an 8-bit unsigned value in the range [0..255]    
+<WORD-VAULUE>   is a 16-bit unsigned value in the range [0..65535]
 ```
 
-1. `expression` must match with the contextual type. 
-   For instance, if the contextual type is `byte`, the expression must have an 8-bit value.
-   Furthermore, the expression must resolve into a constant value.
-2. `expression` must be a numerical expression and its value must be in range `[1..255]`
-3. `expression` must be a `word` expression.
-4. `expression` must be a `boolean` expression.
-5. `operand` must match with the contextual type.
-6. `expression` must be a `byte` expression.
-7. `operator` must match with the contextual type.
-8. Context may limit possible `label` values. For instance, in variable declaration, 
+1. `expression` must evaluate to a fixed `<WORD-VALUE>`.
+2. `expression` must evaluate to a fixed value in the range `[1..256]`.
+3. `<type-boolean>` evaluates to a fixed `<BOOLEAN-VALUE>`.
+4. `<type-byte>` evaluates to a fixed `<BYTE-VALUE>`.
+5. `<type-word>` evaluates to a fixed `<WORD-VALUE>`.
+6. `expression` must match with the contextual type. 
+   For instance, if the contextual type is `byte`, the expression must evaluate to a fixed `<BYTE-VALUE>`.
+7. `expression` must be of `<type-boolean>` type.
+8. `operand` must match with the contextual type.
+9. `expression` must be of `<type-byte>` type.
+10. `label` must denote a variable that is a byte array
+11. `operator` must match with the contextual type.
+12. Context may limit possible `label` values. For instance, in variable declaration, 
    each `label` must be unique within the defining scope. Also, a `label` denoting a variable
    in an expression must refer to a variable that matches with the contextual type. 
 

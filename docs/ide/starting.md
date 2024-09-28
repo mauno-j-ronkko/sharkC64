@@ -1,10 +1,10 @@
-# Starting sharkC64 
+# Starting the sharkC64 IDE 
 
-Instructions to downloading and installing sharkC64 can be found on a page 
-describing [installation](../prerequisites/installing.md). Before starting sharkC64, 
+Instructions to downloading and installing the sharkC64 IDE can be found on a page 
+describing [installation](../prerequisites/installing.md). Before starting the sharkC64 IDE, 
 check that you have installed a compatible Java Runtime environment, see [setup](../prerequisites/setup.md).
 
-The following instructions assume that you have downloaded and unzipped sharkC64 in a Windows
+The following instructions assume that you have downloaded and unzipped the sharkC64 IDE in a Windows
 computer to the folder `C:\SHARKC64`. You may install sharkC64 to another folder, 
 and you may also install it on a Mac or a Linux computer. 
 Then, however, you should pay attention to folder paths so that they match the ones that you have.
@@ -35,7 +35,7 @@ Here are steps to start sharkC64.
 5. Click the OK button, and you should see the home screen (captured on version 0.3)
    ![Home screen](../images/home-screen.png)
 
-The sharkC64 compiler comes bundled with examples. When you start sharkC64 for the first time, it will
+The sharkC64 IDE comes bundled with examples. When you start the sharkC64 IDE for the first time, it will
 extract the example files to an examples folder and create a file with initial settings. 
 Therefore, the folder structure should now look as follows:
 ```

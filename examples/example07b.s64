@@ -1,0 +1,50 @@
+
+//
+// example07b
+// An example that scrolls the text on the upper part of the screen.
+// The text is scrolled only every third time the screen is completely refreshed.
+// The wait counter can be adjusted to have a slower or faster scroll routine.
+//
+
+module example07b
+    const scrollArea := 119  // number of chars in the scroll area
+          firstRow   := 0    // index to the first char on the first row
+          secondRow  := 40   // index to the first char on the second row
+          thirdRow   := 80   // index to the first char on the third row
+          lastOffset := 38   // offset to the last char on a row
+          rasterHigh := $80  // value indicating that raster scan is on the lower part of the screen
+
+    var source      : byte[scrollArea] at $429  // source byte array for the scroll area
+        target      : byte[scrollArea] at $428  // target byte array for the scroll area
+        carry       : byte[3]                   // chars to be carried from the left to the right in the scroll
+        vicRegister : byte at $D011             // VIC-II register
+        wait        : byte := 0                 // wait counter for the scroll
+
+begin
+    while (true) do
+        // Wait until raster scan line is on the lower part of the screen
+        while vicRegister < rasterHigh do end
+
+        // Wait for the third full screen scan to scroll the text
+        wait := wait + 1
+        if (wait > 2) then
+            wait := 0
+
+            // Save the chars that are about to scroll out from the left
+            carry[0] := target[firstRow]
+            carry[1] := target[secondRow]
+            carry[2] := target[thirdRow]
+
+            // Scroll the text
+            target := source
+
+            // Write the saved chars to the right side of the scroll area
+            source[firstRow + lastOffset] := carry[0]
+            source[secondRow + lastOffset] := carry[1]
+            source[thirdRow + lastOffset] := carry[2]
+        end
+
+        // Wait until raster scan line is on the upper part of the screen
+        while vicRegister >= rasterHigh do end
+    end
+end

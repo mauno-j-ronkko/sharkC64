@@ -1,5 +1,17 @@
 # Release history
 
+### Version 0.7.1 published September 29, 2024
+- added array assignment for byte arrays
+- added initial value assignment for byte arrays
+- added byte array modifiers, (.up), (.down)
+- added byte array length operator, (.length)
+- added empty statement ";"
+- improved simplification of index values for array elements
+- improved static type inference in binding
+- improved code branching in code generation
+- refined the help for finding and replacing text in IDE
+- switched to using Temurin 21
+
 ### Version 0.7 published August 30, 2024
 - Added byte arrays
 

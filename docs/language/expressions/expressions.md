@@ -73,7 +73,7 @@ If, however, disjunction needs to be evaluated before the sums,
 it can be achieved by using parentheses:
 `a + (b or -c) + d`
 
-Although sharkC64 follows the left-to-right evaluation order for expressions while parsing them,
+Although the sharkC64 compiler follows the left-to-right evaluation order for expressions while parsing them,
 the optimization and simplification rules most likely change the computation order at run-time.
 As long as expression operands have no side effects, the computation result is equivalent to
 that computed using a strict left-to-right evaluation order.

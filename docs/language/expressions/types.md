@@ -41,5 +41,16 @@ swap intermediate computational values in and out of the 8-bit accumulator of th
 6510 microprocessor. Therefore, the expressions with the `word` data type are
 significantly slower than, for instance, similar expressions with the `byte` data type. 
 
+> :warning: &nbsp; Assigning a word value from one variable to another,
+> partially overlapping variable could fail. The failure occurs when the low byte
+> of the target variable is at the same address as the high byte of the source variable.
+> Then, the low byte value is first copied over the high byte value overwriting the
+> correct high byte value. As a result, both the source and the target variables get 
+> corrupted having the low byte value also as their high byte value.
+> Because of this, **partially overlapping variables (with word data type) 
+> should be avoided.**
+>
+
+
 <br /><br />
 :leftwards_arrow_with_hook: [Back to index](../../index.md)

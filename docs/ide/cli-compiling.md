@@ -1,18 +1,18 @@
 # Compiling a module from the command line
 
-Before compiling with sharkC64, check that you have installed a compatible Java Runtime
+Before compiling with the sharkC64 compiler, check that you have installed a compatible Java Runtime
 environment, see [setup](../prerequisites/setup.md).
 
 Steps to compile a s64 source file:
-1. To make sure that harkC64 is properly initialized,
+1. To make sure that sharkC64 IDE is properly initialized,
    run it first as instructed in the text for [starting sharkC64](starting.md). 
 2. Open a command prompt or a terminal window on your computer.
-3. Move to the folder where you have installed sharkC64;
+3. Move to the folder where you have installed the sharkC64 IDE;
    for instance,
    ```
    cd C:\SHARKC64
    ```
-4. Check where the sharkC64 compiler and the source file are in the folder structure:
+4. Check that the sharkC64 IDE and the example files are in the folder structure:
    ```
    C:\SHARKC64
    |

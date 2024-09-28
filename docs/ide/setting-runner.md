@@ -1,10 +1,10 @@
 # Setting the runner command
 
-The home screen of sharkC64 looks as follows (captured on version 0.3):
+The home screen of the sharkC64 IDE looks as follows (captured on version 0.3):
 ![Selecting active module](../images/runner.png)
 
 Because the runner command depends on your personal system settings
-and installation, sharkC64 leaves it undefined during initialization.
+and installation, the sharkC64 IDE leaves it undefined during initialization.
 In the picture above, the runner command uses a Vice emulator as the runner.
 In that specific case, the Gtk 3 version of the Vice emulator has been 
 installed on a Windows computer to the folder `C:\APP`.

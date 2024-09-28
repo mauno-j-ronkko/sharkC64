@@ -6,7 +6,7 @@ const zero : byte := $00
       one  : zero + $01
 ```
 
-Each constant must also have a unique name. In sharkC64, all the names are case-sensitive.
+Each constant must also have a unique name. In the sharkC64 language, all the names are case-sensitive.
 The type of the constant must also be given, unless the type
 can be inferred from the fixed value. For instance, above, the type of the
 constant `one` is `byte` as that is the type of the value `zero + $01`.

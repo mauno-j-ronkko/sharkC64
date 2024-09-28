@@ -21,7 +21,7 @@ Each module must have a unique name that is given after the `module` keyword.
 module UniqueName01
 ```
 
-All names in sharkC64 are case-sensitive, and a name may contain upper or
+All names in the sharkC64 language are case-sensitive, and a name may contain upper or
 lower case letters followed by digits. However, as the name of the module must match 
 the filename, module names should differ in some other ways than by letter case.
 Otherwise, operating systems that are case-insensitive cannot distinguish them.
