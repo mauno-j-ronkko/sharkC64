@@ -1,7 +1,7 @@
 # Future plans
 
 ### Next release
-- Improving IDE
+- Improving IDE further
 
 ### Backlog
 - Module dependencies

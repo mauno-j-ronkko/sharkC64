@@ -1,5 +1,12 @@
 # Release history
 
+### Version 0.7.2 published November 9, 2024
+- refactored IDE implementation
+- added some minor usability adjustments
+- added dragging of the vertical scroll bar with mouse
+- improved find/replace/error messages
+- added closing of the editor menu by clicking outside it
+
 ### Version 0.7.1 published September 29, 2024
 - added array assignment for byte arrays
 - added initial value assignment for byte arrays
