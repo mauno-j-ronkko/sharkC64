@@ -14,6 +14,8 @@ The sharkC64 compiler comes bundled with example programs.
 | [example06](../../examples/example06.s64)   | use `word` data type                          | 0.6   |
 | [example07](../../examples/example07.s64)   | declare and use `byte` arrays                 | 0.7   |
 | [example07b](../../examples/example07b.s64) | use array assignment                          | 0.7.1 |
+| [example08](../../examples/example08.s64)   | include other modules (use statement)         | 0.8   |
+
 
 <br /><br />
 :leftwards_arrow_with_hook: [Back to index](../index.md)

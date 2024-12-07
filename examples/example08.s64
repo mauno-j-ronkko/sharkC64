@@ -1,0 +1,20 @@
+//
+// example08
+// An example that refers to color module for color values.
+// This example paints the words "commodore" and "basic" with other colors.
+//
+
+module example08
+    use color
+
+    const columns := 40
+
+    var line : byte[columns] at $D800 + (word)columns
+        i    : byte
+
+begin
+  i := 9
+  while i<18 do line[i] := color.lightGreen; i := i + 1 end
+  i := i + 4
+  while i<27 do line[i] := color.lightRed; i := i + 1 end
+end

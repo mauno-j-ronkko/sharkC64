@@ -1,6 +1,6 @@
 # Setting the home folder
 
-The home screen of the sharkC64 IDE looks as follows (captured on version 0.3):
+The home screen of the sharkC64 IDE looks as follows:
 ![Selecting active module](../images/home.png)
 
 The sharkC64 IDE initializes the home folder to be the example folder that it creates

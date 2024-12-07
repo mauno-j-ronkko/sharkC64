@@ -4,6 +4,7 @@ A module is defined in a file, and it has the structure shown below.
 In particular, a module consists of sections that start with a section keyword.
 ```
 module UniqueName01
+    use   moduleA, moduleB
     const one : byte := $01
     var   a,b : byte
           corner : byte at $400 := one
@@ -25,6 +26,13 @@ All names in the sharkC64 language are case-sensitive, and a name may contain up
 lower case letters followed by digits. However, as the name of the module must match 
 the filename, module names should differ in some other ways than by letter case.
 Otherwise, operating systems that are case-insensitive cannot distinguish them.
+
+### Uses
+A module may depend on other modules. Dependencies are declared in a ```use``` section.
+Modules are listed using comma as separator.
+```
+use moduleA, moduleB
+```
 
 ### Constants
 Constants are listed in a `const` section. Each constant must be given a 

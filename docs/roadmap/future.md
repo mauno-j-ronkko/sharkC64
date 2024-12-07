@@ -4,7 +4,6 @@
 - Improving IDE further
 
 ### Backlog
-- Module dependencies
 - Functions
 - Indirect indexing
 - More data types: records, arrays, etc

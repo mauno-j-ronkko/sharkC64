@@ -25,14 +25,15 @@ The sharkC64 IDE is published under MIT license.
       4. [Empty statements](language/statements/empty.md)
    3. Modules
       1. [Modules](language/modules/modules.md)
-      2. [Module initialization](language/modules/initialization.md)
+      2. [Using or including other modules](language/modules/uses.md)
+      3. [Module initialization](language/modules/initialization.md)
    4. [Comments](language/comments.md)
    5. [Language syntax](language/syntax.md)
 3. Using the sharkC64 IDE
    1. [Starting sharkC64 IDE](ide/starting.md)
    2. [Home screen](ide/homescreen.md)
    3. [Setting the home folder](ide/setting-home.md)
-   4. [Setting the runner command](ide/setting-runner.md)
+   4. [Setting the emulator command for running a program](ide/setting-emulator)
    5. [Selecting an active module](ide/selecting.md)
    6. [Editing the active module](ide/editing.md)
    7. [Building the active module](ide/building.md)

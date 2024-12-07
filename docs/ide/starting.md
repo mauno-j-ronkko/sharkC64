@@ -32,7 +32,7 @@ Here are steps to start sharkC64.
    You may then have to click the file with right mouse button and choose an option to run it.
 4. The integrated development environment for the sharkC64 should open with a greeting dialog.
    ![Welcome](../images/welcome.png)
-5. Click the OK button, and you should see the home screen (captured on version 0.3)
+5. Click the OK button, and you should see the home screen
    ![Home screen](../images/home-screen.png)
 
 The sharkC64 IDE comes bundled with examples. When you start the sharkC64 IDE for the first time, it will

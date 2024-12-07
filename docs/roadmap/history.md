@@ -1,5 +1,13 @@
 # Release history
 
+### Version 0.8 published December 7, 2024
+- Added use statement
+- Added referencing of variables and constants in another module
+- Refactored settings and home screen
+- Fixed handling of invalid files
+- Adjusted dialogs on screen
+- Simplified compiler error handling
+
 ### Version 0.7.2 published November 9, 2024
 - refactored IDE implementation
 - added some minor usability adjustments

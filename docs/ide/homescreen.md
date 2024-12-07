@@ -1,6 +1,6 @@
 # Home screen
 
-The home screen of the sharkC64 IDE looks as follows (captured on version 0.3):
+The home screen of the sharkC64 IDE looks as follows:
 ![Home screen](../images/home-screen.png)
 
 It has two sections with actions. The module section has actions for:

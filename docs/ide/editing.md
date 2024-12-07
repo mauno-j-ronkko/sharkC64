@@ -1,6 +1,6 @@
 # Editing the active module
 
-The home screen of the sharkC64 IDE looks as follows (captured on version 0.3):
+The home screen of the sharkC64 IDE looks as follows:
 
 ![Selecting active module](../images/editing.png)
 

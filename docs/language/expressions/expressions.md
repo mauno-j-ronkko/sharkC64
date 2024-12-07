@@ -13,6 +13,22 @@ The data type of a value in the range [`$00` .. `$FF`] can be either a `byte` or
 For such values, the program context defines the exact data type.
 
 
+### Identifiers
+Identifiers are referred by their name. For instance, in initialization body, 
+`screen` refers to an identifier defined in the module. 
+The identifier can be a constant or a variable. 
+An identifier is always associated with its type, and the type information
+is used in evaluating an expression.
+
+An identifier in another module can be referred to by using its qualified name.
+For instance, `color.red` refers to an identifier called `red` that is defined
+in a module called `color`. Because identifiers are unique within a module,
+several modules can have identifiers with the same name. 
+Then, qualified name is used to differentiate which identifier is in question.
+If no module qualification is given, an identifier refers always to the one
+defined in the current module.
+
+
 ### Operators
 The sharkC64 language supports all standard operators that are also supported by the processor.
 Supported operators are listed below. 
