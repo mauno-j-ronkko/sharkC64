@@ -1,15 +1,15 @@
-# Running the active module
+# Running the project
 
 The home screen of the sharkC64 IDE looks as follows:
-![Selecting active module](../images/running.png)
+![Running the project](../images/running.png)
 
-To run the active module, click the Run action in the Module section.
-If the module has not been built yet, the Run action will first build it
+To run the project, click the Run action in the project section.
+If the project has not been built yet, the Run action will first build it
 and then run it. 
 
 The Run action uses the Emulator command for running the built prg file.
 If the Emulator command is not supplied, the Run action is not active. 
-To read more about the Runner command, see the text about the [emulator](setting-emulator)
+To read more about the Emulator command, see the text about the [emulator](setting-emulator)
 command.
 
 If errors are found during the building phase, the editor view will be opened

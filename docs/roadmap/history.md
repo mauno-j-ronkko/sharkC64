@@ -1,5 +1,25 @@
 # Release history
 
+### Version 0.8.1 published January 14, 2025
+- Home screen
+  - Updated home screen to address projects instead of modules
+  - Added creation of a new project
+  - Added dialog for opening an existing project
+  - Added dialog for asking home folder and emulator file
+- Editor
+  - Added actions for creating or opening a module
+  - Added action for building the project without running it
+  - Added action for reverting all unsaved changes
+  - Added checks for not losing changes
+  - Added automatic compilation of a module when opened
+  - Updated header to show the project name
+  - Improved error messaging
+- Language
+  - Improved validation of constant declarations
+- Miscellaneous
+  - Improved submenu stability
+  - Improved mouse click responsiveness
+
 ### Version 0.8 published December 7, 2024
 - Added use statement
 - Added referencing of variables and constants in another module

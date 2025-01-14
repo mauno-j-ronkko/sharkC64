@@ -3,15 +3,16 @@
 The home screen of the sharkC64 IDE looks as follows:
 ![Home screen](../images/home-screen.png)
 
-It has two sections with actions. The module section has actions for:
-- [selecting an active module](selecting.md)
-- [editing the module](editing.md)
-- [building a runnable prg file for the module](building.md)
-- [running a built module with the runner command](running.md)
+It has two sections with actions. The Project section has actions for:
+- [Opening an existing project](ide/opening)
+- [Creating a new project](ide/creating-new.md)
+- [Editing a module](ide/editing.md)
+- [Building the project](ide/building.md)
+- [Running the project](ide/running.md)
 
 The System section has actions for:
-- [setting the home folder for the project](setting-home.md)
-- [setting the runner command for running a built module](running.md)
+- [Setting the home folder](ide/setting-home.md)
+- [Setting the emulator command for running a program](ide/setting-emulator)
 - showing help with the default browser (opens this page)
 - quiting the sharkC64 IDE
 

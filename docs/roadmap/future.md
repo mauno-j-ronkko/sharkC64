@@ -1,11 +1,11 @@
 # Future plans
 
 ### Next release
-- Improving IDE further
+- Function bodies
 
 ### Backlog
-- Functions
-- Indirect indexing
+- Access for data chunks
+- Improvements to functions
 - More data types: records, arrays, etc
 - Computational operators including multiplication and division
 - Support for floating point values
