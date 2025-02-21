@@ -19,10 +19,11 @@ The sharkC64 IDE is published under MIT license.
       4. [Expressions](language/expressions/expressions.md)
       5. [Byte arrays](language/expressions/arrays.md)
    2. Statements
-      1. [Assignment statements](language/statements/assignments.md)
-      2. [If statements](language/statements/ifs.md)
-      3. [While statements](language/statements/whiles.md)
-      4. [Empty statements](language/statements/empty.md)
+      1. [Empty statements](language/statements/empty.md)
+      2. [Assignment statements](language/statements/assignments.md)
+      3. [If statements](language/statements/ifs.md)
+      4. [While statements](language/statements/whiles.md)
+      5. [Functions](language/statements/functions.md)
    3. Modules
       1. [Modules](language/modules/modules.md)
       2. [Using or including other modules](language/modules/uses.md)

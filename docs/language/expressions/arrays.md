@@ -58,9 +58,9 @@ any error messages.  Still, the compiler does perform a static range check
 during compile time. Therefore, a similar expression `data[$12]` will not
 compile, if the length of a byte array `data` is only `$10` bytes.
 
-The length of an array can be obtained also by using `(.length)` unary operator.
+The length of an array can be obtained also by using `(array.size)` unary operator.
 The returned length of an array is either of type `byte` or of type `word`
-depending on the returned value. As an example, `(.length)data` returns the
+depending on the returned value. As an example, `(array.size)data` returns the
 length of a byte array called `data`, which for the declaration example above would 
 thus return `$10`.
 
@@ -97,15 +97,15 @@ By default, the array assignment copies element values from one array to another
 by starting from the first index and ending at the last index. This order works
 correctly in most of the cases. However, if the arrays overlap and the source array
 start before the target array in the memory, this order of copying can cause artifacts. 
-For this purpose, we can use array modifiers `(.up)` or `(.down)`. 
-The `(.up)` modifier corresponds to the default order of copying that
+For this purpose, we can use array modifiers `(array.up)` or `(array.down)`. 
+The `(array.up)` modifier corresponds to the default order of copying that
 starts from the first index and ends at the last index.
-The `(.down)` modifier corresponds the order of copying that
+The `(array.down)` modifier corresponds the order of copying that
 starts from the last index and ends at the first index.
 As an example, the following example copies all the values from the `source` array to 
 the `target` array starting from the last index and ending at the first index.
 ```
-  target := (.down)source 
+  target := (array.down)source 
 ```
 
 <br /><br />

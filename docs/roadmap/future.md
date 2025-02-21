@@ -1,12 +1,11 @@
 # Future plans
 
 ### Next release
-- Function bodies
+- Byte arrays with two dimensions
 
 ### Backlog
-- Access for data chunks
 - Improvements to functions
-- More data types: records, arrays, etc
+- More data types
 - Computational operators including multiplication and division
 - Support for floating point values
 - ... and much more!

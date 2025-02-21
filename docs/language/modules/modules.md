@@ -10,8 +10,13 @@ module UniqueName01
           corner : byte at $400 := one
           result : byte
          
+    fun hello() begin
+        b := a
+    end
+    
 begin
     a := $10
+    hello()
     result := corner + a
 end
 ```
@@ -49,6 +54,17 @@ A variable can also be given a static address and an initial value.
 var a, b : byte
     corner : byte at $400 := $01
 ```
+
+### Functions
+Functions are defined after variable section and before the module initialization.
+Each function starts with the keyword `fun`.
+The statements for the body of the function are then given within a `begin` ... `end` block.
+```
+fun hello() begin
+    b := a
+end
+```
+A function call is simply of the form `hello()` where `hello` is the name of the function.
 
 ### Module initialization
 Module initialization is defined within a `begin` ... `end` block.

@@ -1,5 +1,15 @@
 # Release history
 
+### Version 0.9 published February 16, 2025
+- renamed array modifiers as (array.up), (array.down), and (array.size)
+- added function bodies to the language
+- fixed nested array indexing
+- fixed sorted file list in file dialog
+- fixed saving of emulator file name
+- fixed bug in revert all changes
+- improved history buffering in editing
+- minor UI fixes
+
 ### Version 0.8.1 published January 14, 2025
 - Home screen
   - Updated home screen to address projects instead of modules

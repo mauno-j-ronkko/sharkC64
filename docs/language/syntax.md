@@ -4,10 +4,14 @@ The syntax of the sharkC64 language is as follows
 
 ```
 <module>             ::= "module" <LABEL> 
-                         [<use-section>] [<const-section>] [<var-section>] [<body>]
+                         [<use-section>] [<const-section>] [<var-section>] 
+                         [<fun-section>] [<body>]
 
 <use-section>        ::= "use" <module-list>
 <module-list>        ::= <LABEL> ["," <module-list>]             (1)
+
+<fun-section>        ::= <fun-declaration> [<fun-section>]
+<fun-declaration>    ::= "fun" <LABEL> "()" <body>
 
 <const-section>      ::= "const" <const-declarations>
 <const-declarations> ::= <const-declaration> [<const-declarations>]
@@ -38,30 +42,34 @@ The syntax of the sharkC64 language is as follows
 
 <body>               ::= "begin" <statements> "end"
 <statements>         ::= <statement> [<statements>]
-<statement>          ::= <assignment> | <if-then-else> | <while-do> | ";"
-<assignment>         ::= <LABEL> ":=" <expression> |
+<statement>          ::= <assignment> | <if-then-else> | <while-do> | 
+                         <function-call> | ";"
+<assignment>         ::= <name> ":=" <expression> |
                          <byte-array-element> ":=" <expression>
                          <byte-array> ":=" [<array-modifiers>] <byte-array>
-<if-then-else>       ::= "if" <expression> "then" <statements> ["else" <statements>] "end"  (8)
-<while-do>           ::= "while" <expression> "do" <statements> "end"                       (8)
+<if-then-else>       ::= "if" <expression> "then" <statements>                (8)
+                         ["else" <statements>] "end"  
+<while-do>           ::= "while" <expression> "do" <statements> "end"         (8)
+<function-call>      ::= <name> "()"                                          (9)
 
 <expression>         ::= <operand> [<rhs-expression>]
 <rhs-expression>     ::= <binary-operator> <unary-expression> [<rhs-expression>]
 <unary-expression>   ::= "(" <expression> ")" | <unary-operator> <expression> | <operand> 
-<operand>            ::= <byte-array-element> | <BOOLEAN-VALUE> |  (9)
-                         <LABEL> | <BYTE-VALUE> | <WORD-VALUE>     (9)
-<byte-array-element> ::= <byte-array> "[" <expression> "]"         (10)
-<byte-array>         ::= <LABEL>                                   (11) 
-<binary-operator>    ::= "-" | "+" | "and" | "or" | "xor" |        (12)
-                         "<=" | "<" | "=" | "<>" | ">=" | ">"      (12) 
-<unary-operator>     ::= "-" | "not" |                             (12)
-                         "(byte)" | "(byte.lo)" | "(byte.hi)" |    (12)
-                         "(word)" | "(word.lo)" | "(word.hi)" |    (12)
-                         "(.length)"                               (12)
-<array-modifiers>    ::= "(.up)" | "(.down)"                         
+<operand>            ::= <byte-array-element> | <BOOLEAN-VALUE> |  (10)
+                         <name> | <BYTE-VALUE> | <WORD-VALUE>      (10)
+<byte-array-element> ::= <byte-array> "[" <expression> "]"         (11)
+<byte-array>         ::= <name>                                    (12) 
+<binary-operator>    ::= "-" | "+" | "and" | "or" | "xor" |        (13)
+                         "<=" | "<" | "=" | "<>" | ">=" | ">"      (13) 
+<unary-operator>     ::= "-" | "not" |                             (13)
+                         "(byte)" | "(byte.lo)" | "(byte.hi)" |    (13)
+                         "(word)" | "(word.lo)" | "(word.hi)" |    (13)
+                         "(array.size)"                            (13)
+<array-modifiers>    ::= "(array.up)" | "(array.down)"                         
+<name>               ::= <LABEL> ["." <LABEL>] 
+
     
-    
-<LABEL>         is a letter followed by a sequence of letetrs and digits  (13) 
+<LABEL>         is a letter followed by a sequence of letetrs and digits  (14) 
 <BOOLEAN-VALUE> is a binary truth value {false, true}
 <BYTE-VALUE>    is an 8-bit unsigned value in the range [0..255]    
 <WORD-VAULUE>   is a 16-bit unsigned value in the range [0..65535]
@@ -76,11 +84,12 @@ The syntax of the sharkC64 language is as follows
 7. `expression` must match with the contextual type. 
    For instance, if the contextual type is `byte`, the expression must evaluate to a fixed `<BYTE-VALUE>`.
 8. `expression` must be of `<type-boolean>` type.
-9. `operand` must match with the contextual type.
-10. `expression` must be of `<type-byte>` type.
-11. `<LABEL>` must denote a variable that is a byte array
-12. `operator` must match with the contextual type.
-13. Context may limit possible `<LABEL>` values. For instance, in variable declaration, 
+9. `<name>` must denote a function
+10. `operand` must match with the contextual type.
+11. `expression` must be of `<type-byte>` type.
+12. `<name>` must denote a variable that is a byte array
+13. `operator` must match with the contextual type.
+14. Context may limit possible `<LABEL>` values. For instance, in variable declaration, 
    each `<LABEL>` must be unique within the defining scope. Also, a `<LABEL>` denoting a variable
    in an expression must refer to a variable that matches with the contextual type. 
 
