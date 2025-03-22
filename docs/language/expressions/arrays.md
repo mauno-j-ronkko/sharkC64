@@ -1,9 +1,9 @@
 # Byte arrays
 
-At the moment, the sharkC64 language supports only byte arrays. A byte array is an array 
-whose elements are bytes. Furthermore, the length of a byte array is limited 
-to 256 elements. Working with such an array is supported by the microprocessor 
-of the Commodore 64. 
+At the moment, the sharkC64 language supports only one-dimensional or two-dimensional byte arrays. 
+A byte array is an array whose elements are bytes. 
+The length of a dimension in a byte array is limited to 256 elements. 
+The reason for this limitation is that working with such arrays is supported by the microprocessor of the Commodore 64. 
 
 ### Variable declaration
 A byte array variable is declared in a `var` section just like any other variable.
@@ -11,12 +11,20 @@ A byte array can also be given a static memory address.
 ```
 var  data      : byte[$10]
      hello     := {8, 5, 12, 12, 15}
-     screenRow : byte[$28] at $400 
+     screenRow : byte[40] at $400
+     data2d    := {1, 2, 3; 4, 5, 6} 
+     screen    : byte[25, 40] at $400 
 ```
 
-A byte array is given a length. A byte array must have at least one element, and
+A one-dimensional byte array is given a length. A byte array must have at least one element, and
 it cannot have more than 256 elements. Therefore, the length of a byte array
 must be in the range `[1..256]` .
+Similarly, a two-dimensional byt array is given a number of rows and number of columns.
+The number of rows is the first index in a two-dimensional byte array and the number of
+columns is the second index.
+A two-dimensional byte array must have at least one row and column, and
+it cannot have more than 256 rows or columns.
+In the example above, the `screen` variable has `25` rows and `40` columns. 
 
 If a byte array is not given a static memory location, the sharkC64 compiler will
 allocate as many bytes from the memory for it as its length states.
@@ -31,6 +39,8 @@ When a byte array is given initial values, the allocated memory is initialized
 with them instead of the default zero values.
 This means that, for instance, the value of `hello[$01]` in the above example is
 set to `5` initially, and it will remain `5` as long as no other value is assigned to it.
+For two-dimensional byte arrays, rows in the initial values are separated with `;`.
+In the example above, the `data2d` array has `2` rows and `3` columns.
 
 If a byte array is given a static memory location, the sharkC64 compiler will
 not allocate any memory for it, and it will not be initialized to any value either.
@@ -47,6 +57,8 @@ They are checked for type consistency and the resulting byte code is optimized f
 performance. In particular, this means that a byte array element can appear in an
 index expression of another byte array element. So, an expression like
 `data[screen[$12]]` is perfectly valid.
+An element in a two-dimensional byte array is accessed with two indexes, 
+for instance, `screen[3, 33]`.
 
 The first element in a byte array has the index value `0`, and the last element 
 has the index `length - 1`, where `length` is the length of the byte array.
@@ -58,8 +70,8 @@ any error messages.  Still, the compiler does perform a static range check
 during compile time. Therefore, a similar expression `data[$12]` will not
 compile, if the length of a byte array `data` is only `$10` bytes.
 
-The length of an array can be obtained also by using `(array.size)` unary operator.
-The returned length of an array is either of type `byte` or of type `word`
+The size of an array can be obtained also by using `(array.size)` unary operator.
+The returned size of an array is either of type `byte` or of type `word`
 depending on the returned value. As an example, `(array.size)data` returns the
 length of a byte array called `data`, which for the declaration example above would 
 thus return `$10`.
@@ -81,12 +93,17 @@ After that, the left-hand side index expression is computed.
 Lastly, the computed right-hand side value is assigned to the byte array
 element that has the computed left-hand side index value.
 
+Assignment works similarly for a two-dimensional byte array.
+
 
 ### Array assignment
 
 It is also possible to copy all the values of an array to another array. 
-This is called array assignment. The only condition for array assignment is that the
-source array does not have more elements than the target array.
+This is called array assignment. 
+The only conditions for array assignment are:
+- both arrays must be one-dimensional
+- source array does not have more elements than the target array
+
 For instance, the following assignment statement copies all the values from
 an array called `source` to an array called `target`.
 ```

@@ -1,10 +1,10 @@
 # Future plans
 
 ### Next release
-- Byte arrays with two dimensions
+- Variable declaration to functions
 
 ### Backlog
-- Improvements to functions
+- More improvements to functions
 - More data types
 - Computational operators including multiplication and division
 - Support for floating point values

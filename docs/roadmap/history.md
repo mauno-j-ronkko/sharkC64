@@ -1,8 +1,15 @@
 # Release history
 
+### Version 0.10 published March, 2025
+- added support for 2D byte arrays
+- added support for zero-page instructions
+- improved use of near jumps with word arguments
+- refactored bytecode generation
+- fixed bytecode generation bug for type casting
+
 ### Version 0.9 published February 16, 2025
-- renamed array modifiers as (array.up), (array.down), and (array.size)
 - added function bodies to the language
+- renamed array modifiers as (array.up), (array.down), and (array.size)
 - fixed nested array indexing
 - fixed sorted file list in file dialog
 - fixed saving of emulator file name

@@ -16,6 +16,7 @@ The sharkC64 compiler comes bundled with example programs.
 | [example07b](../../examples/example07b.s64) | use array assignment                          | 0.7.1 |
 | [example08](../../examples/example08.s64)   | include other modules (use statement)         | 0.8   |
 | [example09](../../examples/example09.s64)   | declare and call function bodies              | 0.9   |
+| [example10](../../examples/example10.s64)   | declare two-dimensional `byte` arrays         | 0.10  |
 
 
 <br /><br />

@@ -1,0 +1,57 @@
+//
+// example10
+// An example using 2D byte arrays.
+// This example moves a ball on the screen and bounces it from characters.
+//
+
+module example10
+
+    const rows       := 25
+          cols       := 40
+          space      := $20
+          ball       := $51
+          maxDelay   := 947
+
+    var random           : byte at $A2
+        screen           : byte[rows, cols] at $400
+        row              := 10
+        col              := 21
+        old              := space
+        rMove, cMove     := 1
+        rBounce, cBounce := false
+        delay            : word
+
+    fun wait() begin
+        delay := 0
+        while delay < maxDelay do delay := delay +1 end
+    end
+
+    fun checkBounce() begin
+        rBounce := row + rMove < 0 or row + rMove >= rows
+        cBounce := col + cMove < 0 or col + cMove >= cols
+        if screen[row + rMove, col + cMove] <> space and not (rBounce or cBounce) then
+            rBounce := screen[row + rMove, col] <> space or screen[row - rMove, col] <> space
+            cBounce := screen[row, col + cMove] <> space or screen[row, col - cMove] <> space
+            if not (rBounce or cBounce) then rBounce := true; cBounce := true end
+        end
+    end
+
+    fun move() begin
+        screen[row, col] := old
+        if rBounce then rMove := -rMove else row := row + rMove end
+        if cBounce then cMove := -cMove else col := col + cMove end
+        if row = rows - 1 then
+            if random < 80 and col > 0 then col := col - 1 end
+            if random > 160 and col < cols - 1 then col := col + 1 end
+        end
+        old := screen[row, col]
+        screen[row, col] := ball
+    end
+
+begin
+    while true do
+        wait()
+        checkBounce()
+        move()
+    end
+end
