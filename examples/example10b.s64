@@ -1,0 +1,71 @@
+//
+// example10b
+// Revised version of example10 by using function constants and variables.
+// This example moves a ball on the screen and bounces it from characters.
+//
+
+module example10b
+
+    const rows  := 25
+          cols  := 40
+          space := $20
+
+    var screen           :  byte[rows, cols] at $400
+        row              := 10
+        col              := 21
+        rMove, cMove     := 1
+        rBounce, cBounce := false
+
+
+    fun wait()
+        const maxDelay := 947
+        var   delay    :  word
+
+    begin
+        delay := 0
+        while delay < maxDelay do delay := delay +1 end
+    end
+
+
+    fun checkBounce()
+        var nextRow, nextCol : byte
+
+    begin
+        nextRow := row + rMove
+        nextCol := col + cMove
+        rBounce := nextRow < 0 or nextRow >= rows
+        cBounce := nextCol < 0 or nextCol >= cols
+        if screen[nextRow, nextCol] <> space and not (rBounce or cBounce) then
+            rBounce := screen[nextRow, col] <> space or screen[row - rMove, col] <> space
+            cBounce := screen[row, nextCol] <> space or screen[row, col - cMove] <> space
+            if not (rBounce or cBounce) then rBounce := true; cBounce := true end
+        end
+    end
+
+
+
+    fun move()
+        const ball   := $51
+        var   old    := space
+              random :  byte at $A2
+
+    begin
+        screen[row, col] := old
+        if rBounce then rMove := -rMove else row := row + rMove end
+        if cBounce then cMove := -cMove else col := col + cMove end
+        if row = rows - 1 then
+            if random < 80 and col > 0 then col := col - 1 end
+            if random > 160 and col < col - 1  then col := col + 1 end
+        end
+        old := screen[row, col]
+        screen[row, col] := ball
+    end
+
+
+begin
+    while true do
+        wait()
+        checkBounce()
+        move()
+    end
+end

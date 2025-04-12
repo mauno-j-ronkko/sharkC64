@@ -28,6 +28,10 @@ Then, qualified name is used to differentiate which identifier is in question.
 If no module qualification is given, an identifier refers always to the one
 defined in the current module.
 
+Variables defined in a function can only be referred to in that function.
+A function may have a variable with the same name as in the module.
+Then, in the function, an unqualified name refers to the variable defined in the function,
+and a fully qualified name refers to the variable defined in the module.
 
 ### Operators
 The sharkC64 language supports all standard operators that are also supported by the processor.

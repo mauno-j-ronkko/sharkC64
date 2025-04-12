@@ -1,6 +1,9 @@
 # Release history
 
-### Version 0.10 published March, 2025
+### Version 0.10.1 published April 12, 2025
+- added constant and variable declaration to functions
+
+### Version 0.10 published March 23, 2025
 - added support for 2D byte arrays
 - added support for zero-page instructions
 - improved use of near jumps with word arguments
