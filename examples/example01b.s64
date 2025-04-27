@@ -7,3 +7,5 @@ module example01b
 
     var letterA      : byte    := $01       // variable with type and initial value
         screenCorner : at $400 := letterA   // variable with static address and inferred type
+
+end

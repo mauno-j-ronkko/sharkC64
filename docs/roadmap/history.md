@@ -1,5 +1,11 @@
 # Release history
 
+### Version 0.11 published april 27, 2025
+- added for loops
+- enforced use of end as closing keyword in module definitions
+- added optimization for increment and decrement assignment
+- refactored parse error handling
+
 ### Version 0.10.1 published April 12, 2025
 - added constant and variable declaration to functions
 

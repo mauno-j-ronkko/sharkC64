@@ -1,0 +1,29 @@
+//
+// example11
+// An example using for loops.
+// This example fills the entire screen with a fill character.
+// The fill character is given all possible values one by one.
+//
+
+module example11
+
+    const rows := 25
+          cols := 40
+
+    var screen : byte[rows, cols] at $0400
+        fill   : byte
+
+    fun fillScreen()
+        const lastCol := cols - 1
+              lastRow := rows - 1
+        var   row     :  byte
+              col     :  byte
+    begin
+        for row := 0 to lastRow do
+            for col := 0 to lastCol do screen[row, col] := fill end
+        end
+    end
+
+begin
+    for fill := 0 to 255 do fillScreen() end
+end

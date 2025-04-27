@@ -18,6 +18,7 @@ The sharkC64 compiler comes bundled with example programs.
 | [example09](../../examples/example09.s64)   | declare and call function bodies              | 0.9    |
 | [example10](../../examples/example10.s64)   | declare two-dimensional `byte` arrays         | 0.10   |
 | [example10b](../../examples/example10b.s64) | use function constants and variables          | 0.10.1 |
+| [example11](../../examples/example11.s64)   | use for loops                                 | 0.11   |
 
 
 <br /><br />

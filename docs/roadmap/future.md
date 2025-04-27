@@ -1,7 +1,7 @@
-# Future
+# Future plans
 
 ### Next release
-- Adding for loops 
+- Add function parameters 
 
 ### Backlog
 - More improvements to functions

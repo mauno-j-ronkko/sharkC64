@@ -83,5 +83,7 @@ begin
 end
 ```
 
+If a module has no initialization it can simply end with the keyword `end`.
+
 <br /><br />
 :leftwards_arrow_with_hook: [Back to index](../../index.md)

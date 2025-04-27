@@ -23,7 +23,8 @@ The sharkC64 IDE is published under MIT license.
       2. [Assignment statements](language/statements/assignments.md)
       3. [If statements](language/statements/ifs.md)
       4. [While statements](language/statements/whiles.md)
-      5. [Functions](language/statements/functions.md)
+      5. [For statements](language/statements/fors.md)
+      6. [Functions](language/statements/functions.md)
    3. Modules
       1. [Modules](language/modules/modules.md)
       2. [Using or including other modules](language/modules/uses.md)
