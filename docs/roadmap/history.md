@@ -1,6 +1,13 @@
 # Release history
 
-### Version 0.11 published april 27, 2025
+### Version 0.11.1 published in May 25, 2025
+- added typed parameters to functions
+- added function call chaining
+- improved scrolling with touchpad
+- changed file saving not to clear undo history
+- changed editor to auto-saves files
+
+### Version 0.11 published in April 27, 2025
 - added for loops
 - enforced use of end as closing keyword in module definitions
 - added optimization for increment and decrement assignment

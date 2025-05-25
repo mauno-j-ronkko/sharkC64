@@ -1,0 +1,61 @@
+//
+// example11b
+// An example using function calls with parameters and call chaining.
+// This example moves colored blocks on the screen.
+//
+
+module example11b
+    use color, screen, block
+
+    const lastColumn := 27
+          lastRow    := 17
+
+    var column, nextColumn        := 3
+        row, nextRow              := 3
+        rowStep, columnStep       := 1
+        redOffset, brownOffset    : byte
+        purpleOffset, greenOffset : byte
+
+
+    fun moveByColumn() begin
+        column := nextColumn
+        nextColumn := column + columnStep
+        if nextColumn < 0 or nextColumn > lastColumn then nextColumn := column; columnStep := -columnStep end
+        if columnStep = 1 then redOffset := 0 else redOffset := block.width end
+        brownOffset := block.width - redOffset
+    end
+
+    fun moveByRow() begin
+        row := nextRow
+        nextRow := row + rowStep
+        if nextRow < 0 or nextRow > lastRow then nextRow := row; rowStep := -rowStep end
+        if rowStep = 1 then purpleOffset := 0 else purpleOffset := block.height end
+        greenOffset := block.height - purpleOffset
+    end
+
+
+    fun erase()
+    begin
+        block.eraseRow(22, row + purpleOffset, color.purple)
+             .eraseRow(5, lastRow - row + greenOffset, color.green)
+             .eraseColumn(column + redOffset, 2, color.red)
+             .eraseColumn(lastColumn - column + brownOffset, 14, color.brown)
+    end
+
+
+    fun draw() begin
+        block.drawBlock(nextColumn, 2, color.red)
+             .drawBlock(22, nextRow, color.purple)
+             .drawBlock(5, lastRow - nextRow, color.green)
+             .drawBlock(lastColumn - nextColumn, 14, color.brown)
+    end
+
+
+begin
+    screen.clear(block.char, block.backgroundColor)
+    block.drawBlock(13, 8, block.topColor)
+    while true do
+        moveByColumn().moveByRow()
+        erase().draw()
+    end
+end
