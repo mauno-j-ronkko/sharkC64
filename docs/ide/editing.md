@@ -9,6 +9,12 @@ It will open an edit view.
 
 ![Edit view](../images/edit-view.png)
 
+The header row shows a hamburger icon, the name of the project, the name of the opened module,
+the current status and the cursor location. The number before the name of the module
+indicates the index of the module among already opened modules.
+Yes, the sharkC64 development environment supports now multiple open modules!
+More on that later.
+
 The editor menu can be accessed by clicking the hamburger icon next to the module name
 on the top left screen corner. The editor menu opens directly on top of the hamburger icon.
 All the actions in the menu can be accessed by using keyboard shortcuts. 
@@ -24,6 +30,7 @@ Here is a list of the editor menu actions:
 |:----------------------------------------|:----------------------------|-------------------|-------------------------|
 | Create new module                       | Module.. > New..            | ctrl + n          | command + n             |
 | Open a module                           | Module.. > Open..           | ctrl + o          | command + o             |
+| Switch to an already opened module      | Module.. > Switch..         | shift + ctrl + o  |                         |
 | Save edited module                      | Module.. > Save             | ctrl + s          | command + s             |
 | Close editor view (back to home screen) | Module.. > Close            | ctrl + w          | command + w             |
 | <br>                                    |                             |                   |                         |
@@ -53,6 +60,27 @@ Here is a list of the editor menu actions:
 Note that compiling in the editor view is literally just the compilation action.
 It will not produce any executable prg file. 
 To produce an executable prg file and to run it, select build and run module from the menu. 
+
+## Switching between opened modules
+The sharkC64 development environment supports now multiple open modules.
+You can see a list of all the opened modules by selecting the "Switch.." item from the
+"Module.." menu. Alternatively, you can open that list just by clicking shift+ctrl+o
+(or shift+cmd+o with a mac).
+The list of all the opened modules looks something like this.
+
+![Editor switch menu](../images/editor-switch.png)
+
+If the list does not contain the module that you wish to open, you can click the
+"(other..)" item. That will open a dialog for opening any existing module.
+As the list of opened module shows, the first five modules can also be accessed
+with a shortcut key ctrl-1 through ctrl-5 (or cmd-1 through cmd-5 with a mac).
+The shortcut key works directly in the editor without a need to open any intermediate
+dialogs. It makes it fast and clutter-free to switch between modules. 
+
+Note that, when switching, the find and replace actions carry the find and replace
+patterns from one module to the other. This means, for instance, that replacing
+text across modules is easier. Still, one has to actively switch from one
+module to another - the find and replace actions do not switch the modules.
 
 To read more about the programming language and its syntax, see the language [index](../index.md) .
 

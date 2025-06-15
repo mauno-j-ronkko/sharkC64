@@ -1,5 +1,13 @@
 # Release history
 
+### Version 0.11.2 published in June 15, 2025
+- added action for going back to home screen from editor without losing editing state
+- added support for having multiple open modules
+- added quick switching between open modules
+- improved more scrolling with touchpad
+- improved array element type checking
+- improved translation of expressions with nested array elements
+
 ### Version 0.11.1 published in May 25, 2025
 - added typed parameters to functions
 - added function call chaining

@@ -92,7 +92,7 @@ The syntax of the sharkC64 language is as follows
 <var-name>              ::= <name>                                              (15)
 <1d-array-name>         ::= <name>                                              (16)
 <2d-array-name>         ::= <name>                                              (17)
-<function-name>         ::= <name>                                              (18)
+<function-name>         ::= <name> | "." <LABEL>                                (18)
 <name>                  ::= <LABEL> ["." <LABEL>] 
 
     
@@ -120,7 +120,7 @@ The syntax of the sharkC64 language is as follows
 15. `<name>` must denote a variable; not an array.
 16. `<name>` must denote a one dimensional array.
 17. `<name>` must denote a two-dimensional array.
-18. `<name>` must denote a function.
+18. `<name>` or a chained `<LABEL>` must denote a function 
 19. Context may limit possible `<LABEL>` values. For instance, in variable declaration,  
     each `<LABEL>` must be unique within the defining scope. Also, a `<LABEL>` denoting a variable
     in an expression must refer to a variable that matches with the contextual type. 

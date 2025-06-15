@@ -1,10 +1,10 @@
 # Future plans
 
 ### Next release
-- IDE improvement: Add support for multiple open modules 
+- Function return values 
 
 ### Backlog
-- Improvements to functions
+- Usability testing
 - More data types
 - Computational operators including multiplication and division
 - Support for floating point values
