@@ -51,7 +51,6 @@ has whatever value happens to be at the memory location `$400 + $15` at that mom
 
 
 ### In expressions
-
 Byte array elements can appear in expressions just like any other variables.
 They are checked for type consistency and the resulting byte code is optimized for 
 performance. In particular, this means that a byte array element can appear in an
@@ -78,7 +77,6 @@ thus return `$10`.
 
 
 ### Assigning a value to an element
-
 The value of a byte array element can be changed by using an assignment statement.
 In the assignment statement, a byte array element behaves just like any other variable.
 For instance, the following assignment statement sets the value of a byte array element
@@ -97,7 +95,6 @@ Assignment works similarly for a two-dimensional byte array.
 
 
 ### Array assignment
-
 It is also possible to copy all the values of an array to another array. 
 This is called array assignment. 
 The only conditions for array assignment are:

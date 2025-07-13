@@ -12,8 +12,8 @@ can be inferred from the fixed value. For instance, above, the type of the
 constant `one` is `byte` as that is the type of the value `zero + $01`.
 Constants are treated as literal values during the compile time. No fixed memory is allocated for them.
 
-### Fixed value
 
+### Fixed value
 The fixed value must conform to the data type of the constant. 
 The fixed value can be an expression, as long as it simplifies to a fixed value with a correct data type. 
 The expression may also refer to previously declared constants.

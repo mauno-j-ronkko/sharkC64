@@ -32,6 +32,7 @@ if the comparison holds between the byte values.
 Note that there is not automatic type casting between data types. 
 The programmer must give any type casting explicitly, see [Expressions](expressions.md). 
 
+
 ### Performance consideration
 The microprocessor of the Commodore 64, MOS Technology 6510, is an 8-bit microprocessor.
 It can natively operate only on 8-bit values. Because of this, the microprocessor

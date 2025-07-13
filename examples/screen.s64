@@ -1,22 +1,21 @@
 //
 // screen
-// This module provides variables for screen memroy access.
+// This module provides variables for screen memory access.
 // It also provides a function for clearing the screen.
 //
 
 module screen
 
-    const rows    := 25
-          columns := 40
+    const rows       := 25
+          columns    := 40
+          lastRow    := rows - 1
+          lastColumn := columns - 1
 
     var char  : byte[rows, columns] at $0400
         color : byte[rows, columns] at $D800
 
-
     fun clear(char: byte, color: byte)
-        const lastRow     := rows - 1
-              lastColumn  := columns - 1
-        var   row, column : byte
+        var row, column : byte
     begin
         for row := 0 to lastRow do
             for column := 0 to lastColumn do

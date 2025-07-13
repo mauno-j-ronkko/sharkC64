@@ -1,10 +1,9 @@
 # Future plans
 
 ### Next release
-- Function return values 
+- Usability test and improvements 
 
 ### Backlog
-- Usability testing
 - More data types
 - Computational operators including multiplication and division
 - Support for floating point values

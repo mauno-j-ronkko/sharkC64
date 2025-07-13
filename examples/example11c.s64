@@ -1,0 +1,49 @@
+//
+// example11c
+// An example illustrating function return values.
+// This example clears the screen row by row and character by character.
+// A character with the biggest value is chosen first to be cleared.
+// The clearing is done by gradually changing the character value towards a blank value.
+//
+
+module example11c
+    use screen
+
+    const blank := 32
+
+    var row : byte
+
+    fun pickChar() : byte
+        var column, char : byte
+    begin
+        pickChar := blank
+        for column := 0 to screen.lastColumn do
+            char := screen.char[row, column]
+            if char <> blank then
+                if pickChar = blank or char < pickChar then pickChar := char end
+            end
+        end
+    end
+
+    fun replace(oldChar : byte, newChar : byte)
+        var column : byte
+    begin
+        for column := 0 to screen.lastColumn do
+            if screen.char[row, column] = oldChar then screen.char[row, column] := newChar end
+        end
+    end
+
+    fun clearRow()
+        var oldChar, newChar : byte
+    begin
+        while true do
+           oldChar := pickChar()
+           if oldChar = blank then return end
+           if oldChar < blank then newChar := oldChar + 1 else newChar := oldChar - 1 end
+           replace(oldChar, newChar)
+        end
+    end
+
+begin
+   for row := 0 to screen.lastRow do clearRow() end
+end

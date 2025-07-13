@@ -40,5 +40,11 @@ a static address without an initial value, the variable will not be initialized 
 Then, the initial value of the variable is whatever value happens to be in that
 memory location when the variable is accessed.
 
+
+### Implicit setter functions
+In the sharkC64 language, all primitive variables have automatically
+generated setter functions. You can read more about setter functions in the 
+[chapter for functions](../statements/functions.md).
+
 <br /><br />
 :leftwards_arrow_with_hook: [Back to index](../../index.md)

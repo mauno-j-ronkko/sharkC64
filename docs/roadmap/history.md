@@ -1,7 +1,15 @@
 # Release history
 
+### Version 0.11.3 published in July 13, 2025
+- added optional, typed return value for functions
+- added function call evaluation to expressions
+- added return statement
+- added implicit setters for primitive module variables
+- improved find and replace actions in editor
+- improved automated compilation when switching between modules in editor
+
 ### Version 0.11.2 published in June 15, 2025
-- added action for going back to home screen from editor without losing editing state
+- added menu action for going back to home screen from editor without losing editing state
 - added support for having multiple open modules
 - added quick switching between open modules
 - improved more scrolling with touchpad

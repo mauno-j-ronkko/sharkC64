@@ -10,8 +10,8 @@ In an assignment statement, the type of the variable must match with the
 result type of the expression. In other words, if the expression returns
 a result value of type `byte`, the variable must also be of type `byte`.
 
-### Increments and decrements
 
+### Increments and decrements
 The sharkC64 compiler recognizes and optimizes two special cases: increments and decrements.
 If an assignment increments the value of a variable by one, it will be computed by
 using the increment instruction of the microprocessor. 
@@ -22,8 +22,8 @@ compiled into a single increment instruction:
   x := x + 1 
 ```
 
-### Assignment of arrays and array elements
 
+### Assignment of arrays and array elements
 The value of a byte array element can also be changed by using an assignment statement.
 For instance, the following assignment statement sets the value of a byte array element
 at index `$02` to be the sum of the byte array element at index `$01` plus `$F0` for

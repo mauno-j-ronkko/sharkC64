@@ -20,6 +20,16 @@ The sharkC64 compiler comes bundled with example programs.
 | [example10b](../../examples/example10b.s64) | use function constants and variables          | 0.10.1 |
 | [example11](../../examples/example11.s64)   | use for loops                                 | 0.11   |
 | [example11b](../../examples/example11b.s64) | use function parameters and call chaining     | 0.11.1 |
+| [example11c](../../examples/example11c.s64) | use function return values                    | 0.11.3 |
+
+The bundle includes also the following modules that are used by the example modules
+
+
+| Name                                | Purpose                     | Used by        |
+|-------------------------------------|-----------------------------|----------------|
+| [block](../../examples/block.s64)   | draws a block on the screen | example11b     |
+| [color](../../examples/color.s64)   | defines color constants     | example8,9,11b |
+| [screen](../../examples/screen.s64) | screen memory access        | example11b     |
 
 
 <br /><br />

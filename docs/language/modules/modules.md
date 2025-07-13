@@ -24,6 +24,7 @@ begin
 end
 ```
 
+
 ### Module name
 Each module must have a unique name that is given after the `module` keyword.
 ```
@@ -35,6 +36,7 @@ lower case letters followed by digits. However, as the name of the module must m
 the filename, module names should differ in some other ways than by letter case.
 Otherwise, operating systems that are case-insensitive cannot distinguish them.
 
+
 ### Uses
 A module may depend on other modules. Dependencies are declared in a ```use``` section.
 Modules are listed using comma as separator.
@@ -42,12 +44,14 @@ Modules are listed using comma as separator.
 use moduleA, moduleB
 ```
 
+
 ### Constants
 Constants are listed in a `const` section. Each constant must be given a 
 fixed value.
 ```
 const one : byte := $01
 ```
+
 
 ### Variables
 Variables are listed in a `var` section. Variables with the same type can
@@ -57,6 +61,7 @@ A variable can also be given a static address and an initial value.
 var a,b    : byte
     corner : byte at $400 := $01
 ```
+
 
 ### Functions
 Functions are defined after variable section and before the module initialization.
@@ -71,6 +76,7 @@ begin
 end
 ```
 A function call is simply of the form `hello()` where `hello` is the name of the function.
+
 
 ### Module initialization
 Module initialization is defined within a `begin` ... `end` block.

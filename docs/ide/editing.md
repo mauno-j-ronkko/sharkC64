@@ -49,10 +49,10 @@ Here is a list of the editor menu actions:
 | Paste from clipboard                    | Selection.. > Paste         | ctrl + v          | command + v             |
 | Delete selection                        | Selection.. > Delete        | Delete            | Delete                  |
 | <br>                                    |                             |                   |                         |
-| Compile module in editor                | Compile.. > Compile         | F9                | F9                      |
-| Show next compilation error             | Compile.. > Show next error | ctrl + F9         | command + F9            |
-| Build the project                       | Compile.. > Build           | F10               | F10                     |
-| Build and run the project               | Compile.. > Build and run   | F11               | F11                     |
+| Compile module in editor                | Compile.. > Compile         | ctrl + p          | command + p             |
+| Show next compilation error             | Compile.. > Show next error | shift + ctrl + p  | shift + command + p     |
+| Build the project                       | Compile.. > Build           | ctrl + b          | command + b             |
+| Build and run the project               | Compile.. > Build and run   | shift + ctrl + b  | shift + command + b     |
 | <br>                                    |                             |                   |                         |
 | Show editor Help (this page)            | Help                        | F1                | F1                      |
 | Quit sharkC64                           | Quit                        | ctrl + q          | command + q             |

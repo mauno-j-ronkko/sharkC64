@@ -33,6 +33,14 @@ A function may have a variable with the same name as in the module.
 Then, in the function, an unqualified name refers to the variable defined in the function,
 and a fully qualified name refers to the variable defined in the module.
 
+
+### Function calls
+Functions with return values can appear in expressions as operands.
+For instance, `a + hello(12,1234) + 5` is valid expression.
+In such an expression, the function return type must agree with the
+assumed type in the expression.
+
+
 ### Operators
 The sharkC64 language supports all standard operators that are also supported by the processor.
 Supported operators are listed below. 
