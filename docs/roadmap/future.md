@@ -1,9 +1,14 @@
 # Future plans
 
 ### Next release
-- Usability test and improvements 
+- Implementing internal linker 
 
 ### Backlog
+- Language features improving architecture design
+- Support for sprites 
+- Support for sound
+- Support for user defined characters
+- Support for bitmap graphics
 - More data types
 - Computational operators including multiplication and division
 - Support for floating point values

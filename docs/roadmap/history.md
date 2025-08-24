@@ -1,5 +1,10 @@
 # Release history
 
+## Version 1.0 published in August 24, 2025
+- completed usability tests
+- fixed scroll bar in open module dialog
+- improved error handling
+
 ### Version 0.11.3 published in July 13, 2025
 - added optional, typed return value for functions
 - added function call evaluation to expressions
