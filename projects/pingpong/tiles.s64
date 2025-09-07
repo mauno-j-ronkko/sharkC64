@@ -1,0 +1,72 @@
+//
+// tiles
+// Tile management and identification.
+//
+// This module is part of the pingpong example. It is provided as a tutorial
+// on how to program with the sharkC64 language using multiple modules.
+//
+// Published under MIT License
+// Copyright (C) Mauno Rönkkö, 2023-2025
+// See more at: https://github.com/mauno-j-ronkko/sharkC64
+//
+
+module tiles
+
+    use tile
+
+    const maxIndex := 53
+
+    var remaining : byte
+        row       := {  0,  0,  0,  0,  0,  0,  0,  0,  0,
+                        2,  2,  2,  2,  2,  2,  2,  2,  2,
+                        4,  4,  4,  4,  4,  4,  4,  4,  4,
+                        6,  6,  6,  6,  6,  6,  6,  6,  6,
+                        8,  8,  8,  8,  8,  8,  8,  8,  8,
+                       10, 10, 10, 10, 10, 10, 10, 10, 10 }
+        column    := {  2,  6, 10, 14, 18, 22, 26, 30, 34,
+                        2,  6, 10, 14, 18, 22, 26, 30, 34,
+                        2,  6, 10, 14, 18, 22, 26, 30, 34,
+                        2,  6, 10, 14, 18, 22, 26, 30, 34,
+                        2,  6, 10, 14, 18, 22, 26, 30, 34,
+                        2,  6, 10, 14, 18, 22, 26, 30, 34 }
+        color     := { color.blue,   color.blue,   color.purple, color.purple,
+                       color.red,    color.red,    color.orange, color.orange,
+                       color.yellow, color.yellow, color.green,  color.green }
+
+    fun exist(): boolean begin
+        exist := remaining > 0
+    end
+
+    fun setTile(index : byte) begin
+        tile.row(row[index] + 3).column(column[index])
+    end
+
+    fun reset()
+        var i : byte
+    begin
+        remaining := maxIndex + 1
+        for i := 0 to maxIndex do
+            print.color(color[row[i]]); setTile(i); tile.draw()
+        end
+    end
+
+    fun identifyTile(row : byte, column : byte) : boolean
+        var i, top, left : byte
+    begin
+        identifyTile := false
+        row := row - 3
+        for i := 0 to maxIndex do
+            top := tiles.row[i]
+            if top = row or row = top + 1 then
+                left := tiles.column[i]
+                identifyTile := left <= column and column <= left + 3
+                if identifyTile then setTile(i); return end
+            end
+        end
+    end
+
+    fun removeTile() begin
+        remaining := remaining - 1
+    end
+
+end

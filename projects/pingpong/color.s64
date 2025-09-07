@@ -1,0 +1,32 @@
+//
+// color
+// Color constants.
+//
+// This module is part of the pingpong example. It is provided as a tutorial
+// on how to program with the sharkC64 language using multiple modules.
+//
+// Published under MIT License
+// Copyright (C) Mauno Rönkkö, 2023-2025
+// See more at: https://github.com/mauno-j-ronkko/sharkC64
+//
+
+module color
+
+    const black      := 0
+          white      := 1
+          red        := 2
+          cyan       := 3
+          purple     := 4
+          green      := 5
+          blue       := 6
+          yellow     := 7
+          orange     := 8
+          brown      := 9
+          lightRed   := 10
+          darkGray   := 11
+          gray       := 12
+          lightGreen := 13
+          lightBlue  := 14
+          lightGray  := 15
+
+end

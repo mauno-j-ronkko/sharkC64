@@ -1,0 +1,23 @@
+//
+// collision
+// Collision state variables.
+//
+// This module is part of the pingpong example. It is provided as a tutorial
+// on how to program with the sharkC64 language using multiple modules.
+//
+// Published under MIT License
+// Copyright (C) Mauno Rönkkö, 2023-2025
+// See more at: https://github.com/mauno-j-ronkko/sharkC64
+//
+
+module collision
+
+    var row, column : byte
+        occurred    : boolean
+        withBat     : boolean
+
+    fun reset() begin
+        occurred := false
+    end
+
+end

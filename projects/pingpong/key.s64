@@ -1,0 +1,30 @@
+//
+// key
+// Key press reader.
+//
+// This module is part of the pingpong example. It is provided as a tutorial
+// on how to program with the sharkC64 language using multiple modules.
+//
+// Published under MIT License
+// Copyright (C) Mauno Rönkkö, 2023-2025
+// See more at: https://github.com/mauno-j-ronkko/sharkC64
+//
+
+module key
+
+    const codeA    := 10
+          codeL    := 42
+          codeNone := 64
+
+    fun read() : byte
+        var pressed  : byte at $C5
+            queued   : byte at $C6
+            released := true
+    begin
+        read := codeNone
+        if pressed <> codeNone and released then read := pressed end
+        released := pressed = codeNone
+        queued := 0
+    end
+
+end

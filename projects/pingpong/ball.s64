@@ -1,0 +1,68 @@
+//
+// ball
+// Ball motion animation.
+//
+// This module is part of the pingpong example. It is provided as a tutorial
+// on how to program with the sharkC64 language using multiple modules.
+//
+//
+// Published under MIT License
+// Copyright (C) Mauno Rönkkö, 2023-2025
+// See more at: https://github.com/mauno-j-ronkko/sharkC64
+//
+
+module ball
+
+    use print, collision
+
+    var row, column   : byte
+        dRow, dColumn : byte
+        onPlayground  : boolean
+
+    fun reset() begin
+        row := 20
+        column := 10
+        dRow := -1
+        dColumn:= 1
+        onPlayground := true
+    end
+
+    fun draw(char : byte) begin
+        print.row(row).column(column).char(char).color(color.white).set()
+    end
+
+    fun move() begin
+        row := row + dRow
+        column := column + dColumn
+        if row > screen.lastRow then row := row - dRow; onPlayground := false end
+    end
+
+    fun bounce() begin
+        row := row - dRow
+        column := column - dColumn
+        if screen.char[row - dRow, column + dColumn] <> print.blankChar then
+            dColumn := -dColumn
+        else
+            dRow := -dRow
+        end
+    end
+
+    fun animate() : boolean
+        const ball := 81
+        var   tick : byte
+    begin
+        tick := tick + 1
+        animate := tick > 4
+        if animate then
+            tick := 0
+            draw(print.blankChar).move()
+            collision.occurred := screen.char[row, column] <> print.blankChar
+            if collision.occurred then
+                collision.row(row).column(column).withBat(row >= screen.lastRow)
+                bounce()
+            end
+            draw(ball)
+        end
+    end
+
+end

@@ -1,0 +1,56 @@
+//
+// score
+// Score keeping and animation.
+//
+// This module is part of the pingpong example. It is provided as a tutorial
+// on how to program with the sharkC64 language using multiple modules.
+//
+// Published under MIT License
+// Copyright (C) Mauno Rönkkö, 2023-2025
+// See more at: https://github.com/mauno-j-ronkko/sharkC64
+//
+
+module score
+
+    use print
+
+    const zero := 176
+          row  := 1
+
+    var points,column : byte
+
+    fun reset()
+        const textLength := 11
+              textColumn := 14
+        var   text       := { 147, 131, 143, 146, 133, 160, zero, zero, zero, zero, zero, zero }
+              i          : byte
+    begin
+        print.row(row).column(textColumn).color(color.darkGray)
+        for i := 0 to textLength do print.print(text[i]) end
+        points := 0
+    end
+
+    fun getDigit() : byte begin
+        getDigit := screen.char[row, column] - zero
+    end
+
+    fun setDigit(digit : byte) begin
+        screen.char[row, column] := zero + digit
+    end
+
+    fun addPoints(value : byte) begin
+        points := points + value
+    end
+
+    fun animate()
+        const lastDigit := 24
+    begin
+        if points > 0 then
+            column := lastDigit
+            while getDigit() = 9 do setDigit(0); column := column - 1 end
+            setDigit(getDigit() + 1)
+            points := points - 1
+        end
+    end
+
+end

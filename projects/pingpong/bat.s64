@@ -1,0 +1,68 @@
+//
+// bat
+// Bat motion animation.
+//
+// This module is part of the pingpong example. It is provided as a tutorial
+// on how to program with the sharkC64 language using multiple modules.
+//
+// Published under MIT License
+// Copyright (C) Mauno Rönkkö, 2023-2025
+// See more at: https://github.com/mauno-j-ronkko/sharkC64
+//
+
+module bat
+
+    use print, key
+
+    const row     := 24
+          toLeft  := -1
+          toRight := 1
+          length  := 5
+
+    var column, direction, motion, delay : byte
+
+    fun reset() begin
+        column := 22
+    end
+
+    fun push(by: byte) begin
+        direction := by; motion := motion + 3; delay := 0
+    end
+
+    fun erase() begin
+        if motion > 0 then
+            if direction = toRight then print.column(column) else print.column(column + length) end
+            print.row(row).color(color.gray).print(print.blankChar)
+        end
+    end
+
+    fun draw()
+        var shape := { 85, 68, 68, 68, 68, 73 }
+            i     : byte
+    begin
+        print.row(row).column(column).color(color.gray)
+        for i := 0 to length do print.print(shape[i]) end
+    end
+
+    fun move()
+        const leftmost  := 1
+              rightmost := 33
+              maxDelay  := 6
+    begin
+        if delay > 0 then delay := delay - 1; return end
+        if motion > 0 then column := column + direction; motion := motion - 1 end
+        if column < leftmost then column := leftmost end
+        if column > rightmost then column := rightmost end
+        if motion < maxDelay then delay := maxDelay - motion end
+    end
+
+    fun animate()
+        var pressedKey : byte
+    begin
+        pressedKey := key.read()
+        if pressedKey = key.codeA then push(toLeft) end
+        if pressedKey = key.codeL then push(toRight) end
+        erase().move().draw()
+    end
+
+end

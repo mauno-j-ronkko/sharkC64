@@ -1,0 +1,31 @@
+//
+// flash
+// Tile flash state variables and behaviour.
+//
+// This module is part of the pingpong example. It is provided as a tutorial
+// on how to program with the sharkC64 language using multiple modules.
+//
+// Published under MIT License
+// Copyright (C) Mauno Rönkkö, 2023-2025
+// See more at: https://github.com/mauno-j-ronkko/sharkC64
+//
+
+module flash
+
+    var row, column : byte
+        level       : byte
+
+    fun reset() begin
+        level := 0
+    end
+
+    fun isActive(): boolean begin
+        isActive := level > 0
+    end
+
+    fun step(): boolean begin
+        step := isActive()
+        if step then level := level - 1 end
+    end
+
+end

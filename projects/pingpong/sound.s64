@@ -1,0 +1,73 @@
+//
+// sound
+// Sound effects.
+//
+// This module is part of the pingpong example. It is provided as a tutorial
+// on how to program with the sharkC64 language using multiple modules.
+//
+// Published under MIT License
+// Copyright (C) Mauno Rönkkö, 2023-2025
+// See more at: https://github.com/mauno-j-ronkko/sharkC64
+//
+
+module sound
+
+    var volume : byte at $D418
+
+    fun reset()
+        var voice1     : byte[7] at $D400
+            voice2     : byte[7] at $D407
+            voice3     : byte[7] at $D40E
+            resetClink := { $FF, $70, // Sound frequency
+                            $00, $08, // Pulse width
+                            $00,      // Waveform to no sound
+                            $08,      // Attack/decay
+                            $00 }     // Sustain/Release
+            resetCrash := { $FF, $D0, // Sound frequency
+                            $00, $00, // Pulse width
+                            $00,      // Waveform to no sound
+                            $07,      // Attack/decay
+                            $00 }     // Sustain/Release
+            resetBoing := { $FF, $08, // Sound frequency
+                            $00, $08, // Pulse width
+                            $00,      // Waveform to no sound
+                            $08,      // Attack/decay
+                            $00 }     // Sustain/Release A8
+    begin
+        voice1 := resetClink
+        voice2 := resetCrash
+        voice3 := resetBoing
+        volume := 8
+    end
+
+    fun playClink()
+        const pulseOn        := $41
+              pulseOff       := $40
+        var   voice1Waveform : byte at $D404
+    begin
+        voice1Waveform := pulseOff
+        voice1Waveform := pulseOn
+        volume := 4
+    end
+
+    fun playCrash()
+        const noiseOn        := $81
+              noiseOff       := $80
+        var   voice2Waveform : byte at $D40B
+    begin
+        voice2Waveform := noiseOff
+        voice2Waveform := noiseOn
+        volume := 7
+    end
+
+    fun playBoing()
+        const triangleOn     := $11
+              triangleOff    := $10
+        var   voice3Waveform : byte at $D412
+    begin
+        voice3Waveform := triangleOff
+        voice3Waveform := triangleOn
+        volume := 12
+    end
+
+end

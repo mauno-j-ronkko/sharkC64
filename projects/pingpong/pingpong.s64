@@ -1,0 +1,53 @@
+//
+// pinpong
+// Pingpong is a classic breakout-like game for the Commodore 64.
+// This is the main module.
+//
+// This program is provided as a tutorial on how to program with
+// the sharkC64 language using multiple modules.
+//
+// Published under MIT License
+// Copyright (C) Mauno Rönkkö, 2023-2025
+// See more at: https://github.com/mauno-j-ronkko/sharkC64
+//
+
+
+module pingpong
+
+    use playground, score, tiles, ball, bat, sound
+
+    fun manageCollision() begin
+        if collision.occurred then
+            if tiles.identifyTile(collision.row, collision.column) then
+                if tile.flash() then
+                    score.addPoints(10); tiles.removeTile(); sound.playCrash()
+                else
+                    sound.playClink()
+                end
+            else
+                if collision.withBat then sound.playBoing() else sound.playClink() end
+            end
+        end
+    end
+
+    fun play() begin
+        while ball.onPlayground and tiles.exist() do
+            tile.animate()
+            score.animate()
+            if ball.animate() then manageCollision() end
+            bat.animate()
+            playground.delay(400)
+        end
+    end
+
+
+begin
+    sound.reset()
+    playground.reset()
+    score.reset()
+    ball.reset()
+    bat.reset()
+    tiles.reset()
+    collision.reset()
+    play()
+end

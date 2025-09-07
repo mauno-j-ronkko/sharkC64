@@ -1,0 +1,50 @@
+//
+// print
+// Print functions.
+//
+// This module is part of the pingpong example. It is provided as a tutorial
+// on how to program with the sharkC64 language using multiple modules.
+//
+// Published under MIT License
+// Copyright (C) Mauno Rönkkö, 2023-2025
+// See more at: https://github.com/mauno-j-ronkko/sharkC64
+//
+
+module print
+
+    use screen, color
+
+    const blankChar := 32
+
+    var row, column : byte
+        char, color : byte
+
+    fun home() begin
+        row := 0; column := 0
+    end
+
+    fun set() begin
+        screen.char[row, column] := char
+        screen.color[row, column] := color
+    end
+
+    fun print(char: byte) begin
+        print.char := char
+        set()
+        column := column + 1
+        if column >= screen.columns then
+            column := 0
+            row := row + 1
+            if row >= screen.rows then row := 0 end
+        end
+    end
+
+    fun clear() begin
+        char := blankChar
+        for row :=0 to screen.lastRow do
+            for column := 0 to screen.lastColumn do set() end
+        end
+        home()
+    end
+
+end

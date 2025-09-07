@@ -1,0 +1,57 @@
+//
+// tile
+// Single tile drawing and animation.
+//
+// This module is part of the pingpong example. It is provided as a tutorial
+// on how to program with the sharkC64 language using multiple modules.
+//
+// Published under MIT License
+// Copyright (C) Mauno Rönkkö, 2023-2025
+// See more at: https://github.com/mauno-j-ronkko/sharkC64
+//
+
+module tile
+
+    use print, flash
+
+    var row, column : byte
+
+    fun draw()
+        var upper := { 207, 247, 247, 247 }
+            lower := { 204, 239, 239, 239 }
+            i     : byte
+    begin
+        print.row(row).column(column)
+        for i := 0 to 3 do print.print(upper[i]) end
+        print.row(row + 1).column(column)
+        for i := 0 to 3 do print.print(lower[i]) end
+    end
+
+    fun erase()
+        var i : byte
+    begin
+        print.row(row).column(column).color(color.black)
+        for i := 0 to 3 do print.print(print.blankChar) end
+        print.row(row + 1).column(column)
+        for i := 0 to 3 do print.print(print.blankChar) end
+    end
+
+    fun flash(): boolean
+        const maxLevel := 9
+    begin
+        flash := not flash.isActive()
+        if flash then flash.row(row).column(column).level(maxLevel) end
+    end
+
+    fun animate()
+        var fade := { color.black, color.darkGray, color.darkGray, color.gray, color.gray,
+                      color.lightGray, color.lightGray, color.white, color.white }
+    begin
+        if flash.step() then
+            tile.row(flash.row).column(flash.column)
+            print.color(fade[flash.level])
+            if flash.isActive() then draw() else erase() end
+        end
+    end
+
+end

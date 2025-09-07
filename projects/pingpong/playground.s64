@@ -1,0 +1,42 @@
+//
+// playground
+// Playground drawing functions.
+//
+// This module is part of the pingpong example. It is provided as a tutorial
+// on how to program with the sharkC64 language using multiple modules.
+//
+// Published under MIT License
+// Copyright (C) Mauno Rönkkö, 2023-2025
+// See more at: https://github.com/mauno-j-ronkko/sharkC64
+//
+
+module playground
+
+    use print
+
+    fun delay(duration: word)
+        var tick : word
+    begin
+        for tick := 0 to duration do end
+    end
+
+    fun drawTopBorder(row : byte) begin
+        print.row(row)
+        for print.column := 0 to screen.lastColumn do print.set() end
+    end
+
+    fun drawSideBorder(column : byte) begin
+        print.column(column)
+        for print.row := 2 to screen.lastRow do print.set() end
+    end
+
+    fun reset()
+        const block := 160
+    begin
+        screen.withBackground(color.black).withBorder(color.black)
+        print.clear().char(block).color(color.darkGray)
+        drawTopBorder(0).drawTopBorder(1)
+        drawSideBorder(0).drawSideBorder(screen.lastColumn)
+    end
+
+end

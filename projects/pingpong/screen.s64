@@ -1,0 +1,26 @@
+//
+// screen
+// Screen memory access.
+//
+// This module is part of the pingpong example. It is provided as a tutorial
+// on how to program with the sharkC64 language using multiple modules.
+//
+// Published under MIT License
+// Copyright (C) Mauno Rönkkö, 2023-2025
+// See more at: https://github.com/mauno-j-ronkko/sharkC64
+//
+
+
+module screen
+
+    const rows       := 25
+          columns    := 40
+          lastRow    := rows - 1
+          lastColumn := columns - 1
+
+    var char           : byte[rows, columns] at $0400
+        color          : byte[rows, columns] at $D800
+        withBorder     : byte at $D020
+        withBackground : byte at $D021
+
+end
