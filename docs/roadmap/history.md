@@ -1,5 +1,12 @@
 # Release history
 
+## Version 1.1 published in October 12, 2025
+- build changed to create PRG file directly to the home folder
+- refactored translator, generator and compiler
+- implemented internal linker
+- find/replace takes now selected text as the search pattern
+- fixed redo not to activate selection
+
 ## Version 1.0 published in August 24, 2025
 - completed usability tests
 - fixed scroll bar in open module dialog

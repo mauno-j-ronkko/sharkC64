@@ -1,7 +1,7 @@
 # Future plans
 
 ### Next release
-- Implementing internal linker 
+- Support for defining static data 
 
 ### Backlog
 - Language features improving architecture design
