@@ -4,8 +4,8 @@ The syntax of the sharkC64 language is as follows
 
 ```
 <module>                ::= "module" <LABEL> 
-                            [<use-section>] [<const-section>] [<var-section>] 
-                            [<fun-section>] <body>
+                            [<use-section>] [<const-section>] [<data-section>] 
+                            [<var-section>] [<fun-section>] <body>
 
 <use-section>           ::= "use" <module-list>
 <module-list>           ::= <LABEL> ["," <module-list>]                         (1)
@@ -21,19 +21,24 @@ The syntax of the sharkC64 language is as follows
 <const-declarations>    ::= <const-declaration> [<const-declarations>]
 <const-declaration>     ::= <LABEL> [":" <type>] <intial-value>
 
+<data-section>          ::= "data" <data-declarations>
+<data-declarations>     ::= <data-declaration> [<data-declarations>]
+<data-declaration>      ::= <LABEL> <at-address> <initial-1d-values>
+ 
 <var-section>           ::= "var" <var-declarations>
 <var-declarations>      ::= <var-declaration> [<var-declarations>]
 <var-declaration>       ::= <var-labels> <var-type>
 <var-labels>            ::= <LABEL> ["," <var-labels>]
 <var-type>              ::= <var-primitive> | <var-array>
-<var-primitive>         ::= ":" <type-primitive> [<var-address>] [<intial-value>] |
-                            [":" <var-address>] <intial-value>
+<var-primitive>         ::= ":" <type-primitive> [<at-address>] [<intial-value>] |
+                            [":" <at-address>] <intial-value>
 <var-array>             ::= <var-1d-array> | <var-2d-array>
-<var-1d-array>          ::= ":" <type-1d-byte-array> [<var-address>] |
+<var-1d-array>          ::= ":" <type-1d-byte-array> [<at-address>] |
                             [":" <type-1d-byte-array>] <intial-1d-values>  
-<var-2d-array>          ::= ":" <type-2d-byte-array> [<var-address>] |
+<var-2d-array>          ::= ":" <type-2d-byte-array> [<at-address>] |
                             [":" <type-2d-byte-array>] <intial-2d-values>  
-<var-address>           ::= "at" <expression>                                   (2)
+
+<at-address>            ::= "at" <expression>                                   (2)
                            
 <type-1d-byte-array>    ::= <type-byte> "[" <expression> "]" |                  (3)
 <type-2d-byte-array>    ::= <type-byte> "[" <expression>, <expression> "]"      (3) 
@@ -89,8 +94,7 @@ The syntax of the sharkC64 language is as follows
                             "<=" | "<" | "=" | "<>" | ">=" | ">"                (15) 
 <unary-operator>        ::= "-" | "not" |                                       (15)
                             "(byte)" | "(byte.lo)" | "(byte.hi)" |              (15)
-                            "(word)" | "(word.lo)" | "(word.hi)" |              (15)
-                            "(array.size)"                                      (15)
+                            "(word)" | "(word.lo)" | "(word.hi)"                (15)
 
 <const-name>            ::= <name>                                              (16)
 <var-name>              ::= <name>                                              (17)

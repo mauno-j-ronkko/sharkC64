@@ -1,7 +1,7 @@
 # Future plans
 
 ### Next release
-- Support for defining static data 
+- Support for hiding module identifiers 
 
 ### Backlog
 - Language features improving architecture design

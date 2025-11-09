@@ -18,6 +18,7 @@ The sharkC64 IDE is published under MIT license.
       3. [Variables](language/expressions/variables.md)
       4. [Expressions](language/expressions/expressions.md)
       5. [Byte arrays](language/expressions/arrays.md)
+      6. [Data](language/expressions/data.md)
    2. Statements
       1. [Empty statements](language/statements/empty.md)
       2. [Assignment statements](language/statements/assignments.md)

@@ -21,6 +21,7 @@ The sharkC64 compiler comes bundled with example programs.
 | [example11](../../examples/example11.s64)   | use for loops                                 | 0.11   |
 | [example11b](../../examples/example11b.s64) | use function parameters and call chaining     | 0.11.1 |
 | [example11c](../../examples/example11c.s64) | use function return values                    | 0.11.3 |
+| [example12](../../examples/example11c.s64)  | use a data section                            | 1.2    |
 
 The bundle includes also the following modules that are used by the example modules
 

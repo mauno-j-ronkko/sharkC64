@@ -1,0 +1,109 @@
+//
+// example12
+// An example illustrating data section.
+// This example shows how to define bitmaps for sprites using a data section.
+//
+
+module example12
+
+    use color
+
+    const sharkIndex := 33  // points to memory location $0840
+          c64Index   := 34  // points to memory location $0880
+
+    data shark at $0840 := { %00000000, %00000000, %00000110,
+                             %00000000, %00000000, %00111100,
+                             %00000000, %00000001, %11111100,
+                             %00000000, %00000000, %11111000,
+                             %00000000, %01111111, %00111000,
+                             %00000001, %11111111, %11011000,
+                             %00000111, %11111111, %11101000,
+                             %00011111, %10011111, %11110000,
+                             %00111111, %10111111, %11111000,
+                             %00111111, %11111111, %11111000,
+                             %00011111, %11101111, %11111000,
+                             %00000111, %11100011, %11111100,
+                             %00000000, %00001101, %11111100,
+                             %00000000, %00001110, %11111100,
+                             %00000000, %00000100, %11111100,
+                             %00000000, %00000000, %01111000,
+                             %00000000, %00000000, %01111000,
+                             %00000000, %00000000, %01110000,
+                             %00000000, %00000000, %11100000,
+                             %00000000, %00000000, %11000000,
+                             %00000000, %00000000, %00000000 }
+
+         c64 at $0880 :=   { %00000000, %00000000, %00000000,
+                             %00000000, %00000000, %00000000,
+                             %00000000, %00000000, %00000000,
+                             %00000000, %00000000, %00000000,
+                             %00000000, %00000000, %00000000,
+                             %00000000, %00000000, %00000000,
+                             %00000000, %00000000, %00000000,
+                             %00000000, %00000000, %00000000,
+                             %00000000, %00000000, %00000000,
+                             %00000000, %00000000, %00000000,
+                             %00000000, %00000000, %00000000,
+                             %00000000, %00000000, %00000000,
+                             %00000000, %00000000, %00000000,
+                             %00011000, %11000000, %00000000,
+                             %00100101, %00001000, %00000000,
+                             %00100001, %11010100, %00000000,
+                             %00100001, %00100100, %00000000,
+                             %00100101, %00111110, %00000000,
+                             %00011000, %11000100, %00000000,
+                             %00000000, %00000000, %00000000,
+                             %00000000, %00000000, %00000000 }
+
+    var backgroundColor : byte at $D021
+
+        sprite0Index : byte at $07F8
+        sprite0Color : byte at $D027
+        sprite0X     : byte at $D000
+        sprite0Y     : byte at $D001
+
+        sprite1Index : byte at $07F9
+        sprite1Color : byte at $D028
+        sprite1X     : byte at $D002
+        sprite1Y     : byte at $D003
+
+        spriteEnable : byte at $D015
+
+
+    fun move(position: byte) begin
+        sprite0X := 180 + position
+        sprite1X := 180 - position
+    end
+
+    fun delay()
+        var i : word
+            duration : word := 0
+    begin
+        for i := 0 to duration do end
+        duration := duration + 30
+    end
+
+    fun animate()
+        var position : byte
+    begin
+        for position := 75 downto 0 do
+            move(position)
+            delay()
+        end
+    end
+
+begin
+    backgroundColor := color.black
+
+    sprite0Index := sharkIndex
+    sprite0Color := color.lightBlue
+    sprite0Y := 180
+
+    sprite1Index := c64Index
+    sprite1Color := color.blue
+    sprite1Y := 180
+
+    spriteEnable := 3
+
+    animate()
+end

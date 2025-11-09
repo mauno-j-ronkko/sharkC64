@@ -1,5 +1,9 @@
 # Release history
 
+## Version 1.2 published in November 9, 2025
+- added static data section to the language
+- removed (array.size) modifier
+
 ## Version 1.1 published in October 12, 2025
 - build changed to create PRG file directly to the home folder
 - refactored translator, generator and compiler

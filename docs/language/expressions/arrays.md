@@ -69,12 +69,6 @@ any error messages.  Still, the compiler does perform a static range check
 during compile time. Therefore, a similar expression `data[$12]` will not
 compile, if the length of a byte array `data` is only `$10` bytes.
 
-The size of an array can be obtained also by using `(array.size)` unary operator.
-The returned size of an array is either of type `byte` or of type `word`
-depending on the returned value. As an example, `(array.size)data` returns the
-length of a byte array called `data`, which for the declaration example above would 
-thus return `$10`.
-
 
 ### Assigning a value to an element
 The value of a byte array element can be changed by using an assignment statement.

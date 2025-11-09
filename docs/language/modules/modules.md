@@ -4,12 +4,15 @@ A module is defined in a file, and it has the structure shown below.
 In particular, a module consists of sections that start with a section keyword.
 ```
 module UniqueName01
-    use   moduleA, moduleB
+    use moduleA, moduleB
     
-    const one    : byte := $01
-    var   a,b    : byte
-          corner : byte at $400 := one
-          result : byte
+    const one : byte := $01
+    
+    data numbers at $1000 := {1, 2, 3, 4}
+    
+    var a,b    : byte
+        corner : byte at $400 := one
+        result : byte
          
     fun hello()
         var c : byte 
@@ -52,6 +55,13 @@ fixed value.
 const one : byte := $01
 ```
 
+
+### Data
+Byte data at a fixed memory location is listed in a `data` section.
+Each data element is given a name, starting location, and the byte value series.
+```
+data numbers at $1000 := {1, 2, 3, 4}
+```
 
 ### Variables
 Variables are listed in a `var` section. Variables with the same type can
