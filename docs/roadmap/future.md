@@ -1,7 +1,7 @@
 # Future plans
 
 ### Next release
-- Support for hiding module identifiers 
+- Usability testing to prioritize next features
 
 ### Backlog
 - Language features improving architecture design

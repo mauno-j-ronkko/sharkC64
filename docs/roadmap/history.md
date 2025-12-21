@@ -1,5 +1,8 @@
 # Release history
 
+## Version 1.3 published in December 21, 2025
+- added hide section to the language
+
 ## Version 1.2 published in November 9, 2025
 - added static data section to the language
 - removed (array.size) modifier

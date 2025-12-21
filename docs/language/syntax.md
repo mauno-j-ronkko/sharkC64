@@ -4,11 +4,14 @@ The syntax of the sharkC64 language is as follows
 
 ```
 <module>                ::= "module" <LABEL> 
-                            [<use-section>] [<const-section>] [<data-section>] 
-                            [<var-section>] [<fun-section>] <body>
+                            [<use-section>] [<hide-section>] [<const-section>] 
+                            [<data-section>] [<var-section>] [<fun-section>] <body>
 
 <use-section>           ::= "use" <module-list>
 <module-list>           ::= <LABEL> ["," <module-list>]                         (1)
+
+<hide-section>          ::= "hide" <identifier-list>
+<identifier-list>       ::= <LABEL> ["," <identifier-list>]
 
 <fun-section>           ::= <fun-declaration> [<fun-section>]
 <fun-declaration>       ::= "fun" <LABEL> "(" [<fun-parameters>] ")" 

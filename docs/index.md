@@ -1,7 +1,15 @@
 # sharkC64
 
 The sharkC64 programming language is designed to be used for the development of computer programs 
-for the Commodore C64. The sharkC64 IDE comes bundled with a compiler and a bunch of example programs.
+for the Commodore C64. 
+
+The sharkC64 language is a modular programming language. 
+It supports primitive data types: booleans, bytes, and words.
+It also supports use of one-dimensional and two-dimensional byt arrays.
+A module in the sharkC64 language consists of constants, variables, functions, and a module body.
+A module may refer to other modules, use their variables, and call their functions.
+
+The sharkC64 IDE comes bundled with a compiler and a bunch of example programs.
 The sharkC64 IDE is published under MIT license.
 
 
@@ -28,8 +36,9 @@ The sharkC64 IDE is published under MIT license.
       6. [Functions](language/statements/functions.md)
    3. Modules
       1. [Modules](language/modules/modules.md)
-      2. [Using or including other modules](language/modules/uses.md)
-      3. [Module initialization](language/modules/initialization.md)
+      2. [Using or including other modules](language/modules/use.md)
+      3. [Hiding identifiers and functions](language/modules/hide.md)
+      4. [Module initialization](language/modules/initialization.md)
    4. [Comments](language/comments.md)
    5. [Language syntax](language/syntax.md)
 3. Using the sharkC64 IDE

@@ -6,6 +6,8 @@ In particular, a module consists of sections that start with a section keyword.
 module UniqueName01
     use moduleA, moduleB
     
+    hide corner, myHello
+    
     const one : byte := $01
     
     data numbers at $1000 := {1, 2, 3, 4}
@@ -15,6 +17,12 @@ module UniqueName01
         result : byte
          
     fun hello()
+        var c : byte 
+    begin
+        c := a
+    end
+
+    fun myHello()
         var c : byte 
     begin
         c := a
@@ -40,11 +48,21 @@ the filename, module names should differ in some other ways than by letter case.
 Otherwise, operating systems that are case-insensitive cannot distinguish them.
 
 
-### Uses
+### Using or including other modules
 A module may depend on other modules. Dependencies are declared in a ```use``` section.
-Modules are listed using comma as separator.
+The used modules are listed using comma as a separator.
 ```
 use moduleA, moduleB
+```
+
+
+### Hiding identifiers and functions
+A module can list which identifiers and functions are hidden.
+A hidden identifier or function cannot be accessed from other modules.
+A list of hidden elements is declared in a ```hide``` section.
+The hidden elements are listed using comma as a separator.
+```
+hide corner, myHello
 ```
 
 
