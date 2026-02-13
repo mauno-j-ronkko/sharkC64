@@ -1,0 +1,86 @@
+[
+  {
+    "name": "example01",
+    "description": "Shows how to declare variables"
+  },
+  {
+    "name": "example01b",
+    "description": "Shows how to use comments"
+  },
+  {
+    "name": "example02",
+    "description": "Shows how to use assignment statements"
+  },
+  {
+    "name": "example03",
+    "description": "Shows how to declare constants"
+  },
+  {
+    "name": "example03b",
+    "description": "Shows how to use boolean data type"
+  },
+  {
+    "name": "example04",
+    "description": "Shows how to use if statements"
+  },
+  {
+    "name": "example05",
+    "description": "Shows how to use while statements (busy-loop raster lines)"
+  },
+  {
+    "name": "example06",
+    "description": "Shows how to use word data type"
+  },
+  {
+    "name": "example07",
+    "description": "Shows how to declare and use byte arrays"
+  },
+  {
+    "name": "example07b",
+    "description": "Shows how to use array assignment"
+  },
+  {
+    "name": "example08",
+    "description": "Shows how to include other modules (use statement)"
+  },
+  {
+    "name": "example09",
+    "description": "Shows how to declare and call functions"
+  },
+  {
+    "name": "example10",
+    "description": "Shows how to declare two-dimensional byte arrays"
+  },
+  {
+    "name": "example10b",
+    "description": "Shows how to use function constants and variables"
+  },
+  {
+    "name": "example11",
+    "description": "Shows how to use for loops"
+  },
+  {
+    "name": "example11b",
+    "description": "Shows how to use function parameters and call chaining"
+  },
+  {
+    "name": "example11c",
+    "description": "Shows how to use function return values"
+  },
+  {
+    "name": "example12",
+    "description": "Shows how to use a data section"
+  },
+  {
+    "name": "block",
+    "description": "Util module for drawing a block on the screen - used by example11b"
+  },
+  {
+    "name": "color",
+    "description": "Util module for defining color constants - used by example08, example09, and example11b"
+  },
+  {
+    "name": "screen",
+    "description": "Util module for defining screen memory access - used by example11b"
+  }
+]
