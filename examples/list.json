@@ -33,11 +33,11 @@
   },
   {
     "name": "example07",
-    "description": "Shows how to declare and use byte arrays"
+    "description": "Shows how to declare and use byte arrays (lower case letters)"
   },
   {
     "name": "example07b",
-    "description": "Shows how to use array assignment"
+    "description": "Shows how to use array assignment (text scroll)"
   },
   {
     "name": "example08",
@@ -49,27 +49,27 @@
   },
   {
     "name": "example10",
-    "description": "Shows how to declare two-dimensional byte arrays"
+    "description": "Shows how to declare two-dimensional byte arrays (bouncing ball)"
   },
   {
     "name": "example10b",
-    "description": "Shows how to use function constants and variables"
+    "description": "Shows how to use function constants and variables (bouncing ball)"
   },
   {
     "name": "example11",
-    "description": "Shows how to use for loops"
+    "description": "Shows how to use for loops (fill screen)"
   },
   {
     "name": "example11b",
-    "description": "Shows how to use function parameters and call chaining"
+    "description": "Shows how to use function parameters and call chaining (color blocks)"
   },
   {
     "name": "example11c",
-    "description": "Shows how to use function return values"
+    "description": "Shows how to use function return values (flip-flap departure board)"
   },
   {
     "name": "example12",
-    "description": "Shows how to use a data section"
+    "description": "Shows how to use a data section (sprites)"
   },
   {
     "name": "block",
