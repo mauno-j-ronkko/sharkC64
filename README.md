@@ -5,7 +5,7 @@ It comes bundled with a compiler and an integrated development environment.
 It is published under [MIT License](LICENSE).
 
 This is a work in progress, and updates are published frequently.
-The first official release is the [version 2.0](https://github.com/mauno-j-ronkko/sharkC64/releases/tag/2.0).
+The current official release is the [version 2.0](https://github.com/mauno-j-ronkko/sharkC64/releases/tag/2.0).
 The most recent release is available in 
 [Releases](https://github.com/mauno-j-ronkko/sharkC64/releases).
 
