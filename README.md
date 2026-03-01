@@ -12,9 +12,9 @@ The most recent release is available in
 If you wish to try out sharkC64, here are some guides for
 1. Setting up the environment, [setting up](docs/prerequisites/setup.md)
 2. Downloading and installing, [installing](docs/prerequisites/installing.md) 
-3. Starting sharkC64, [starting](docs/ide/starting.md)
-4. Building a program, [building](docs/ide/building.md)
-5. Running a program, [running](docs/ide/running.md)
+3. Starting sharkC64, [starting](docs/ide/starting-up/starting.md)
+4. Downloading an example, [downloading](docs/ide/examples/download-example.md) 
+5. Running the example, [running](docs/ide/examples/run-example.md)
 6. More about the sharkC64 programming language and IDE, [index](docs/index.md) 
 
 You can find videos about the sharkC64 compiler, its design, construction, and use in

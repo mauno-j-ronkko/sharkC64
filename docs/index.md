@@ -18,7 +18,7 @@ The sharkC64 IDE is published under MIT license.
 
 1. Prerequisites
    1. [Setup](prerequisites/setup.md)
-   2. [Installing sharkC64 compiler and examples](prerequisites/installing.md)
+   2. [Installing sharkC64 IDE](prerequisites/installing.md)
 2. Language structures
    1. Expressions
       1. [Types](language/expressions/types.md)
@@ -42,18 +42,29 @@ The sharkC64 IDE is published under MIT license.
    4. [Comments](language/comments.md)
    5. [Language syntax](language/syntax.md)
 3. Using the sharkC64 IDE
-   1. [Starting sharkC64 IDE](ide/starting.md)
-   2. [Home screen](ide/homescreen.md)
-   3. [Setting the home folder](ide/setting-home.md)
-   4. [Setting the emulator command for running a program](ide/setting-emulator)
-   5. [Opening an existing project](ide/opening)
-   6. [Creating a new project](ide/creating-new.md)
-   7. [Editing a module](ide/editing.md)
-   8. [Building the project](ide/building.md)
-   9. [Running the project](ide/running.md)
-   10. [Compiling a module from the command line](ide/cli-compiling.md)
-   11. [Running a built program from the command line](ide/cli-running.md)
-   12. [List of examples](ide/examples.md)
+   1. Starting up and Settings
+      1. [Starting sharkC64 IDE](ide/starting-up/starting.md)
+      2. [Setting the home directory](ide/starting-up/set-home.md)
+      3. [Setting the emulator for running a program](ide/starting-up/set-emulator.md)
+   2. Working with Examples
+      1. [Downloading an example](ide/examples/download-example.md)
+      2. [Running a downloaded example](ide/examples/run-example.md)
+      3. [List of examples](ide/examples/examples.md)
+   3. Working with Projects
+      1. [Creating a new project](ide/projects/new-project.md)
+      2. [Persisting a transient project](ide/projects/persist-project.md)
+      3. [Opening an existing project](ide/projects/open-project.md)
+      4. [Adding a new module to the project](ide/projects/add-module.md)
+      5. [Importing an existing module to the project](ide/projects/import-module.md)
+      6. [Editing a module](ide/projects/edit-module.md)
+      7. [Deleting a module from the project](ide/projects/delete-module.md)
+      8. [Saving changes in a module](ide/projects/save-module.md)
+      9. [Reverting a module to opened state](ide/projects/revert-module.md)
+      10. [Closing an open project](ide/projects/close-project.md)
+   4. Compiler Actions
+      1. [Compiling a module](ide/compiler/compile.md)
+      2. [Building the project](ide/compiler/build.md)
+      3. [Running the project](ide/compiler/run.md)
 4. Roadmap
    1. [Release history](roadmap/history.md)
    2. [Future plans](roadmap/future.md)

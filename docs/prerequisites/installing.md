@@ -6,23 +6,17 @@ environment (or development kit) and VICE emulator, see [setup](setup.md).
 Steps to install the latest version of the sharkC64 IDE:
 1. Open the release page [here](https://github.com/mauno-j-ronkko/sharkC64/releases).
 2. Click the "Assets" option on the latest release. It will open a list of assets,
-   including a zip file named "sharkC64-x.y.z.zip", where "x.y.z" is the latest version.
-3. Click the zip file "sharkC64-x.y.z.zip", and it will start the downloading immediately. 
-   Your browser will indicate where the zip file has been downloaded.
-4. Unzip the zip file to any folder, where you would like to run the sharkC64 IDE,
-   for instance, I have unzipped it on my Windows computer to folder `C:\SHARKC64`
-5. Verify that the zip file has been successfully unzipped. 
-   The folder structure should be as follows:
+   including a jar file named "sharkC64-x.y.jar", where "x.y" is the latest version.
+3. Click the file "sharkC64-x.y.jar", and it will start the downloading immediately. 
+   Your browser will indicate where the file has been downloaded.
+4. You can relocate the jar file to any folder, where you would like to run the sharkC64 IDE.
+5. The jar file can be executed either from the command-line:
    ```
-   C:\SHARKC64
-   |
-   +-- sharkC64-x.y.z
-       |
-       +-- bin
-       +-- lib
+   java -jar shakrC64-x.y.z.jar
    ```
+   OR, if your OS configuration allows, the IDE can be started by double-clicking the jar file. 
 
-To learn more about how to run the sharkC64 IDE, see the instructions for [Starting sharkC64 IDE](../ide/starting.md).
+To learn more about how to run the sharkC64 IDE, see the instructions for [Starting sharkC64 IDE](../ide/starting-up/starting.md).
 
 <br /><br />
 :leftwards_arrow_with_hook: [Back to index](../index.md)

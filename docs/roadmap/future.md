@@ -1,11 +1,10 @@
 # Future plans
 
 ### Next release
-- Usability testing to prioritize next features
+- Improving design support for projects
 
 ### Backlog
-- Language features improving architecture design
-- Support for sprites 
+- Support for sprites
 - Support for sound
 - Support for user defined characters
 - Support for bitmap graphics

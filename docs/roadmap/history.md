@@ -1,5 +1,8 @@
 # Release history
 
+## version 2.0 published in March 1, 2026
+- reimplemented the entire IDE with a modern look and feel
+
 ## Version 1.3 published in December 21, 2025
 - added hide section to the language
 

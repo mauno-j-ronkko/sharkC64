@@ -1,7 +1,8 @@
 # Acknowledgements
 
-Copilot is used throughout this manual to proofread and refine sentences. 
-Copilot also contributes to the contents of this manual with valuable insights.
+Copilot and Gemini have provided valuable insights during the development
+of the sharkC64 language and the IDE. They have also provided much needed
+help in understanding Swing technicalities from time to time.
 
 <br /><br />
 :leftwards_arrow_with_hook: [Back to index](index.md)

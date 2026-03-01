@@ -39,7 +39,7 @@ In particular, moduleC is read only once.
 >   ...
 > ```
 
-Note that, although all the names and labels in Shark are case-sensitive, 
+Note that, although all the names and labels in sharkC64 are case-sensitive, 
 the operating system may consider file names case-insensitive.
 Therefore, module names that differ only by letter cases are not recommended.  
 
