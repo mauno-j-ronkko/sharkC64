@@ -1,6 +1,7 @@
 # Compiling a module 
 
 You can compile a module from the Compiler menu.
+
 ![Compiler menu](../../images/menu/compiler.png)
 
 To create the active module in the editor view, select the "Compile Module" item.
@@ -9,9 +10,11 @@ and shows the compilation result in the Compiler tab.
 
 For instance, if the module has errors, the Compiler tab shows the errors as a list.
 You can locate the error in the source code by clicking it in the Compiler tab.
+
 ![Module with errors](../../images/project/module-with-errors.png)
 
 After correcting all the errors, the Compiler tab shows a successful compilation result.
+
 ![Corrected module](../../images/project/corrected-module.png)
 
 It should be noted that the compilation does create any executable program.
