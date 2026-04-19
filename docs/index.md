@@ -1,16 +1,16 @@
-# sharkC64
+# SharkC64
 
-The sharkC64 programming language is designed to be used for the development of computer programs 
+The SharkC64 programming language is designed to be used for the development of computer programs 
 for the Commodore C64. 
 
-The sharkC64 language is a modular programming language. 
+The SharkC64 language is a modular programming language. 
 It supports primitive data types: booleans, bytes, and words.
 It also supports use of one-dimensional and two-dimensional byt arrays.
-A module in the sharkC64 language consists of constants, variables, functions, and a module body.
+A module in the SharkC64 language consists of constants, variables, functions, and a module body.
 A module may refer to other modules, use their variables, and call their functions.
 
-The sharkC64 IDE comes bundled with a compiler and a bunch of example programs.
-The sharkC64 IDE is published under MIT license.
+The SharkC64 IDE comes bundled with a compiler and a bunch of example programs.
+The SharkC64 IDE is published under MIT license.
 
 
 ## Index
@@ -18,7 +18,7 @@ The sharkC64 IDE is published under MIT license.
 
 1. Prerequisites
    1. [Setup](prerequisites/setup.md)
-   2. [Installing sharkC64 IDE](prerequisites/installing.md)
+   2. [Installing SharkC64 IDE](prerequisites/installing.md)
 2. Language structures
    1. Expressions
       1. [Types](language/expressions/types.md)
@@ -41,9 +41,9 @@ The sharkC64 IDE is published under MIT license.
       4. [Module initialization](language/modules/initialization.md)
    4. [Comments](language/comments.md)
    5. [Language syntax](language/syntax.md)
-3. Using the sharkC64 IDE
+3. Using the SharkC64 IDE
    1. Starting up and Settings
-      1. [Starting sharkC64 IDE](ide/starting-up/starting.md)
+      1. [Starting SharkC64 IDE](ide/starting-up/starting.md)
       2. [Setting the home directory](ide/starting-up/set-home.md)
       3. [Setting the emulator for running a program](ide/starting-up/set-emulator.md)
    2. Working with Examples
@@ -65,6 +65,8 @@ The sharkC64 IDE is published under MIT license.
       1. [Compiling a module](ide/compiler/compile.md)
       2. [Building the project](ide/compiler/build.md)
       3. [Running the project](ide/compiler/run.md)
+   5. Designer Actions
+      1. [Viewing a module dependency diagram](ide/designer/diagram.md)
 4. Roadmap
    1. [Release history](roadmap/history.md)
    2. [Future plans](roadmap/future.md)

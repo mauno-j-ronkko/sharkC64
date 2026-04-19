@@ -12,7 +12,7 @@ a result value of type `byte`, the variable must also be of type `byte`.
 
 
 ### Increments and decrements
-The sharkC64 compiler recognizes and optimizes two special cases: increments and decrements.
+The SharkC64 compiler recognizes and optimizes two special cases: increments and decrements.
 If an assignment increments the value of a variable by one, it will be computed by
 using the increment instruction of the microprocessor. 
 The same applies to an assignment statement that decrements the values of a variable by one.
@@ -32,7 +32,7 @@ a byte array called `data`.
   data[$02] := data[$01] + $F0 
 ```
 
-The sharkC64 language supports also the assignment of one-dimensional byte arrays.
+The SharkC64 language supports also the assignment of one-dimensional byte arrays.
 For instance, the following assignment statement copies all the values from
 an array called `source` to an array called `target`.
 ```

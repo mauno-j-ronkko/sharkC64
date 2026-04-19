@@ -1,6 +1,6 @@
 # Language syntax
 
-The syntax of the sharkC64 language is as follows
+The syntax of the SharkC64 language is as follows
 
 ```
 <module>                ::= "module" <LABEL> 

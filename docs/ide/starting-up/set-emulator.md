@@ -10,8 +10,8 @@ is selected. Note that the appearance of the dialog depends on the operating sys
 
 ![Emulator dialog](../../images/dialog/set-emulator.png)
 
-Once the emulator is chosen, sharkC64 updates the initialization file so that the
-emulator is remembered, when the sharkC64 IDE is opened again.
+Once the emulator is chosen, SharkC64 updates the initialization file so that the
+emulator is remembered, when the SharkC64 IDE is opened again.
 
 <br /><br />
 :leftwards_arrow_with_hook: [Back to index](../../index.md)

@@ -14,8 +14,10 @@
 
 module pingpong
 
-    use playground, score, tiles, ball, bat, sound
+    use playground, tiles, ball, score, bat, sound
 
+    hide manageCollision, play
+    
     fun manageCollision() begin
         if collision.occurred then
             if tiles.identifyTile(collision.row, collision.column) then

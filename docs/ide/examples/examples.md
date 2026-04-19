@@ -1,6 +1,6 @@
 # List of examples
 
-The following examples illustrate the use of the sharkC64 language.
+The following examples illustrate the use of the SharkC64 language.
 
 | Name                                        | How to ...                                    | Added  |
 |---------------------------------------------|-----------------------------------------------|--------|

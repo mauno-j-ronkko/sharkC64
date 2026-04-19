@@ -28,7 +28,7 @@ module print
         screen.color[row, column] := color
     end
 
-    fun print(char: byte) begin
+    fun single(char: byte) begin
         print.char := char
         set()
         column := column + 1

@@ -14,6 +14,10 @@ module bat
 
     use print, key
 
+    hide row, toLeft, toRight, length,
+         column, direction, motion, delay,
+         push, erase, draw, move
+    
     const row     := 24
           toLeft  := -1
           toRight := 1
@@ -32,7 +36,7 @@ module bat
     fun erase() begin
         if motion > 0 then
             if direction = toRight then print.column(column) else print.column(column + length) end
-            print.row(row).color(color.gray).print(print.blankChar)
+            print.row(row).color(color.gray).single(print.blankChar)
         end
     end
 
@@ -41,7 +45,7 @@ module bat
             i     : byte
     begin
         print.row(row).column(column).color(color.gray)
-        for i := 0 to length do print.print(shape[i]) end
+        for i := 0 to length do print.single(shape[i]) end
     end
 
     fun move()

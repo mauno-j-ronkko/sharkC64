@@ -13,6 +13,8 @@
 module tiles
 
     use tile
+    
+    hide maxIndex, remaining, row, column, color, exit, setTile
 
     const maxIndex := 53
 

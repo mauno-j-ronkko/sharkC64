@@ -1,12 +1,12 @@
-# Starting the sharkC64 IDE 
+# Starting the SharkC64 IDE 
 
-Instructions to downloading and installing the sharkC64 IDE can be found on a page 
-describing [installation](../../prerequisites/installing.md). Before starting the sharkC64 IDE, 
+Instructions to downloading and installing the SharkC64 IDE can be found on a page 
+describing [installation](../../prerequisites/installing.md). Before starting the SharkC64 IDE, 
 check that you have installed a compatible Java Runtime environment, see [setup](../../prerequisites/setup.md).
 
-The following instructions assume that you have downloaded the sharkC64 jar file.
+The following instructions assume that you have downloaded the SharkC64 jar file.
 
-Here are steps to start sharkC64.
+Here are steps to start SharkC64.
 1. Open the folder, where you have downloaded `sharkC64-x.y.jar` file.
 2. Double-click the jar file.
    Note that some OS policies may restrict you from executing the jar file without
@@ -19,7 +19,7 @@ Here are steps to start sharkC64.
    ```
    java -jar sharkC64-x.y.jar
    ```
-3. The integrated development environment for the sharkC64 should open with a greeting.
+3. The integrated development environment for the SharkC64 should open with a greeting.
    ![Welcome](../../images/welcome.png)
 
 

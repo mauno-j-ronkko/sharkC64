@@ -59,7 +59,7 @@ end
 
 
 ### Function variables
-Unlike in many other programming languages, the functions in sharkC64 are _stateful_.
+Unlike in many other programming languages, the functions in SharkC64 are _stateful_.
 This means that the variables that defined locally in functions retain their
 value from one function call to the next. 
 In particular, this means that initial values defined in the variable declaration
@@ -91,8 +91,8 @@ ball.erase().moveToLeft().draw(color.white)
 
 
 ### Function calls and call chaining
-The sharkC64 language supports also implicit setter functions that can be embedded in 
-call chaining. In the sharkC64 language, all primitive variables have automatically 
+The SharkC64 language supports also implicit setter functions that can be embedded in 
+call chaining. In the SharkC64 language, all primitive variables have automatically 
 generated setter functions. The setter functions have the same name as the variables.
 When a setter function is called with a value, it simply assigns that value to the variable.
 In fact, the setter function is mere syntactic sugar, and it is always translated

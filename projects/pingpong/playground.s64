@@ -14,6 +14,8 @@ module playground
 
     use print
 
+    hide drawTopBorder, drawsideBorder
+    
     fun delay(duration: word)
         var tick : word
     begin

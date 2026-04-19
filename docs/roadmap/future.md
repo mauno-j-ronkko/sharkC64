@@ -5,12 +5,12 @@
 
 ### Backlog
 - Support for sprites
-- Support for sound
+- Support for screen designs
 - Support for user defined characters
+- Support for sound
 - Support for bitmap graphics
-- More data types
 - Computational operators including multiplication and division
-- Support for floating point values
+- More data types; support for floating point values
 - ... and much more!
 
 <br /><br />

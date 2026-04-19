@@ -1,0 +1,19 @@
+{
+    "mainModule": "pingpong",
+    "modules": [
+        "ball",
+        "bat",
+        "collision",
+        "color",
+        "flash",
+        "key",
+        "pingpong",
+        "playground",
+        "print",
+        "score",
+        "screen",
+        "sound",
+        "tile",
+        "tiles"
+    ]
+}

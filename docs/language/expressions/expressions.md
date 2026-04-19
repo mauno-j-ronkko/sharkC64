@@ -5,7 +5,7 @@ A Boolean value can be either `false` or `true`.
 
 
 ### Numbers
-The sharkC64 language recognizes decimal values, hexadecimal values, and binary values.
+The SharkC64 language recognizes decimal values, hexadecimal values, and binary values.
 Hexadecimal values start with `$`, and binary values start with `%`.
 A number value can be in the range [`$0000` .. `$FFFF`]. 
 The data type of a value bigger than `$FF` is always a `word`.
@@ -42,7 +42,7 @@ assumed type in the expression.
 
 
 ### Operators
-The sharkC64 language supports all standard operators that are also supported by the processor.
+The SharkC64 language supports all standard operators that are also supported by the processor.
 Supported operators are listed below. 
 An operator belonging to a higher precedence group in the table binds 
 stronger than an operator belonging to a lower precedence group in the table.
@@ -71,9 +71,9 @@ Also, (operand) means that the result data type is the same as the operand data 
 
 
 ### Type inference and type casting
-The sharkC64 compiler has a bottom-up type inference.
+The SharkC64 compiler has a bottom-up type inference.
 You can read more about the type inference in [Types](types.md) section.
-The sharkC64 compiler does not perform any type casting automatically. It must be given 
+The SharkC64 compiler does not perform any type casting automatically. It must be given 
 explicitly by the programmer. For this purpose, there are the following unary operators.
 
 
@@ -101,14 +101,14 @@ If, however, disjunction needs to be evaluated before the sums,
 it can be achieved by using parentheses:
 `a + (b or -c) + d`
 
-Although the sharkC64 compiler follows the left-to-right evaluation order for expressions while parsing them,
+Although the SharkC64 compiler follows the left-to-right evaluation order for expressions while parsing them,
 the optimization and simplification rules most likely change the computation order at run-time.
 As long as expression operands have no side effects, the computation result is equivalent to
 that computed using a strict left-to-right evaluation order.
 
-The goal of the sharkC64 compiler is to produce compact and efficient bytecode.
+The goal of the SharkC64 compiler is to produce compact and efficient bytecode.
 To do this, it first tries to simplify the expression by using fixed values and constants.
-With fixed values and constants, the sharkC64 compiler can precompute the expression at 
+With fixed values and constants, the SharkC64 compiler can precompute the expression at 
 compile time. Then, the resulting fixed value us used directly in the bytecode.
 After that, the compiler compiles bytecode instructions for the right-hand side expression 
 before the left-hand side expression. This produces fewer instructions in general, 

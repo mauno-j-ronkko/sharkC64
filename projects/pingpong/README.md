@@ -34,23 +34,9 @@ The program consists of the following modules:
 
 
 The modules form the following dependency graph:
-```
-                         pingpong 
-                        /   |    \      
-                   sound    |     tiles
-                            |          \
-                +-----------+           \
-               / \         / \           \ 
-            ball  score  bat  playground  tile
-           /    \  \     /  \      \     /    \
-  collision      \  \   /   key     \   /      flash
-                  \  \ /             \ /     
-                   +--+       +-------+
-                       \     /               
-                        print                
-                        /   \ 
-                   screen   color
-```
+
+![Dependency diagram](./diagram.png)
+
 
 Published under MIT License </BR>
 Copyright (C) Mauno Rönkkö, 2023-2025 </BR>

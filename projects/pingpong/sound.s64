@@ -12,6 +12,8 @@
 
 module sound
 
+    hide volume
+
     var volume : byte at $D418
 
     fun reset()

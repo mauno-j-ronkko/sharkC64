@@ -1,6 +1,6 @@
 # Setting the home directory
 
-You can change the home directory from the File menu of the sharkC64 IDE.
+You can change the home directory from the File menu of the SharkC64 IDE.
 Note, however, that the home directory can be changed only if there is
 no project open.
 

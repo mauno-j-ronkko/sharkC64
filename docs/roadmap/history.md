@@ -1,5 +1,12 @@
 # Release history
 
+## version 2.1 published in April 19, 2026
+- added an interactive module dependency diagram
+- added Jump To menu item to locate declaration of a qualified term
+- added opening of the recent project when IDE is restarted
+- fixed status bar updates
+- fixed outdated error highlight when project is rebuilt
+
 ## version 2.0 published in March 1, 2026
 - reimplemented the entire IDE with a modern look and feel
 

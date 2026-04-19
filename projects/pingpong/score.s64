@@ -14,6 +14,8 @@ module score
 
     use print
 
+    hide zero, row, points, column, getDigit, setDigit
+    
     const zero := 176
           row  := 1
 
@@ -26,7 +28,7 @@ module score
               i          : byte
     begin
         print.row(row).column(textColumn).color(color.darkGray)
-        for i := 0 to textLength do print.print(text[i]) end
+        for i := 0 to textLength do print.single(text[i]) end
         points := 0
     end
 

@@ -14,7 +14,7 @@ After saving the changes, the status bar shows a "Saved" state.
 
 ![Saved changes](../../images/project/saved-module.png)
 
-Note that the sharkC64 IDE saves automatically all changes in a module when you close it
+Note that the SharkC64 IDE saves automatically all changes in a module when you close it
 or quit using the IDE. Automatic saving is also applied, when you try to build or run a project. 
 
 <br /><br />

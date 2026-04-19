@@ -15,7 +15,7 @@ Type inference is used with expressions.
 It is also used when declaring a constant or a variable with an initial value.
 Then, the type of the identifier can be inferred from the initial value.
 
-The sharkC64 compiler has a bottom-up type inference. When analyzing the syntax tree 
+The SharkC64 compiler has a bottom-up type inference. When analyzing the syntax tree 
 of an expression, there are always operands at the bottom of the expression tree. 
 The operands have either a predetermined type, or their type can be inferred from 
 the value. Therefore, the type of the operator is determined by the type of its operands.

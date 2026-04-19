@@ -14,6 +14,8 @@
 module ball
 
     use print, collision
+    
+    hide row, column, dRow, dColumn, draw, move, bounce
 
     var row, column   : byte
         dRow, dColumn : byte

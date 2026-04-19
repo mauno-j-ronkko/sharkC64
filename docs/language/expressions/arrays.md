@@ -1,6 +1,6 @@
 # Byte arrays
 
-At the moment, the sharkC64 language supports only one-dimensional or two-dimensional byte arrays. 
+At the moment, the SharkC64 language supports only one-dimensional or two-dimensional byte arrays. 
 A byte array is an array whose elements are bytes. 
 The length of a dimension in a byte array is limited to 256 elements. 
 The reason for this limitation is that working with such arrays is supported by the microprocessor of the Commodore 64. 
@@ -26,14 +26,14 @@ A two-dimensional byte array must have at least one row and column, and
 it cannot have more than 256 rows or columns.
 In the example above, the `screen` variable has `25` rows and `40` columns. 
 
-If a byte array is not given a static memory location, the sharkC64 compiler will
+If a byte array is not given a static memory location, the SharkC64 compiler will
 allocate as many bytes from the memory for it as its length states.
 Moreover, the allocated memory is initialized with zero values.
 This means that, for instance, the value of `data[$05]` in the above example is 
 set to `0` initially, and it will remain `0` as long as no other value is assigned to it.
 
 A byte array without a static memory location can be given initial values. 
-Then, the sharkC64 compiler infers the length of the byte array. 
+Then, the SharkC64 compiler infers the length of the byte array. 
 If the length is explicitly given for the array, it must agree with the number of the initial values.
 When a byte array is given initial values, the allocated memory is initialized
 with them instead of the default zero values.
@@ -42,7 +42,7 @@ set to `5` initially, and it will remain `5` as long as no other value is assign
 For two-dimensional byte arrays, rows in the initial values are separated with `;`.
 In the example above, the `data2d` array has `2` rows and `3` columns.
 
-If a byte array is given a static memory location, the sharkC64 compiler will
+If a byte array is given a static memory location, the SharkC64 compiler will
 not allocate any memory for it, and it will not be initialized to any value either.
 Then, its first element is found at the memory address, and the rest of the
 elements in the byte array are found in the following memory locations.
