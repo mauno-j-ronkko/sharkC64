@@ -1,5 +1,8 @@
 # Release history
 
+## version 2.2 published in May 14, 2026
+- added a high-resolution sprite editor
+
 ## version 2.1 published in April 19, 2026
 - added an interactive module dependency diagram
 - added Jump To menu item to locate declaration of a qualified term

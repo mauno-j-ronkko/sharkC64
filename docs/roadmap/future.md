@@ -1,10 +1,9 @@
 # Future plans
 
 ### Next release
-- Improving design support for projects
+- Usability tests with high-resolution sprites
 
 ### Backlog
-- Support for sprites
 - Support for screen designs
 - Support for user defined characters
 - Support for sound

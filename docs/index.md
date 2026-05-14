@@ -67,6 +67,7 @@ The SharkC64 IDE is published under MIT license.
       3. [Running the project](ide/compiler/run.md)
    5. Designer Actions
       1. [Viewing a module dependency diagram](ide/designer/diagram.md)
+      2. [Editing sprites](ide/designer/sprites.md)
 4. Roadmap
    1. [Release history](roadmap/history.md)
    2. [Future plans](roadmap/future.md)

@@ -4,7 +4,7 @@ You can open a module dependency diagram for a persisted project from the design
 
 ![Designer menu](../../images/menu/designer.png)
 
-To open the module dependency diagram for a persisted project, select the "Show Module Diagram" item.
+To open the module dependency diagram for a persisted project, select the "Module Diagram" item.
 It first builds the entire project and then opens a dependency diagram based on the built information.
 The diagram is shown in the Editor view. 
 For instance, for the pingpong project, the module dependency diagram looks like this.

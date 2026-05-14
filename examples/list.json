@@ -72,12 +72,16 @@
     "description": "Shows how to use a data section (sprites)"
   },
   {
+    "name": "example13",
+    "description": "Shows how to use sprites drawn with the sprite editor"
+  },
+  {
     "name": "block",
     "description": "Util module for drawing a block on the screen - used by example11b"
   },
   {
     "name": "color",
-    "description": "Util module for defining color constants - used by example08, example09, and example11b"
+    "description": "Util module for defining color constants - used by example08, example09 and others"
   },
   {
     "name": "screen",
