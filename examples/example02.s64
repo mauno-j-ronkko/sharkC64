@@ -8,7 +8,7 @@ module example02
         screenA : byte at $400
         screenC : byte at $401
 
-begin
+init
     screenA := letterA
     screenC := letterA + 2
 end

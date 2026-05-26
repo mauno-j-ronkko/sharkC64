@@ -8,8 +8,8 @@ module example12
 
     use color
 
-    const sharkIndex := 33  // points to memory location $0840
-          c64Index   := 34  // points to memory location $0880
+    val sharkIndex := 33  // points to memory location $0840
+        c64Index   := 34  // points to memory location $0880
 
     data shark at $0840 := { %00000000, %00000000, %00000110,
                              %00000000, %00000000, %00111100,
@@ -70,29 +70,24 @@ module example12
         spriteEnable : byte at $D015
 
 
-    fun move(position: byte) begin
+    fun move(position: byte) is
         sprite0X := 180 + position
         sprite1X := 180 - position
-    end
 
     fun delay()
         var i : word
             duration : word := 0
-    begin
-        for i := 0 to duration do end
-        duration := duration + 30
-    end
+        is  for i := 0 to duration do end
+            duration := duration + 30
 
     fun animate()
         var position : byte
-    begin
-        for position := 75 downto 0 do
-            move(position)
-            delay()
-        end
-    end
+        is  for position := 75 downto 0 do
+                move(position)
+                delay()
+            end
 
-begin
+init
     backgroundColor := color.black
 
     sprite0Index := sharkIndex

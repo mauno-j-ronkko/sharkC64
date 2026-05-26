@@ -16,43 +16,36 @@ module score
 
     hide zero, row, points, column, getDigit, setDigit
     
-    const zero := 176
-          row  := 1
+    val zero := 176
+        row  := 1
 
     var points,column : byte
 
     fun reset()
-        const textLength := 11
-              textColumn := 14
-        var   text       := { 147, 131, 143, 146, 133, 160, zero, zero, zero, zero, zero, zero }
-              i          : byte
-    begin
-        print.row(row).column(textColumn).color(color.darkGray)
-        for i := 0 to textLength do print.single(text[i]) end
-        points := 0
-    end
+        val textLength := 11
+            textColumn := 14
+        var text       := { 147, 131, 143, 146, 133, 160, zero, zero, zero, zero, zero, zero }
+            i          : byte
+        is  print.row(row).column(textColumn).color(color.darkGray)
+            for i := 0 to textLength do print.single(text[i]) end
+            points := 0
 
-    fun getDigit() : byte begin
+    fun getDigit() : byte is
         getDigit := screen.char[row, column] - zero
-    end
 
-    fun setDigit(digit : byte) begin
+    fun setDigit(digit : byte) is
         screen.char[row, column] := zero + digit
-    end
 
-    fun addPoints(value : byte) begin
+    fun addPoints(value : byte) is
         points := points + value
-    end
 
     fun animate()
-        const lastDigit := 24
-    begin
-        if points > 0 then
-            column := lastDigit
-            while getDigit() = 9 do setDigit(0); column := column - 1 end
-            setDigit(getDigit() + 1)
-            points := points - 1
-        end
-    end
+        val lastDigit := 24
+        is  if points > 0 then
+                column := lastDigit
+                while getDigit() = 9 do setDigit(0); column := column - 1 end
+                setDigit(getDigit() + 1)
+                points := points - 1
+            end
 
 end

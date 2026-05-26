@@ -18,7 +18,7 @@ module pingpong
 
     hide manageCollision, play
     
-    fun manageCollision() begin
+    fun manageCollision() is
         if collision.occurred then
             if tiles.identifyTile(collision.row, collision.column) then
                 if tile.flash() then
@@ -30,9 +30,8 @@ module pingpong
                 if collision.withBat then sound.playBoing() else sound.playClink() end
             end
         end
-    end
 
-    fun play() begin
+    fun play() is
         while ball.onPlayground and tiles.exist() do
             tile.animate()
             score.animate()
@@ -40,10 +39,9 @@ module pingpong
             bat.animate()
             playground.delay(400)
         end
-    end
 
 
-begin
+init
     sound.reset()
     playground.reset()
     score.reset()

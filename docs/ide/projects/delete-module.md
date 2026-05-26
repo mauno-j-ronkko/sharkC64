@@ -7,7 +7,7 @@ You can create delete module from the project through the File menu.
 To create delete a module, select the module to be deleted
 either from the Project tab or from the editor view.
 
-![Module selected](../../images/project/module-selected.png)
+![Module selected](../../images/project/new-module.png)
 
 Then, select the "Delete" item from the File menu.
 It opens a dialog asking fi you want to move the module to trash.

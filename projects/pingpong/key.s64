@@ -12,19 +12,17 @@
 
 module key
 
-    const codeA    := 10
-          codeL    := 42
-          codeNone := 64
+    val codeA    := 10
+        codeL    := 42
+        codeNone := 64
 
     fun read() : byte
         var pressed  : byte at $C5
             queued   : byte at $C6
             released := true
-    begin
-        read := codeNone
-        if pressed <> codeNone and released then read := pressed end
-        released := pressed = codeNone
-        queued := 0
-    end
+        is  read := codeNone
+            if pressed <> codeNone and released then read := pressed end
+            released := pressed = codeNone
+            queued := 0
 
 end

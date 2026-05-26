@@ -1,38 +1,48 @@
 # Release history
 
-## version 2.2 published in May 14, 2026
+## version 2.3 published on May 26, 2026
+- breaking change: main body is now "init" .. "end"
+- breaking change: function declaration is now "fun" .. "is" ..
+- breaking change: "const" is now "val"
+- added undo/redo to Sprite Editor
+- added autocomplete to the source code editor
+- added Jump Back feature
+- added recalling of open tabs when the project is opened
+- added unindentation
+
+## version 2.2 published on May 14, 2026
 - added a high-resolution sprite editor
 
-## version 2.1 published in April 19, 2026
+## version 2.1 published on April 19, 2026
 - added an interactive module dependency diagram
 - added Jump To menu item to locate declaration of a qualified term
 - added opening of the recent project when IDE is restarted
 - fixed status bar updates
 - fixed outdated error highlight when project is rebuilt
 
-## version 2.0 published in March 1, 2026
+## version 2.0 published on March 1, 2026
 - reimplemented the entire IDE with a modern look and feel
 
-## Version 1.3 published in December 21, 2025
+## Version 1.3 published on December 21, 2025
 - added hide section to the language
 
-## Version 1.2 published in November 9, 2025
+## Version 1.2 published on November 9, 2025
 - added static data section to the language
 - removed (array.size) modifier
 
-## Version 1.1 published in October 12, 2025
+## Version 1.1 published on October 12, 2025
 - build changed to create PRG file directly to the home folder
 - refactored translator, generator and compiler
 - implemented internal linker
 - find/replace takes now selected text as the search pattern
 - fixed redo not to activate selection
 
-## Version 1.0 published in August 24, 2025
+## Version 1.0 published on August 24, 2025
 - completed usability tests
 - fixed scroll bar in open module dialog
 - improved error handling
 
-### Version 0.11.3 published in July 13, 2025
+### Version 0.11.3 published on July 13, 2025
 - added optional, typed return value for functions
 - added function call evaluation to expressions
 - added return statement
@@ -40,7 +50,7 @@
 - improved find and replace actions in editor
 - improved automated compilation when switching between modules in editor
 
-### Version 0.11.2 published in June 15, 2025
+### Version 0.11.2 published on June 15, 2025
 - added menu action for going back to home screen from editor without losing editing state
 - added support for having multiple open modules
 - added quick switching between open modules
@@ -48,30 +58,30 @@
 - improved array element type checking
 - improved translation of expressions with nested array elements
 
-### Version 0.11.1 published in May 25, 2025
+### Version 0.11.1 published on May 25, 2025
 - added typed parameters to functions
 - added function call chaining
 - improved scrolling with touchpad
 - changed file saving not to clear undo history
 - changed editor to auto-saves files
 
-### Version 0.11 published in April 27, 2025
+### Version 0.11 published on April 27, 2025
 - added for loops
 - enforced use of end as closing keyword in module definitions
 - added optimization for increment and decrement assignment
 - refactored parse error handling
 
-### Version 0.10.1 published April 12, 2025
+### Version 0.10.1 published on April 12, 2025
 - added constant and variable declaration to functions
 
-### Version 0.10 published March 23, 2025
+### Version 0.10 published on March 23, 2025
 - added support for 2D byte arrays
 - added support for zero-page instructions
 - improved use of near jumps with word arguments
 - refactored bytecode generation
 - fixed bytecode generation bug for type casting
 
-### Version 0.9 published February 16, 2025
+### Version 0.9 published on February 16, 2025
 - added function bodies to the language
 - renamed array modifiers as (array.up), (array.down), and (array.size)
 - fixed nested array indexing
@@ -81,7 +91,7 @@
 - improved history buffering in editing
 - minor UI fixes
 
-### Version 0.8.1 published January 14, 2025
+### Version 0.8.1 published on January 14, 2025
 - Home screen
   - Updated home screen to address projects instead of modules
   - Added creation of a new project
@@ -101,7 +111,7 @@
   - Improved submenu stability
   - Improved mouse click responsiveness
 
-### Version 0.8 published December 7, 2024
+### Version 0.8 published on December 7, 2024
 - Added use statement
 - Added referencing of variables and constants in another module
 - Refactored settings and home screen
@@ -109,14 +119,14 @@
 - Adjusted dialogs on screen
 - Simplified compiler error handling
 
-### Version 0.7.2 published November 9, 2024
+### Version 0.7.2 published on November 9, 2024
 - refactored IDE implementation
 - added some minor usability adjustments
 - added dragging of the vertical scroll bar with mouse
 - improved find/replace/error messages
 - added closing of the editor menu by clicking outside it
 
-### Version 0.7.1 published September 29, 2024
+### Version 0.7.1 published on September 29, 2024
 - added array assignment for byte arrays
 - added initial value assignment for byte arrays
 - added byte array modifiers, (.up), (.down)
@@ -128,61 +138,61 @@
 - refined the help for finding and replacing text in IDE
 - switched to using Temurin 21
 
-### Version 0.7 published August 30, 2024
+### Version 0.7 published on August 30, 2024
 - Added byte arrays
 
-### Version 0.6 published August 3, 2024
+### Version 0.6 published on August 3, 2024
 - Added the word data type with type casting operators
 - Refined intermediate representation language and its translation
 - Refined bytecode generation
 
-### Version 0.5 published June 22, 2024
+### Version 0.5 published on June 22, 2024
 - Added While statements
 - Improved optimization of If statements
 - Fixed issue with pressing delete and backspace keys after pressing a shift key
 - Removed support for the old "path" attribute when compiling from command line
 
-### Version 0.4 published May 18, 2024
+### Version 0.4 published on May 18, 2024
 - Added If statements
 - Fixed an issue in the editor when deleting selection with backspace
 
-### Version 0.3.4 published April 14, 2024
+### Version 0.3.4 published on April 14, 2024
 - Refactored expression parsing and binding
 - Improved boolean constant definitions; comparison expressions are now supported
 - Added scroll-wheel support to editor view
 
-### Version 0.3.3 published March 17, 2024
+### Version 0.3.3 published on March 17, 2024
 - Added comparison operators
 - Fixed precedence issue in parser
 - Added an indicator for building and running
 - Added a scroll bar to edit view
 - Simplified translation for commutative operators
 
-### Version 0.3.2 published February 18, 2024
+### Version 0.3.2 published on February 18, 2024
 - Boolean types with true and false values
 - Logical expression (not, and, or, xor) for booleans
 - Build and run module in edit view (Compiler > Build and run / F10)
 - Rephrased confirmation dialog when closing the editor without saving changes
 
-### Version 0.3.1 published January 28, 2024
+### Version 0.3.1 published on January 28, 2024
 - Constant values
 - A newly created module opens with a named module body 
 
-### Version 0.3 published December 29, 2023
+### Version 0.3 published on December 29, 2023
 - The very first version of an IDE
 - The `path` parameter in the command line mode has been deprecated;
   use `home` parameter instead
 
-### Version 0.2 published November 13, 2023
+### Version 0.2 published on November 13, 2023
 - Assignment statements
 - Module initialization
 
-### Version 0.1.1 published October 26, 2023
+### Version 0.1.1 published on October 26, 2023
 - Single-line comments
 - Inferred variable types
 - Language syntax added to the manual
 
-### Version 0.1 published September 15, 2023
+### Version 0.1 published on September 15, 2023
 - Byte data type 
 - Variable declaration 
 - Variables with static addresses

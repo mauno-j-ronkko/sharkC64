@@ -8,7 +8,7 @@ module UniqueName01
     
     hide corner, myHello
     
-    const one : byte := $01
+    val one : byte := $01
     
     data numbers at $1000 := {1, 2, 3, 4}
     
@@ -18,17 +18,14 @@ module UniqueName01
          
     fun hello()
         var c : byte 
-    begin
-        c := a
-    end
-
+        is  c := a
+            b := c + a
+    
     fun myHello()
         var c : byte 
-    begin
-        c := a
-    end
+        is  c := a
     
-begin
+init
     a := $10
     hello()
     result := corner + a
@@ -49,7 +46,7 @@ Otherwise, operating systems that are case-insensitive cannot distinguish them.
 
 
 ### Using or including other modules
-A module may depend on other modules. Dependencies are declared in a ```use``` section.
+A module may depend on other modules. Dependencies are declared in a `use` section.
 The used modules are listed using comma as a separator.
 ```
 use moduleA, moduleB
@@ -59,7 +56,7 @@ use moduleA, moduleB
 ### Hiding identifiers and functions
 A module can list which identifiers and functions are hidden.
 A hidden identifier or function cannot be accessed from other modules.
-A list of hidden elements is declared in a ```hide``` section.
+A list of hidden elements is declared in a `hide` section.
 The hidden elements are listed using comma as a separator.
 ```
 hide corner, myHello
@@ -67,10 +64,10 @@ hide corner, myHello
 
 
 ### Constants
-Constants are listed in a `const` section. Each constant must be given a 
+Constants are listed in a `val` section. Each constant must be given a 
 fixed value.
 ```
-const one : byte := $01
+val one : byte := $01
 ```
 
 
@@ -95,23 +92,22 @@ var a,b    : byte
 Functions are defined after variable section and before the module initialization.
 Each function starts with the keyword `fun`. 
 Functions may define constants and variables that are local to them.
-The statements for the body of the function are then given within a `begin` ... `end` block.
+The statements for the body of the function are then given after the `is` keyword.
 ```
 fun hello()
     var c : byte 
-begin
-    c := a
-end
+    is  c := a
+        b := c + a
 ```
 A function call is simply of the form `hello()` where `hello` is the name of the function.
 
 
 ### Module initialization
-Module initialization is defined within a `begin` ... `end` block.
-It acts as the main function of the module. The statements are executed 
+Module initialization is defined within a `init` ... `end` block.
+It acts as the main body of the module. The statements are executed 
 right after the module variables are initialized.
 ```
-begin
+init
     a := $10
     result := corner + a
 end

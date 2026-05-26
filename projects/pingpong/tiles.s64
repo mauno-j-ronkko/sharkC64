@@ -16,7 +16,7 @@ module tiles
     
     hide maxIndex, remaining, row, column, color, exit, setTile
 
-    const maxIndex := 53
+    val maxIndex := 53
 
     var remaining : byte
         row       := {  0,  0,  0,  0,  0,  0,  0,  0,  0,
@@ -35,40 +35,33 @@ module tiles
                        color.red,    color.red,    color.orange, color.orange,
                        color.yellow, color.yellow, color.green,  color.green }
 
-    fun exist(): boolean begin
+    fun exist(): boolean is
         exist := remaining > 0
-    end
 
-    fun setTile(index : byte) begin
+    fun setTile(index : byte) is
         tile.row(row[index] + 3).column(column[index])
-    end
 
     fun reset()
         var i : byte
-    begin
-        remaining := maxIndex + 1
-        for i := 0 to maxIndex do
-            print.color(color[row[i]]); setTile(i); tile.draw()
-        end
-    end
+        is  remaining := maxIndex + 1
+            for i := 0 to maxIndex do
+              print.color(color[row[i]]); setTile(i); tile.draw()
+            end
 
     fun identifyTile(row : byte, column : byte) : boolean
         var i, top, left : byte
-    begin
-        identifyTile := false
-        row := row - 3
-        for i := 0 to maxIndex do
-            top := tiles.row[i]
-            if top = row or row = top + 1 then
-                left := tiles.column[i]
-                identifyTile := left <= column and column <= left + 3
-                if identifyTile then setTile(i); return end
+        is  identifyTile := false
+            row := row - 3
+            for i := 0 to maxIndex do
+                top := tiles.row[i]
+                if top = row or row = top + 1 then
+                    left := tiles.column[i]
+                    identifyTile := left <= column and column <= left + 3
+                    if identifyTile then setTile(i); return end
+                end
             end
-        end
-    end
 
-    fun removeTile() begin
+    fun removeTile() is
         remaining := remaining - 1
-    end
 
 end

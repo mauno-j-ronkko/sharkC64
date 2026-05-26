@@ -14,21 +14,19 @@ module print
 
     use screen, color
 
-    const blankChar := 32
+    val blankChar := 32
 
     var row, column : byte
         char, color : byte
 
-    fun home() begin
+    fun home() is
         row := 0; column := 0
-    end
 
-    fun set() begin
+    fun set() is
         screen.char[row, column] := char
         screen.color[row, column] := color
-    end
 
-    fun single(char: byte) begin
+    fun single(char: byte) is
         print.char := char
         set()
         column := column + 1
@@ -37,14 +35,12 @@ module print
             row := row + 1
             if row >= screen.rows then row := 0 end
         end
-    end
 
-    fun clear() begin
+    fun clear() is
         char := blankChar
         for row :=0 to screen.lastRow do
             for column := 0 to screen.lastColumn do set() end
         end
         home()
-    end
 
 end

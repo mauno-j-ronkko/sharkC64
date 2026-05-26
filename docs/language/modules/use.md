@@ -1,5 +1,5 @@
 # Using or including other modules
-A module may depend on other modules. Dependencies are declared in a ```use``` section.
+A module may depend on other modules. Dependencies are declared in a `use` section.
 Module files are listed using comma as separator.
 ```
 use moduleA, moduleB, moduleC

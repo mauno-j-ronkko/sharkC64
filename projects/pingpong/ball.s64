@@ -20,26 +20,23 @@ module ball
     var row, column   : byte
         dRow, dColumn : byte
         onPlayground  : boolean
-
-    fun reset() begin
+  
+    fun reset() is
         row := 20
         column := 10
         dRow := -1
         dColumn:= 1
         onPlayground := true
-    end
 
-    fun draw(char : byte) begin
+    fun draw(char : byte) is
         print.row(row).column(column).char(char).color(color.white).set()
-    end
 
-    fun move() begin
+    fun move() is
         row := row + dRow
         column := column + dColumn
         if row > screen.lastRow then row := row - dRow; onPlayground := false end
-    end
 
-    fun bounce() begin
+    fun bounce() is
         row := row - dRow
         column := column - dColumn
         if screen.char[row - dRow, column + dColumn] <> print.blankChar then
@@ -47,24 +44,21 @@ module ball
         else
             dRow := -dRow
         end
-    end
 
     fun animate() : boolean
-        const ball := 81
-        var   tick : byte
-    begin
-        tick := tick + 1
-        animate := tick > 4
-        if animate then
-            tick := 0
-            draw(print.blankChar).move()
-            collision.occurred := screen.char[row, column] <> print.blankChar
-            if collision.occurred then
-                collision.row(row).column(column).withBat(row >= screen.lastRow)
-                bounce()
+        val ball := 81
+        var tick : byte
+        is  tick := tick + 1
+            animate := tick > 4
+            if animate then
+                tick := 0
+                draw(print.blankChar).move()
+                collision.occurred := screen.char[row, column] <> print.blankChar
+                if collision.occurred then
+                    collision.row(row).column(column).withBat(row >= screen.lastRow)
+                    bounce()
+                end
+                draw(ball)
             end
-            draw(ball)
-        end
-    end
 
 end

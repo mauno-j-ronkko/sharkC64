@@ -1,9 +1,9 @@
 # Constants
 
-Constants are listed in a `const` section. Each constant must be given a fixed value.
+Constants are listed in a `val` section. Each constant must be given a fixed value.
 ```
-const zero : byte := $00
-      one  : zero + $01
+val zero : byte := $00
+    one  : zero + $01
 ```
 
 Each constant must also have a unique name. In the SharkC64 language, all the names are case-sensitive.

@@ -13,10 +13,10 @@
 
 module screen
 
-    const rows       := 25
-          columns    := 40
-          lastRow    := rows - 1
-          lastColumn := columns - 1
+    val rows       := 25
+        columns    := 40
+        lastRow    := rows - 1
+        lastColumn := columns - 1
 
     var char           : byte[rows, columns] at $0400
         color          : byte[rows, columns] at $D800

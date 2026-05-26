@@ -1,7 +1,7 @@
 # Future plans
 
 ### Next release
-- Usability tests with high-resolution sprites
+- Integer data type
 
 ### Backlog
 - Support for screen designs

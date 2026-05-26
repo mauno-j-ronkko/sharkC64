@@ -57,6 +57,7 @@ The SharkC64 IDE is published under MIT license.
       4. [Adding a new module to the project](ide/projects/add-module.md)
       5. [Importing an existing module to the project](ide/projects/import-module.md)
       6. [Editing a module](ide/projects/edit-module.md)
+      7. [Working with autocomplete](ide/projects/autocomplete.md)
       7. [Deleting a module from the project](ide/projects/delete-module.md)
       8. [Saving changes in a module](ide/projects/save-module.md)
       9. [Reverting a module to opened state](ide/projects/revert-module.md)

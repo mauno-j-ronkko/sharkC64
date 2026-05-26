@@ -31,37 +31,28 @@ module example13
         
     fun sync() 
         var highX : byte
+        is  if x > 255 then highX := spriteHighX or $01 else highX := spriteHighX and $FE end
+            spriteY := y
+            spriteX := (byte.lo)x
+            spriteHighX := highX
         
-    begin
-        if x > 255 then highX := spriteHighX or $01 else highX := spriteHighX and $FE end
-        spriteY := y
-        spriteX := (byte.lo)x
-        spriteHighX := highX
-    end
-    
-    
-    fun move() begin
+    fun move() is
         x := x + dx
         y := y + dy
         if x < 25 or x > 322 then dx := -dx end
         if y < 51 or y > 228 then dy := -dy end  
-    end
     
     
     fun delay() 
         var i : byte
-        
-    begin
-        for i := 0 to 255 do end
-    end
+        is  for i := 0 to 255 do end
     
     
-    fun animate() begin
+    fun animate() is
         while true do move(); sync(); delay() end
-    end
     
     
-begin
+init
     backgroundColor := color.black
 
     spriteIndex := example13sprites.firstSprite

@@ -7,23 +7,21 @@
 
 module example11
 
-    const rows := 25
-          cols := 40
+    val rows := 25
+        cols := 40
 
     var screen : byte[rows, cols] at $0400
         fill   : byte
 
     fun fillScreen()
-        const lastCol := cols - 1
-              lastRow := rows - 1
-        var   row     :  byte
-              col     :  byte
-    begin
-        for row := 0 to lastRow do
-            for col := 0 to lastCol do screen[row, col] := fill end
-        end
-    end
+        val lastCol := cols - 1
+            lastRow := rows - 1
+        var row     :  byte
+            col     :  byte
+        is  for row := 0 to lastRow do
+                for col := 0 to lastCol do screen[row, col] := fill end
+            end
 
-begin
+init
     for fill := 0 to 255 do fillScreen() end
 end

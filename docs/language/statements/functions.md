@@ -6,21 +6,19 @@ A function may have type parameters that are listed in parentheses after the fun
 A function can also return a value. 
 Then, its type is a primitive type, and it is declared right after the parameter list. 
 Functions may define constants and variables that are local to them.
-The statements for the body of the function are then given within a `begin` ... `end` block.
+The statements for the body of the function are then given after the `is` keyword.
 ```
 fun hello(first: byte, second: word) : byte
     var c := 12 
-begin
-    c := c + a
-    difference := first - (byte)second
-    hello := difference + c
-end
+    is  c := c + a
+        difference := first - (byte)second
+        hello := difference + c
 ```
 
 ### Function parameters
 Function parameters are defined in parentheses after the function name.
 Parameters are separated with a comma and each parameter is given a type.
-The type of a parameter must be a primitive type, i.e. `boolean`, `byte`, or `word`.  
+The type of parameter must be a primitive type, i.e. `boolean`, `byte`, or `word`.  
 
 
 ### Return value
@@ -48,13 +46,11 @@ For instance, the following function exits as soon as it finds the
 index for the given value in an array. If the index is not found, 
 the function returns `-1`.
 ```
-fun indexOf(value: byte) : byte
-begin
+fun indexOf(value: byte) : byte is
     for indexOf := 0 to maxIndex do
       if array[indexOf] = value then return end
     end
     indexOf := -1
-end
 ```
 
 

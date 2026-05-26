@@ -32,7 +32,7 @@ You can close the entire find panel by clicking the cross button next to the arr
 
 If you select the "Replace..." item from the menu, it opens the replacement panel below the find panel.
 
-![Find panel](../../images/editor/replacement-panel.png)
+![Replace panel](../../images/editor/replacement-panel.png)
 
 In the panel, you can type the text to be used in replacing the found text.
 You can replace the highlighted instance by clicking the "one" button.
@@ -54,12 +54,17 @@ first occurrence of the term `height` in it.
 ![Jump target module](../../images/editor/jump-target.png)
 
 This works for all the terms, such as constants, variables, data sections, and functions.
+To jump back, select the "Jump Back" item from the edit menu.
 
 If, however, the cursor is not over a term, and the menu item "Jump To..."
 is selected, a dialog is opened, where you can type in the term 
 that you wish to locate.
 
 ![Jump dialog](../../images/editor/jump-dialog.png)
+
+
+Jumping works also, for sprites. If the cursor is on a sprite index value,
+"Jump To..." will open sprite editor to show that sprite.
 
 It should be noted that at the moment jumping in the source code is not fully accurate.
 It will locate the first occurrence of a term in a module.

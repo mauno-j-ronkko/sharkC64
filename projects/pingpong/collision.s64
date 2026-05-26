@@ -16,8 +16,7 @@ module collision
         occurred    : boolean
         withBat     : boolean
 
-    fun reset() begin
+    fun reset() is
         occurred := false
-    end
 
 end

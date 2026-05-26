@@ -6,23 +6,21 @@
 
 module screen
 
-    const rows       := 25
-          columns    := 40
-          lastRow    := rows - 1
-          lastColumn := columns - 1
+    val rows       := 25
+        columns    := 40
+        lastRow    := rows - 1
+        lastColumn := columns - 1
 
     var char  : byte[rows, columns] at $0400
         color : byte[rows, columns] at $D800
 
     fun clear(char: byte, color: byte)
         var row, column : byte
-    begin
-        for row := 0 to lastRow do
-            for column := 0 to lastColumn do
-                screen.char[row, column] := char
-                screen.color[row, column] := color
+        is  for row := 0 to lastRow do
+                for column := 0 to lastColumn do
+                    screen.char[row, column] := char
+                    screen.color[row, column] := color
+                end
             end
-        end
-    end
 
 end

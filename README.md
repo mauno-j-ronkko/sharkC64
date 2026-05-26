@@ -1,6 +1,7 @@
 # sharkC64
 
-SharkC64 is a new programming language for the Commodore C64. 
+SharkC64 is a programming language for the Commodore 64
+with a Nordic flavor. 
 It comes bundled with a compiler and an integrated development environment.
 It is published under [MIT License](LICENSE).
 
@@ -12,12 +13,12 @@ The most recent release is available in
 If you wish to try out sharkC64, here are some guides for
 1. Setting up the environment, [setting up](docs/prerequisites/setup.md)
 2. Downloading and installing, [installing](docs/prerequisites/installing.md) 
-3. Starting sharkC64, [starting](docs/ide/starting-up/starting.md)
+3. Starting SharkC64, [starting](docs/ide/starting-up/starting.md)
 4. Downloading an example, [downloading](docs/ide/examples/download-example.md) 
 5. Running the example, [running](docs/ide/examples/run-example.md)
-6. More about the sharkC64 programming language and IDE, [index](docs/index.md) 
+6. More about the SharkC64 programming language and IDE, [index](docs/index.md) 
 
-You can find videos about the sharkC64 compiler, its design, construction, and use in
+You can find videos about the SharkC64 compiler, its design, construction, and use in
 YouTube, in the [Programming Redux](https://www.youtube.com/@programmingredux6211) channel. 
 
 <p align="right">

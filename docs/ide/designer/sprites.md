@@ -21,7 +21,7 @@ The toggle tool is selected by default, it toggles the pixel on/off.
 When you move mouse over the sprite image, a square with a blue triangle
 is shown on the pixel that is to be toggled
 
-![Sprite editor](../../images/sprites/toggle-tool.png)
+![Toggle tool](../../images/sprites/toggle-tool.png)
 
 The other two tools are paint and erase.
 They either set the pixel clicked with a mouse on or off, respectively.
@@ -31,7 +31,7 @@ To add, clone, delete, or rename a sprite, click the button with three ellipses,
 `...` next to the sprite name. It opens up a popup menu, where you can select
 the desired action.
 
-![Sprite editor](../../images/sprites/popup-menu.png)
+![Popup menu](../../images/sprites/popup-menu.png)
 
 You can select the sprite to be edited from the list of sprite names in the control panel.
 
@@ -44,7 +44,7 @@ project explorer view, it will open the sprite editor for you.
 To investigate what is in the module, you can use the diagram view.
 There, you can see how the sprites are stored into the module.
 
-![Sprite editor](../../images/sprites/diagram-view.png)
+![Diagram view](../../images/sprites/diagram-view.png)
 
 As you can see, each sprite has two entries.
 The first entry is a constant value, `firstSprite`, having the index value of the sprite 

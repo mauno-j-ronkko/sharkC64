@@ -6,14 +6,15 @@
 //
 
 module example04
-    const value0 := $30
-          value9 := $39
-          white  := $01
+
+    val value0 := $30
+        value9 := $39
+        white  := $01
 
     var digit      : byte at $400
         foreground : byte at $D800
 
-begin
+init
     foreground := white
     if digit < value0 then
         digit := value0

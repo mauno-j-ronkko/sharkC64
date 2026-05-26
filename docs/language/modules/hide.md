@@ -1,6 +1,6 @@
 # Hiding identifiers and functions
 A module may hide its elements, constant, variables, and functions, from other modules
-to improve encapsulation. Hidden elements are declared in a ```hide``` section.
+to improve encapsulation. Hidden elements are declared in a `hide` section.
 Elements that are to be hidden are listed using comma as separator.
 ```
 hide corner, myHello
@@ -17,13 +17,12 @@ moduleA
   var corner : byte
       line   : byte
         
-  fun myHello() begin
+  fun myHello() is
       ...
-  end
     
-  fun greet() begin
+  fun greet() is
       myHello()    // OK: myHello is accessible within moduleA
-  end
+  
   ...
 end
 
@@ -31,7 +30,7 @@ moduleB
   use moduleA
   ...
   
-begin
+init
   moduleA.greet()    // OK: greet is accessible from moduleB
   moduleA.myHello()  // Error: myHello is hidden in moduleA
   

@@ -6,11 +6,11 @@
 
 module example10
 
-    const rows       := 25
-          cols       := 40
-          space      := $20
-          ball       := $51
-          maxDelay   := 947
+    val rows       := 25
+        cols       := 40
+        space      := $20
+        ball       := $51
+        maxDelay   := 947
 
     var random           : byte at $A2
         screen           : byte[rows, cols] at $400
@@ -21,12 +21,11 @@ module example10
         rBounce, cBounce := false
         delay            : word
 
-    fun wait() begin
+    fun wait() is
         delay := 0
         while delay < maxDelay do delay := delay +1 end
-    end
 
-    fun checkBounce() begin
+    fun checkBounce() is
         rBounce := row + rMove < 0 or row + rMove >= rows
         cBounce := col + cMove < 0 or col + cMove >= cols
         if screen[row + rMove, col + cMove] <> space and not (rBounce or cBounce) then
@@ -34,9 +33,8 @@ module example10
             cBounce := screen[row, col + cMove] <> space or screen[row, col - cMove] <> space
             if not (rBounce or cBounce) then rBounce := true; cBounce := true end
         end
-    end
 
-    fun move() begin
+    fun move() is
         screen[row, col] := old
         if rBounce then rMove := -rMove else row := row + rMove end
         if cBounce then cMove := -cMove else col := col + cMove end
@@ -46,9 +44,8 @@ module example10
         end
         old := screen[row, col]
         screen[row, col] := ball
-    end
 
-begin
+init
     while true do
         wait()
         checkBounce()

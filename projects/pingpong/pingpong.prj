@@ -15,5 +15,9 @@
         "sound",
         "tile",
         "tiles"
-    ]
+    ],
+    "tabs": [
+        "pingpong"
+    ],
+    "focus": "pingpong"
 }

@@ -15,17 +15,14 @@ module flash
     var row, column : byte
         level       : byte
 
-    fun reset() begin
+    fun reset() is
         level := 0
-    end
 
-    fun isActive(): boolean begin
+    fun isActive(): boolean is
         isActive := level > 0
-    end
 
-    fun step(): boolean begin
+    fun step(): boolean is
         step := isActive()
         if step then level := level - 1 end
-    end
 
 end

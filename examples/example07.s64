@@ -5,18 +5,19 @@
 //
 
 module example07
-    const blockMask      := $F0  // mask for the char block selection
-          lowerCaseBlock := $06  // char block for lower cae characters
-          letterZ        := $1A  // code for a lower case letter Z
-          spaceChar      := $20  // code for a space char
-          upperCase      := $40  // offset for upper case letters
-          fourRows       := 160  // number of chars for four rows on the screen
+
+    val blockMask      := $F0  // mask for the char block selection
+        lowerCaseBlock := $06  // char block for lower cae characters
+        letterZ        := $1A  // code for a lower case letter Z
+        spaceChar      := $20  // code for a space char
+        upperCase      := $40  // offset for upper case letters
+        fourRows       := 160  // number of chars for four rows on the screen
 
     var screen    : byte[fourRows] at $400  // byte array for four rows on the screen
         charBlock : byte at $D018            // char block selector
         i         : byte                     // index variable
 
-begin
+init
     // select the char block for thet lower case chars
     charBlock := (charBlock and blockMask) + lowerCaseBlock
 

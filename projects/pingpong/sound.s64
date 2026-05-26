@@ -35,41 +35,33 @@ module sound
                             $00,      // Waveform to no sound
                             $08,      // Attack/decay
                             $00 }     // Sustain/Release A8
-    begin
-        voice1 := resetClink
-        voice2 := resetCrash
-        voice3 := resetBoing
-        volume := 8
-    end
+        is  voice1 := resetClink
+            voice2 := resetCrash
+            voice3 := resetBoing
+            volume := 8
 
     fun playClink()
-        const pulseOn        := $41
-              pulseOff       := $40
-        var   voice1Waveform : byte at $D404
-    begin
-        voice1Waveform := pulseOff
-        voice1Waveform := pulseOn
-        volume := 4
-    end
+        val pulseOn        := $41
+            pulseOff       := $40
+        var voice1Waveform : byte at $D404
+        is  voice1Waveform := pulseOff
+            voice1Waveform := pulseOn
+            volume := 4
 
     fun playCrash()
-        const noiseOn        := $81
-              noiseOff       := $80
-        var   voice2Waveform : byte at $D40B
-    begin
-        voice2Waveform := noiseOff
-        voice2Waveform := noiseOn
-        volume := 7
-    end
+        val noiseOn        := $81
+            noiseOff       := $80
+        var voice2Waveform : byte at $D40B
+        is  voice2Waveform := noiseOff
+            voice2Waveform := noiseOn
+            volume := 7
 
     fun playBoing()
-        const triangleOn     := $11
-              triangleOff    := $10
-        var   voice3Waveform : byte at $D412
-    begin
-        voice3Waveform := triangleOff
-        voice3Waveform := triangleOn
-        volume := 12
-    end
+        val triangleOn     := $11
+            triangleOff    := $10
+        var voice3Waveform : byte at $D412
+        is  voice3Waveform := triangleOff
+            voice3Waveform := triangleOn
+            volume := 12
 
 end

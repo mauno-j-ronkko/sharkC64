@@ -4,8 +4,8 @@ The syntax of the SharkC64 language is as follows
 
 ```
 <module>                ::= "module" <LABEL> 
-                            [<use-section>] [<hide-section>] [<const-section>] 
-                            [<data-section>] [<var-section>] [<fun-section>] <body>
+                            [<use-section>] [<hide-section>] [<val-section>] 
+                            [<data-section>] [<var-section>] [<fun-section>] <init>
 
 <use-section>           ::= "use" <module-list>
 <module-list>           ::= <LABEL> ["," <module-list>]                         (1)
@@ -16,13 +16,14 @@ The syntax of the SharkC64 language is as follows
 <fun-section>           ::= <fun-declaration> [<fun-section>]
 <fun-declaration>       ::= "fun" <LABEL> "(" [<fun-parameters>] ")" 
                             [":" <type-primitive>] 
-                            [<const-section>] [<var-section>] <body>
+                            [<val-section>] [<var-section>] 
+                            "is" <statements>
 <fun-parameters>        ::= <fun-parameter> ["," <fun-parameters>]
 <fun-parameter>         ::= <LABEL> ":" <type-primitive>                   
 
-<const-section>         ::= "const" <const-declarations>
-<const-declarations>    ::= <const-declaration> [<const-declarations>]
-<const-declaration>     ::= <LABEL> [":" <type>] <intial-value>
+<val-section>           ::= "val" <val-declarations>
+<val-declarations>      ::= <val-declaration> [<val-declarations>]
+<val-declaration>       ::= <LABEL> [":" <type>] <intial-value>
 
 <data-section>          ::= "data" <data-declarations>
 <data-declarations>     ::= <data-declaration> [<data-declarations>]
@@ -58,7 +59,7 @@ The syntax of the SharkC64 language is as follows
 <initial-1d-sequence>   ::= <expression> ["," <initial-1d-sequence>]            (7)
 <initial-2d-sequence>   ::= <initial-1d-sequence> [";" <initial-2d-sequence>]   (7)
 
-<body>                  ::= "begin" <statements> "end" | "end"
+<init>                  ::= "init" <statements> "end" | "end"
 <statements>            ::= <statement> [<statements>]
 <statement>             ::= <assignment> | 
                             <if-then-else> | <while-do> | <for-do> | 
@@ -88,7 +89,7 @@ The syntax of the SharkC64 language is as follows
 <unary-expression>      ::= "(" <expression> ")" | 
                             <unary-operator> <expression> | <operand> 
 <operand>               ::= <BOOLEAN-VALUE> | <BYTE-VALUE> | <WORD-VALUE> |     (12)
-                            <const-name> | <var-name> | <byte-array-element> |  (12)
+                            <val-name> | <var-name> | <byte-array-element> |  (12)
                             <function-call>                                     (13)
 <byte-array-element>    ::= <1d-byte-array-element> | <2d-byte-array-element>
 <1d-byte-array-element> ::= <1d-array-name> "[" <expression> "]"                (14)
@@ -99,7 +100,7 @@ The syntax of the SharkC64 language is as follows
                             "(byte)" | "(byte.lo)" | "(byte.hi)" |              (15)
                             "(word)" | "(word.lo)" | "(word.hi)"                (15)
 
-<const-name>            ::= <name>                                              (16)
+<val-name>            ::= <name>                                              (16)
 <var-name>              ::= <name>                                              (17)
 <1d-array-name>         ::= <name>                                              (18)
 <2d-array-name>         ::= <name>                                              (19)

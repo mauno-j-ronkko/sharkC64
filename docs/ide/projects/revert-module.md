@@ -16,7 +16,7 @@ Then, a dialog is opened to confirm the revert action.
 
 When you click "Yes" button, all the changes to the module are reverted.
 
-![Reverted changes](../../images/project/reverted-changes.png)
+![Reverted changes](../../images/project/persisted.png)
 
 After the revert action, the status bar shows the "Ok" state.
 
