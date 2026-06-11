@@ -11,14 +11,14 @@ The statements for the body of the function are then given after the `is` keywor
 fun hello(first: byte, second: word) : byte
     var c := 12 
     is  c := c + a
-        difference := first - (byte)second
+        difference := first - (byte.lo)second
         hello := difference + c
 ```
 
 ### Function parameters
 Function parameters are defined in parentheses after the function name.
 Parameters are separated with a comma and each parameter is given a type.
-The type of parameter must be a primitive type, i.e. `boolean`, `byte`, or `word`.  
+The type of parameter must be a primitive type, i.e. `boolean`, `byte`, `word`, or `int`.  
 
 
 ### Return value

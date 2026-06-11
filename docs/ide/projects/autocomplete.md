@@ -26,7 +26,7 @@ This is shown in the popup with orange color.
 
 ![Common prefix](../../images/autocomplete/common-prefix.png)
 
-If you now press then `tab` key, it will fill in the common prefix.
+If you now press `tab`, it will fill in the common prefix.
 
 ![Completed prefix](../../images/autocomplete/completed-prefix.png)
 
@@ -50,6 +50,8 @@ In practise, this means that you can get the exact suggestion
 with a couple of letters, if those letters appear uniquely in that suggestion.
 For instance, in the example above, the label `spriteColor` 
 would have shown as a single, unique suggestion simply by typing `sC`.
+
+> :information_source: &nbsp; You can hide the suggestion popup by pressing `esc`.
 
 
 <br /><br />

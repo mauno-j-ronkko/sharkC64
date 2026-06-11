@@ -1,7 +1,7 @@
 # Future plans
 
 ### Next release
-- Integer data type
+- Adding a new example project with sprites
 
 ### Backlog
 - Support for screen designs

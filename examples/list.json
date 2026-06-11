@@ -76,6 +76,10 @@
     "description": "Shows how to use sprites drawn with the sprite editor"
   },
   {
+    "name": "example14",
+    "description": "Shows how to use int variables"
+  },
+  {
     "name": "block",
     "description": "Util module for drawing a block on the screen - used by example11b"
   },

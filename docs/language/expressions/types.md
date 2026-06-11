@@ -2,11 +2,12 @@
 
 These are the currently available data types:
 
-| Type      | Description           | Range                | Default initial value |
-|-----------|-----------------------|----------------------|-----------------------|
-| `boolean` | Truth value           | {`false`, `true`}    | `false`               |
-| `byte`    | 8-bit unsigned value  | [`$00` .. `$FF`]     | `0`                   |
-| `word`    | 16-bit unsigned value | [`$0000` .. `$FFFF`] | '0'                   |
+| Type      | Description           | Range                 | Default initial value |
+|-----------|-----------------------|-----------------------|----------------------|
+| `boolean` | Truth value           | {`false`, `true`}     | `false`              |
+| `byte`    | 8-bit unsigned value  | [`$00` .. `$FF`]      | `0`                  |
+| `word`    | 16-bit unsigned value | [`$0000` .. `$FFFF`]  | `0`                  |
+| `int`     | 16-bit signed value   | [`-$8000` .. `$7FFF`] | `0`                  |
 
 
 
@@ -37,12 +38,19 @@ The programmer must give any type casting explicitly, see [Expressions](expressi
 The microprocessor of the Commodore 64, MOS Technology 6510, is an 8-bit microprocessor.
 It can natively operate only on 8-bit values. Because of this, the microprocessor
 provides native instructions for handling the `boolean` and the `byte` data type.
+
 This means that the 16-bit `word` data type requires use of multiple instructions that
 swap intermediate computational values in and out of the 8-bit accumulator of the
 6510 microprocessor. Therefore, the expressions with the `word` data type are
 significantly slower than, for instance, similar expressions with the `byte` data type. 
 
-> :warning: &nbsp; Assigning a word value from one variable to another,
+The `int` data type is computationally as slow as the `word` data type.
+The `int` data type, however, is even slower with comparisons, as the 6510 microprocessor
+lacks comparison instructions for signed values.
+The comparison of signed values required some extra instructions to compensate
+the value range shift during the comparison.
+
+> :warning: &nbsp; Assigning a word value or an int value from one variable to another,
 > partially overlapping variable could fail. The failure occurs when the low byte
 > of the target variable is at the same address as the high byte of the source variable.
 > Then, the low byte value is first copied over the high byte value overwriting the

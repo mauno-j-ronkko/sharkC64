@@ -6,11 +6,11 @@ In particular, a module consists of sections that start with a section keyword.
 module UniqueName01
     use moduleA, moduleB
     
-    hide corner, myHello
+    own corner, myHello
     
     val one : byte := $01
     
-    data numbers at $1000 := {1, 2, 3, 4}
+    dat numbers at $1000 := {1, 2, 3, 4}
     
     var a,b    : byte
         corner : byte at $400 := one
@@ -56,10 +56,10 @@ use moduleA, moduleB
 ### Hiding identifiers and functions
 A module can list which identifiers and functions are hidden.
 A hidden identifier or function cannot be accessed from other modules.
-A list of hidden elements is declared in a `hide` section.
+A list of hidden elements is declared in an `own` section.
 The hidden elements are listed using comma as a separator.
 ```
-hide corner, myHello
+own corner, myHello
 ```
 
 
@@ -72,10 +72,10 @@ val one : byte := $01
 
 
 ### Data
-Byte data at a fixed memory location is listed in a `data` section.
+Byte data at a fixed memory location is listed in a `dat` section.
 Each data element is given a name, starting location, and the byte value series.
 ```
-data numbers at $1000 := {1, 2, 3, 4}
+dat numbers at $1000 := {1, 2, 3, 4}
 ```
 
 ### Variables
@@ -114,6 +114,10 @@ end
 ```
 
 If a module has no initialization it can simply end with the keyword `end`.
+
+> :information_source: &nbsp; As you may have noticed, all section keywords 
+> have only three letters. This improves source code alignment, 
+> making the source code a lot easier to parse at first glance.
 
 <br /><br />
 :leftwards_arrow_with_hook: [Back to index](../../index.md)

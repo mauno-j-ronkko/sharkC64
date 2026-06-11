@@ -1,8 +1,8 @@
 # Data
-Data elements are listed in a `data` section. 
+Data elements are listed in a `dat` section. 
 Each data element defines a sequence of bytes starting at a fixed memory location.
 ```
-data numbers at $1000 := {1, 2, 3, 4}
+dat numbers at $1000 := {1, 2, 3, 4}
 ```
 
 Each data element must have a unique name and a starting address.
@@ -24,14 +24,14 @@ Each value in the byte sequence must be of `byte` data type, having the value in
 Moreover, all bytes of the data element must fall within the range of allowed memory addresses `[$0811..$A000]`.
 So, for instance, the following definition is illegal, as the byte sequence spans outside the allowed memory range.
 ```
-data outsideOfMemory at $9FFF := {1, 2, 3, 4}
+dat outsideOfMemory at $9FFF := {1, 2, 3, 4}
 ```
 
 Lastly, no bytes in the byte sequence may overlap in memory with bytes of any other data elements.
 So, for instance, the following definitions are illegal, as they overlap in memory.
 ```
-data firstSequence       at $1000 := {1, 2, 3, 4}
-     overlappingSequence at $1002 := {5, 6, 7, 8}
+dat firstSequence       at $1000 := {1, 2, 3, 4}
+    overlappingSequence at $1002 := {5, 6, 7, 8}
 ```
 
 ### Accessing bytes in data sequence
@@ -44,7 +44,7 @@ However, if you wish to access the byte values in a data element, you can define
 Then, you can also define the array structure to access the data element.
 Consider the following definitions.
 ```
-data sequence at $1000 := {10, 11, 20, 21}
+dat sequence at $1000 := {10, 11, 20, 21}
 var  value : byte[2, 2] at sequence  
 ```
 

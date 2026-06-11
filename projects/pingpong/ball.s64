@@ -7,7 +7,7 @@
 //
 //
 // Published under MIT License
-// Copyright (C) Mauno Rönkkö, 2023-2025
+// Copyright (C) Mauno Rönkkö, 2023-2026
 // See more at: https://github.com/mauno-j-ronkko/sharkC64
 //
 
@@ -15,7 +15,7 @@ module ball
 
     use print, collision
     
-    hide row, column, dRow, dColumn, draw, move, bounce
+    own row, column, dRow, dColumn, draw, move, bounce
 
     var row, column   : byte
         dRow, dColumn : byte
@@ -24,7 +24,7 @@ module ball
     fun reset() is
         row := 20
         column := 10
-        dRow := -1
+        dRow := 0 - 1
         dColumn:= 1
         onPlayground := true
 

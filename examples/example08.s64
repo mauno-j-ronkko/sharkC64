@@ -9,7 +9,7 @@ module example08
 
     val columns := 40
 
-    var line : byte[columns] at $D800 + (word)columns
+    var line : byte[columns] at $D800 + (word.lo)columns
         i    : byte
 
 init

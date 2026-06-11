@@ -4,13 +4,13 @@ The syntax of the SharkC64 language is as follows
 
 ```
 <module>                ::= "module" <LABEL> 
-                            [<use-section>] [<hide-section>] [<val-section>] 
+                            [<use-section>] [<own-section>] [<val-section>] 
                             [<data-section>] [<var-section>] [<fun-section>] <init>
 
 <use-section>           ::= "use" <module-list>
 <module-list>           ::= <LABEL> ["," <module-list>]                         (1)
 
-<hide-section>          ::= "hide" <identifier-list>
+<own-section>           ::= "own" <identifier-list>
 <identifier-list>       ::= <LABEL> ["," <identifier-list>]
 
 <fun-section>           ::= <fun-declaration> [<fun-section>]
@@ -25,7 +25,7 @@ The syntax of the SharkC64 language is as follows
 <val-declarations>      ::= <val-declaration> [<val-declarations>]
 <val-declaration>       ::= <LABEL> [":" <type>] <intial-value>
 
-<data-section>          ::= "data" <data-declarations>
+<data-section>          ::= "dat" <data-declarations>
 <data-declarations>     ::= <data-declaration> [<data-declarations>]
 <data-declaration>      ::= <LABEL> <at-address> <initial-1d-values>
  
@@ -48,16 +48,18 @@ The syntax of the SharkC64 language is as follows
 <type-2d-byte-array>    ::= <type-byte> "[" <expression>, <expression> "]"      (3) 
 <type-primitive>        ::= <type-boolean> |                                    (4) 
                             <type-byte> |                                       (5)
-                            <type-word>                                         (6)
+                            <type-word> |                                       (6)
+                            <type-int>                                          (7)
 <type-boolean>          ::= "boolean"
 <type-byte>             ::= "byte"
 <type-word>             ::= "word"
+<type-int>              ::= "int"
 
-<intial-value>          ::= ":=" <expression>                                   (7)
-<intial-1d-values>      ::= ":=" "{" <initial-1d-sequence> "}"                  (7)
-<intial-2d-values>      ::= ":=" "{" <initial-2d-sequence> "}"                  (7)
-<initial-1d-sequence>   ::= <expression> ["," <initial-1d-sequence>]            (7)
-<initial-2d-sequence>   ::= <initial-1d-sequence> [";" <initial-2d-sequence>]   (7)
+<intial-value>          ::= ":=" <expression>                                   (8)
+<intial-1d-values>      ::= ":=" "{" <initial-1d-sequence> "}"                  (8)
+<intial-2d-values>      ::= ":=" "{" <initial-2d-sequence> "}"                  (8)
+<initial-1d-sequence>   ::= <expression> ["," <initial-1d-sequence>]            (8)
+<initial-2d-sequence>   ::= <initial-1d-sequence> [";" <initial-2d-sequence>]   (8)
 
 <init>                  ::= "init" <statements> "end" | "end"
 <statements>            ::= <statement> [<statements>]
@@ -72,47 +74,50 @@ The syntax of the SharkC64 language is as follows
 <primitive-assignment>  ::= <var-name> ":=" <expression> 
 <array-modifiers>       ::= "(array.up)" | "(array.down)"
 
-<if-then-else>          ::= "if" <expression> "then" <statements>               (8)
+<if-then-else>          ::= "if" <expression> "then" <statements>               (9)
                             ["else" <statements>] "end"  
-<while-do>              ::= "while" <expression> "do" <statements> "end"        (8)
+<while-do>              ::= "while" <expression> "do" <statements> "end"        (9)
 <for-do>                ::= <for-to-do> | <for-downto-do> 
-<for-to-do>             ::= "for" <primitive-assignment> "to" <expression>      (9) 
+<for-to-do>             ::= "for" <primitive-assignment> "to" <expression>      (10) 
                             "do" <statements> "end" 
-<for-downto-do>         ::= "for" <primitive-assignment> "downto" <expression>  (9)
+<for-downto-do>         ::= "for" <primitive-assignment> "downto" <expression>  (10)
                             "do" <statements> "end" 
 <function-call>         ::= <function-name> "(" [function-arguments] ")"
-<function-arguments>    ::= <expression> ["," <function-arguments> ]            (10)                                
-<setter-call>           ::= <setter-name> "(" <expression> ")"                  (11)
+<function-arguments>    ::= <expression> ["," <function-arguments> ]            (11)                                
+<setter-call>           ::= <setter-name> "(" <expression> ")"                  (12)
 
 <expression>            ::= <operand> [<rhs-expression>]
 <rhs-expression>        ::= <binary-operator> <unary-expression> [<rhs-expression>]
 <unary-expression>      ::= "(" <expression> ")" | 
                             <unary-operator> <expression> | <operand> 
-<operand>               ::= <BOOLEAN-VALUE> | <BYTE-VALUE> | <WORD-VALUE> |     (12)
-                            <val-name> | <var-name> | <byte-array-element> |  (12)
-                            <function-call>                                     (13)
+<operand>               ::= <BOOLEAN-VALUE> | <BYTE-VALUE> |                    (13)
+                            <WORD-VALUE> | <INT-VALUE>                          (13)
+                            <val-name> | <var-name> | <byte-array-element> |    (13)
+                            <function-call>                                     (14)
 <byte-array-element>    ::= <1d-byte-array-element> | <2d-byte-array-element>
-<1d-byte-array-element> ::= <1d-array-name> "[" <expression> "]"                (14)
-<2d-byte-array-element> ::= <2d-array-name> "[" <expression>, <expression> "]"  (14)
-<binary-operator>       ::= "-" | "+" | "and" | "or" | "xor" |                  (15)
-                            "<=" | "<" | "=" | "<>" | ">=" | ">"                (15) 
-<unary-operator>        ::= "-" | "not" |                                       (15)
-                            "(byte)" | "(byte.lo)" | "(byte.hi)" |              (15)
-                            "(word)" | "(word.lo)" | "(word.hi)"                (15)
+<1d-byte-array-element> ::= <1d-array-name> "[" <expression> "]"                (15)
+<2d-byte-array-element> ::= <2d-array-name> "[" <expression>, <expression> "]"  (15)
+<binary-operator>       ::= "-"  | "+" | "and" | "or" | "xor" |                 (16)
+                            "<=" | "<" | "="   | "<>" | ">="  | ">"             (16) 
+<unary-operator>        ::= "-" | "not" |                                       (16)
+                            "(byte.lo)" | "(byte.hi)" |                         (16)
+                            "(word.lo)" | "(word.hi)" |                         (16)
+                            "(int)" | "(word)"                                  (16)
 
-<val-name>            ::= <name>                                              (16)
-<var-name>              ::= <name>                                              (17)
-<1d-array-name>         ::= <name>                                              (18)
-<2d-array-name>         ::= <name>                                              (19)
-<function-name>         ::= <name> | "." <LABEL>                                (20)
-<setter-name>           ::= <name> | "." <LABEL>                                (21)
+<val-name>              ::= <name>                                              (17)
+<var-name>              ::= <name>                                              (18)
+<1d-array-name>         ::= <name>                                              (19)
+<2d-array-name>         ::= <name>                                              (20)
+<function-name>         ::= <name> | "." <LABEL>                                (21)
+<setter-name>           ::= <name> | "." <LABEL>                                (22)
 <name>                  ::= <LABEL> ["." <LABEL>] 
 
     
-<LABEL>         is a letter followed by a sequence of letters and digits        (22) 
+<LABEL>         is a letter followed by a sequence of letters and digits        (23) 
 <BOOLEAN-VALUE> is a binary truth value {false, true}
 <BYTE-VALUE>    is an 8-bit unsigned value in the range [0..255]    
 <WORD-VAULUE>   is a 16-bit unsigned value in the range [0..65535]
+<INT-VALUE>     is a 16-bit signed value in the range [-32768..32767]
 ```
 
 1. `<LABEL>` must refer to an existing module with that name
@@ -121,23 +126,24 @@ The syntax of the SharkC64 language is as follows
 4. `<type-boolean>` evaluates to a fixed `<BOOLEAN-VALUE>`.
 5. `<type-byte>` evaluates to a fixed `<BYTE-VALUE>`. 
 6. `<type-word>` evaluates to a fixed `<WORD-VALUE>`. 
-7. `expression` must match with the contextual type. 
+7. `<type-int>` evaluates to a fixed `<INT-VALUE>`.
+8. `expression` must match with the contextual type. 
    For instance, if the contextual type is `byte`, the expression must evaluate to a fixed `<BYTE-VALUE>`.
-8. `expression` must be of `<type-boolean>` type.
-9. `primitive-assignment` and `expression` must be of the same `<type-byte>` or `<type-word>` type.
-10. `expression` must be of the same type as corresponding function parameter.
-11. `expression` must be of the same type as corresponding primitive variable for the setter.
-12. `operand` type must match with the contextual type.
-13. `<function-call>` return type must match with the contextual type.
-14. `expression` must be of `<type-byte>` type.
-15. `operator` type must match with the contextual type. 
-16. `<name>` must denote a constant.
-17. `<name>` must denote a variable; not an array.
-18. `<name>` must denote a one dimensional array.
-19. `<name>` must denote a two-dimensional array.
-20. `<name>` or a chained `<LABEL>` must denote a function 
-21. `<name>` or a chained `<LABEL>` must denote a primitive variable
-22. Context may limit possible `<LABEL>` values. For instance, in variable declaration,  
+9. `expression` must be of `<type-boolean>` type.
+10. `primitive-assignment` and `expression` must be of the same numeric type.
+11. `expression` must be of the same type as corresponding function parameter.
+12. `expression` must be of the same type as corresponding primitive variable for the setter.
+13. `operand` type must match with the contextual type.
+14. `<function-call>` return type must match with the contextual type.
+15. `expression` must be of `<type-byte>` type.
+16. `operator` type must match with the contextual type. 
+17. `<name>` must denote a constant.
+18. `<name>` must denote a variable; not an array.
+19. `<name>` must denote a one dimensional array.
+20. `<name>` must denote a two-dimensional array.
+21. `<name>` or a chained `<LABEL>` must denote a function 
+22. `<name>` or a chained `<LABEL>` must denote a primitive variable
+23. Context may limit possible `<LABEL>` values. For instance, in variable declaration,  
     each `<LABEL>` must be unique within the defining scope. Also, a `<LABEL>` denoting a variable
     in an expression must refer to a variable that matches with the contextual type. 
 

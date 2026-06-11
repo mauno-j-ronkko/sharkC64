@@ -39,5 +39,5 @@ The modules form the following dependency graph:
 
 
 Published under MIT License </BR>
-Copyright (C) Mauno Rönkkö, 2023-2025 </BR>
+Copyright (C) Mauno Rönkkö, 2023-2026 </BR>
 See [GitHub pages for the sharkC64 language](https://github.com/mauno-j-ronkko/sharkC64)

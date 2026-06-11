@@ -10,7 +10,7 @@ end
 
 After the `for` keyword there is an initial value assignment.
 The variable in the assignment is used as a loop counter.
-Only `byte` and `word` values variables are accepted as loop counters.
+Any numeric variables are accepted as loop counters, including `int`.
 The initial value is the first value that is used to execute the statement block.
 
 After the initial assignment there is a `to` keyword.

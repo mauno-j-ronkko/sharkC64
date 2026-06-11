@@ -6,7 +6,7 @@
 // on how to program with the sharkC64 language using multiple modules.
 //
 // Published under MIT License
-// Copyright (C) Mauno Rönkkö, 2023-2025
+// Copyright (C) Mauno Rönkkö, 2023-2026
 // See more at: https://github.com/mauno-j-ronkko/sharkC64
 //
 
@@ -14,7 +14,7 @@ module playground
 
     use print
 
-    hide drawTopBorder, drawSideBorder
+    own drawTopBorder, drawSideBorder
     
     fun delay(duration: word)
         var tick : word

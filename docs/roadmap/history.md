@@ -1,5 +1,15 @@
 # Release history
 
+## version 2.4 published on June 11, 2026
+- Breaking change: "hide" is now "own"
+- Breaking change: "data" is now "dat"
+- Breaking change: (word) casts now an int to a word -- not a byte to a word
+- Breaking change: (byte) is removed, use (byte.lo) or (byte.hi) instead
+- Added an integer data type, int
+- Added (int) to cast a word to an integer
+- Enforcing value ranges for byte, word, and int constants
+- Improved autocomplete
+
 ## version 2.3 published on May 26, 2026
 - breaking change: main body is now "init" .. "end"
 - breaking change: function declaration is now "fun" .. "is" ..

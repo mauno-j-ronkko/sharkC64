@@ -8,9 +8,19 @@ A Boolean value can be either `false` or `true`.
 The SharkC64 language recognizes decimal values, hexadecimal values, and binary values.
 Hexadecimal values start with `$`, and binary values start with `%`.
 A number value can be in the range [`$0000` .. `$FFFF`]. 
-The data type of a value bigger than `$FF` is always a `word`.
-The data type of a value in the range [`$00` .. `$FF`] can be either a `byte` or a `word`.
-For such values, the program context defines the exact data type.
+A signed number value can be in the range [`-$8000` .. `$7FFF`].
+The data type of value bigger than `$7FFF` is always a `word`.
+The data type of value bigger than `$FF` can be either a `word` or an `int`.
+The data type of value in the range [`$00` .. `$FF`] can be of any number type.
+The data type of value in the range [`-$8000` .. `-$0001`] is always an `int`.
+When inferring a type, the compiler favours `byte` over other types,
+and `word` over `int`.
+
+> :information_source: &nbsp; Value range overflow is permitted. 
+> So, for instance, a `byte` value cannot be `-1`, 
+> but it is perfectly valid to give an expression `0 - 1`. 
+> That causes an overflow leading to a value `$FF`, 
+> which acts as "-1" for `byte` values.
 
 
 ### Identifiers
@@ -46,25 +56,26 @@ The SharkC64 language supports all standard operators that are also supported by
 Supported operators are listed below. 
 An operator belonging to a higher precedence group in the table binds 
 stronger than an operator belonging to a lower precedence group in the table.
-In the table, (any) means any of the data types `boolean`, `byte` or `word`.
-Also, (operand) means that the result data type is the same as the operand data type. 
+In the table, (any) means any of the data types `boolean`, `byte`, `word`, or `int`.
+Also, (numeric) means any numeric data type `byte`, `word`, or `int`.
+Lastly, (operand) means that the result data type is the same as the operand data type. 
   
 
-| Operator | Description              | Precedence | Arity   | Commutative | Operand type    | Result type |
-|:---------|--------------------------|:-----------|:--------|-------------|:----------------|:------------|
-| `not`    | Logical/bitwise negation | 4          | unary   | no          | (any)           | (operand)   |
-| `-`      | Negation                 | 4          | unary   | no          | `byte`, `word`  | (operand)   |
-| `+`      | Sum                      | 3          | binary  | yes         | `byte`, `word`  | (operand)   |
-| `-`      | Subtraction              | 3          | binary  | no          | `byte`, `word`  | (operand)   |
-| `<`      | Less than                | 2          | binary  | no          | (any)           | `boolean`   |
-| `<=`     | Less or equal to         | 2          | binary  | no          | (any)           | `boolean`   |
-| `=`      | Equal to                 | 2          | binary  | no          | (any)           | `boolean`   |
-| `<>`     | Not equal to             | 2          | binary  | no          | (any)           | `boolean`   |
-| `>=`     | Greater or equal to      | 2          | binary  | no          | (any)           | `boolean`   |
-| `>`      | Greater than             | 2          | binary  | no          | (any)           | `boolean`   |
-| `and`    | Logical/bitwise and      | 1          | binary  | yes         | (any)           | (operand)   |
-| `or`     | Logical/bitwise or       | 0          | binary  | yes         | (any)           | (operand)   |
-| `xor`    | Logical/bitwise xor      | 0          | binary  | yes         | (any)           | (operand)   |
+| Operator | Description              | Precedence | Arity   | Commutative | Operand type | Result type |
+|:---------|--------------------------|:-----------|:--------|-------------|:-------------|:------------|
+| `not`    | Logical/bitwise negation | 4          | unary   | no          | (any)        | (operand)   |
+| `-`      | Negation                 | 4          | unary   | no          | (numeric)    | (operand)   |
+| `+`      | Sum                      | 3          | binary  | yes         | (numeric)    | (operand)   |
+| `-`      | Subtraction              | 3          | binary  | no          | (numeric)    | (operand)   |
+| `<`      | Less than                | 2          | binary  | no          | (any)        | `boolean`   |
+| `<=`     | Less or equal to         | 2          | binary  | no          | (any)        | `boolean`   |
+| `=`      | Equal to                 | 2          | binary  | no          | (any)        | `boolean`   |
+| `<>`     | Not equal to             | 2          | binary  | no          | (any)        | `boolean`   |
+| `>=`     | Greater or equal to      | 2          | binary  | no          | (any)        | `boolean`   |
+| `>`      | Greater than             | 2          | binary  | no          | (any)        | `boolean`   |
+| `and`    | Logical/bitwise and      | 1          | binary  | yes         | (any)        | (operand)   |
+| `or`     | Logical/bitwise or       | 0          | binary  | yes         | (any)        | (operand)   |
+| `xor`    | Logical/bitwise xor      | 0          | binary  | yes         | (any)        | (operand)   |
 
 > :warning: &nbsp; At the moment, multiplication and division are not supported.
 > 
@@ -79,12 +90,12 @@ explicitly by the programmer. For this purpose, there are the following unary op
 
 | Operator    | Description                               | Precedence | Operand type | Result type |
 |:------------|-------------------------------------------|:-----------|:-------------|:------------|
-| `(byte)`    | Cast low byte of `word` value to `byte`   | 4          | `word`       | `byte`      |
 | `(byte.lo)` | Cast low byte of `word` value to `byte`   | 4          | `word`       | `byte`      |
 | `(byte.hi)` | Cast high byte of `word` value to `byte`  | 4          | `word`       | `byte`      |
-| `(word)`    | Cast `byte` value to low value of `word`  | 4          | `byte`       | `word`      |
 | `(word.lo)` | Cast `byte` value to low value of `word`  | 4          | `byte`       | `word`      |
 | `(word.hi)` | Cast `byte` value to high value of `word` | 4          | `byte`       | `word`      |
+| `(word)`    | Cast `int` value to `word`                | 4          | `int`        | `word`      |
+| `(int)`     | Cast `word` value to `int`                | 4          | `word`       | `int`       |
 
 
 ### Evaluation order
