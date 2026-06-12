@@ -1,6 +1,6 @@
 [
   {
     "name": "pingpong",
-    "description": "A classic breakout-like game for the Commodore 64"
+    "description": "A classic breakout-like game demonstrating access to screen memory"
   }
 ]
