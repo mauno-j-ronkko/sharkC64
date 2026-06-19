@@ -1,0 +1,68 @@
+//
+// example13
+// An example illustrating the use of the sprite editor.
+// This example shows how sprites designed with the sprite editor are
+// integrated into a program.
+//
+// Instructions:
+// 1) make a persistent project: File > Persiste Project
+// 2) download color module: Help > Download example > color
+// 3) open sprite editor with name example13sprites: Designer > Sprite Editor > example13sprites
+// 4) draw a sprite as firstSprite
+// 5) run the project: Compiler > Run Project
+//
+
+module example13
+
+    use color, example13sprites
+    
+    var backgroundColor : byte at $D021
+
+        spriteEnable : byte at $D015
+        spriteIndex  : byte at $07F8
+        spriteColor  : byte at $D027
+        spriteHighX  : byte at $D010
+        spriteX      : byte at $D000
+        spriteY      : byte at $D001
+
+        x, dx : word 
+        y, dy : byte
+    
+        
+    fun sync() 
+        var highX : byte
+        is  if x > 255 then highX := spriteHighX or $01 else highX := spriteHighX and $FE end
+            spriteY := y
+            spriteX := (byte.lo)x
+            spriteHighX := highX
+        
+    fun move() is
+        x := x + dx
+        y := y + dy
+        if x < 25 or x > 322 then dx := -dx end
+        if y < 51 or y > 228 then dy := -dy end  
+    
+    
+    fun delay() 
+        var i : byte
+        is  for i := 0 to 255 do end
+    
+    
+    fun animate() is
+        while true do move(); sync(); delay() end
+    
+    
+init
+    backgroundColor := color.black
+
+    spriteIndex := example13sprites.firstSprite
+    spriteColor := color.yellow
+    x := 170
+    y := 140
+    dx := 1
+    dy := 1
+
+    spriteEnable := 1
+
+    animate()
+end

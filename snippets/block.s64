@@ -1,0 +1,45 @@
+//
+// block
+// This module draws a block on the screen and provides functions
+// for erasing sides of the block from the screen.
+//
+
+module block
+    use color, screen
+
+    val backgroundColor := color.black
+        topColor        := color.lightGray
+        colorBits       := $0F
+        char            := 160
+        width           := 12
+        height          := 7
+
+
+    fun drawBlock(left: byte, top: byte, color: byte)
+        var row, column, right, bottom : byte
+        is  right := left + width
+            bottom := top + height
+            for row := top to bottom do
+                for column := left to right do
+                    if (screen.color[row, column] and colorBits) < color then
+                        screen.color[row, column] := color
+                    end
+                end
+            end
+
+    fun erase(column: byte, row: byte, color: byte) is
+        if (screen.color[row, column] and colorBits) = color then
+            screen.color[row, column] := backgroundColor
+        end
+
+    fun eraseColumn(column: byte, top: byte, color: byte)
+        var row, bottom : byte
+        is  bottom := top + height
+            for row := top to bottom do erase(column, row, color) end
+
+    fun eraseRow(left: byte, row: byte, color: byte)
+        var column, right : byte
+        is  right := left + width
+            for column := left to right do erase(column, row, color) end
+
+end

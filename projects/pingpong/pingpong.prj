@@ -17,9 +17,7 @@
         "tiles"
     ],
     "tabs": [
-        "bat",
-        "sound",
-        "tile"
+        "pingpong"
     ],
     "focus": "tile"
 }

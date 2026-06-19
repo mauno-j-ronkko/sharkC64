@@ -1,0 +1,26 @@
+//
+// example09
+// An example that refers to color module for color values.
+// This example paints the words "commodore" and "basic" with other colors.
+//
+
+module example09
+    use color
+
+    val columns := 40
+
+    var line : byte[columns] at $D800 + (word.lo)columns
+        i    : byte
+
+    fun paintCommodore() is
+        i := 9
+        while i<18 do line[i] := color.lightGreen; i := i + 1 end
+
+    fun paintBasic() is
+        i := 22
+        while i<27 do line[i] := color.lightRed; i := i + 1 end
+
+init
+    paintCommodore()
+    paintBasic()
+end
