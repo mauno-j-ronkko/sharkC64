@@ -1,6 +1,0 @@
-module example01
-
-    var letterA : byte := $01
-        screenCorner : byte at $400 := letterA
-
-end
