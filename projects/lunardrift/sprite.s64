@@ -1,0 +1,72 @@
+//
+// sprite
+// Sprite manipulation functions.
+//
+// This module is part of the lunardrift example. It is provided as a tutorial
+// on how to program with the sharkC64 language using multiple modules and sprites.
+//
+// Published under MIT License
+// Copyright (C) Mauno Rönkkö, 2023-2026
+// See more at: https://github.com/mauno-j-ronkko/sharkC64
+//
+
+module sprite
+
+    use sprites
+    
+    own bit, mask, indexInLocations, 
+        enable, collision, images, colors, msb, locations,
+        enableReg, collisionReg, imagesReg, colorsReg, msbReg, locationsReg
+         
+    var index :  byte
+        
+        bit              := {$01, $02, $04, $08, $10, $20, $40, $80}
+        mask             := {$FE, $FD, $FB, $F7, $EF, $ED, $EB, $E7}
+        indexInLocations := {0, 2, 4, 6, 8, 10, 12, 14}
+    
+        enable, collision : byte
+        images            : byte[8]
+        colors            : byte[8]
+        locations         : byte[16]
+        msb               : byte
+        enableReg         : byte at $D015
+        collisionReg      : byte at $D01F
+        imagesReg         : byte[8] at $07F8
+        colorsReg         : byte[8] at $D027
+        msbReg            : byte at $D010
+        locationsReg      : byte[16] at $D000
+
+    fun update() is
+        imagesReg := images
+        colorsReg := colors
+        msbReg := msb
+        locationsReg := locations
+        enableReg := enable
+        collision := collisionReg
+    
+    fun hasCollided(): boolean is
+        hasCollided := (collision and bit[index]) <> 0
+            
+    fun show(state: boolean) is
+        if state then
+            enable := enable or bit[index] 
+        else
+            enable := enable and mask[index]
+        end
+
+    fun image(imageIndex: byte) is
+        images[index] := imageIndex
+    
+    fun color(color: byte) is
+        colors[index] := color
+        
+    fun set(x: word, y: byte) 
+        var high          : byte
+            locationIndex : byte
+        is  if x > 255 then high := bit[index] else high := 0 end
+            msb := msb and mask[index] or high
+            locationIndex := indexInLocations[index]
+            locations[locationIndex] := (byte.lo)x
+            locations[locationIndex + 1] := y
+
+end

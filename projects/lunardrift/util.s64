@@ -1,0 +1,20 @@
+//
+// util
+// Utility functions.
+//
+// This module is part of the lunardrift example. It is provided as a tutorial
+// on how to program with the sharkC64 language using multiple modules and sprites.
+//
+// Published under MIT License
+// Copyright (C) Mauno Rönkkö, 2023-2026
+// See more at: https://github.com/mauno-j-ronkko/sharkC64
+//
+
+module util
+
+    fun delay(duration: word)
+        var tick : word
+        is  for tick := 0 to duration do end
+
+
+end

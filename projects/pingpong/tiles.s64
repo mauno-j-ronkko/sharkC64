@@ -13,7 +13,7 @@
 module tiles
 
     use tile
-    
+
     own maxIndex, remaining, row, column, color, exit, setTile
 
     val maxIndex := 53

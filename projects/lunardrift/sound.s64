@@ -1,0 +1,63 @@
+//
+// sound
+// Sound effects.
+//
+// This module is part of the lunardrift example. It is provided as a tutorial
+// on how to program with the sharkC64 language using multiple modules and sprites.
+//
+// Published under MIT License
+// Copyright (C) Mauno Rönkkö, 2023-2026
+// See more at: https://github.com/mauno-j-ronkko/sharkC64
+//
+
+module sound
+
+    own noiseOn, noiseOff, volume
+
+    val noiseOn  := $81
+        noiseOff := $80
+
+    var volume : byte at $D418
+
+    fun reset()
+        var voice1          : byte[7] at $D400
+            voice2          : byte[7] at $D407
+            voice3          : byte[7] at $D40E
+            resetMainThrust := { $FF, $08, // Sound frequency
+                                 $00, $00, // Pulse width
+                                 $00,      // Waveform to no sound
+                                 $9A,      // Attack/decay
+                                 $00 }     // Sustain/Release
+            resetThrust     := { $FF, $FF, // Sound frequency
+                                 $00, $00, // Pulse width
+                                 $00,      // Waveform to no sound
+                                 $9A,      // Attack/decay
+                                 $00 }     // Sustain/Release
+            resetExplosion  := { $FF, $00, // Sound frequency
+                                 $00, $00, // Pulse width
+                                 $00,      // Waveform to no sound
+                                 $4B,      // Attack/decay
+                                 $00 }     // Sustain/Release
+        is  voice1 := resetMainThrust
+            voice2 := resetThrust
+            voice3 := resetExplosion
+
+    fun playMainThrust()
+        var voice1Waveform : byte at $D404
+        is  voice1Waveform := noiseOff
+            voice1Waveform := noiseOn
+            volume := 6
+
+    fun playThrust()
+        var voice2Waveform : byte at $D40B
+        is  voice2Waveform := noiseOff
+            voice2Waveform := noiseOn
+            volume := 2
+
+    fun playExplosion()
+        var voice3Waveform : byte at $D412
+        is  voice3Waveform := noiseOff
+            voice3Waveform := noiseOn
+            volume := 12
+
+end

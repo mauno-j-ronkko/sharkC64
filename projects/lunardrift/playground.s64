@@ -1,0 +1,61 @@
+//
+// playground
+// Playground drawing functions.
+//
+// This module is part of the lunardrift example. It is provided as a tutorial
+// on how to program with the sharkC64 language using multiple modules and sprites.
+//
+// Published under MIT License
+// Copyright (C) Mauno Rönkkö, 2023-2026
+// See more at: https://github.com/mauno-j-ronkko/sharkC64
+//
+
+module playground
+
+    use print
+
+    own maxBlop, maxBar, block,
+        blopRow, blopCol, barRow, barFirst, batLast,
+        drawBars, drawColumn, drawBlop, drawBlops
+
+    val maxBlop := 9
+        maxBar  := 3
+        block   := 160
+
+    var blopRow  := {1,  1,   8, 11, 16, 16, 18, 18, 23, 23}
+        blopCol  := {11, 36, 26, 15, 7,  36, 20, 36, 1,  32}
+        barRow   := {0,  10, 18, 24}
+        barFirst := {0,  1,  7,  1}
+        barLast  := {39, 30, 39, 34}
+
+    fun drawBars()
+        var i : byte
+        is  for i := 0 to maxBar do
+            print.atRow(barRow[i])
+            for print.atColumn := barFirst[i] to barLast[i] do print.set() end
+        end
+
+    fun drawColumn(column : byte) is
+        print.atColumn(column)
+        for print.atRow := 1 to screen.lastRow do print.set() end
+
+    fun drawBlop(row: byte, column: byte) is
+        if screen.char[row, column] = print.blankChar then
+            print.atRow(row).atColumn(column).one(233).one(block).one(223)
+        end
+        if screen.char[row + 1, column] = print.blankChar then
+            print.atRow(row + 1).atColumn(column).one(95).one(block).one(105)
+        end
+
+    fun drawBlops()
+        var i : byte
+        is  for i := 0 to maxBlop do drawBlop(blopRow[i], blopCol[i]) end
+
+    fun reset()
+        is  screen.withBackground(color.black).withBorder(color.black)
+            print.clear().withChar(block).withColor(color.brown)
+            drawBars()
+            drawColumn(0).drawColumn(screen.lastColumn)
+            drawBlops()
+
+end

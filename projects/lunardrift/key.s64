@@ -1,0 +1,29 @@
+//
+// key
+// Key press reader.
+//
+// This module is part of the lunardrift example. It is provided as a tutorial
+// on how to program with the sharkC64 language using multiple modules and sprites.
+//
+// Published under MIT License
+// Copyright (C) Mauno Rönkkö, 2023-2026
+// See more at: https://github.com/mauno-j-ronkko/sharkC64
+//
+
+module key
+
+    val codeA     := 10
+        codeL     := 42
+        codeSpace := 60
+        codeNone  := 64
+
+    fun read() : byte
+        var pressed  : byte at $C5
+            queued   : byte at $C6
+            released := true
+        is  read := codeNone
+            if pressed <> codeNone and released then read := pressed end
+            released := pressed = codeNone
+            queued := 0
+
+end

@@ -1,0 +1,40 @@
+//
+// lunardrift
+// Lunar Drift main module.
+//
+// This module is part of the lunardrift example. It is provided as a tutorial
+// on how to program with the sharkC64 language using multiple modules and sprites.
+//
+// Published under MIT License
+// Copyright (C) Mauno Rönkkö, 2023-2026
+// See more at: https://github.com/mauno-j-ronkko/sharkC64
+//
+
+module lunardrift
+
+    use playground, ship, key
+    
+    own control, play
+
+    fun control(pressed: byte) is
+        if pressed = key.codeSpace then ship.thrustDown() end
+        if pressed = key.codeA then ship.thrustLeft() end
+        if pressed = key.codeL then ship.thrustRight() end
+
+    fun play() is
+        while not (ship.reachedGoal() or ship.hasCollided()) do
+            control(key.read())
+            ship.move().draw()
+            util.delay(100)
+        end
+        if ship.hasCollided() then  end
+        ship.terminate()
+
+
+init
+    playground.reset()
+    sound.reset()
+    ship.reset()
+    ship.draw()
+    play()
+end

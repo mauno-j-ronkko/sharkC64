@@ -1,0 +1,32 @@
+//
+// explosion
+// Explosion animation.
+//
+// This module is part of the lunardrift example. It is provided as a tutorial
+// on how to program with the sharkC64 language using multiple modules and sprites.
+//
+// Published under MIT License
+// Copyright (C) Mauno Rönkkö, 2023-2026
+// See more at: https://github.com/mauno-j-ronkko/sharkC64
+//
+
+module explosion
+
+    use sprite, util
+
+    own id
+
+    val id := 0
+
+    fun show(x: word, y: byte)
+        var i : byte
+        is  sprite.index(id).image(sprites.cloud1).color(color.yellow).show(true)
+            for i := 0 to 8 do
+                if (i and 1) = 0 then sprite.image(sprites.cloud1) else sprite.image(sprites.cloud2) end
+                sprite.update()
+                util.delay(3000)
+            end
+            sprite.index(id).show(false).update()
+
+
+end

@@ -1,6 +1,6 @@
 # List of examples
 
-The following examples illustrate the use of the SharkC64 language.
+The following code snippets illustrate the use of specific SharkC64 language features.
 
 | Name                                           | How to ...                                    | Added  |
 |------------------------------------------------|-----------------------------------------------|--------|
@@ -26,7 +26,8 @@ The following examples illustrate the use of the SharkC64 language.
 | [example14](../../../examples/example14.s64)   | use int variables                             | 2.3    |                                                |                                              |        |
 
 
-The modules above use the following utility modules.
+The code snippets above use the following utility modules that can be downloaded
+along the code snippets.
 
 | Name                                | Purpose                     | Used by              |
 |-------------------------------------|-----------------------------|----------------------|

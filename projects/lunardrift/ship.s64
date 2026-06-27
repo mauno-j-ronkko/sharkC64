@@ -1,0 +1,96 @@
+//
+// ship
+// Ship manipulation functions.
+//
+// This module is part of the lunardrift example. It is provided as a tutorial
+// on how to program with the sharkC64 language using multiple modules and sprites.
+//
+// Published under MIT License
+// Copyright (C) Mauno Rönkkö, 2023-2026
+// See more at: https://github.com/mauno-j-ronkko/sharkC64
+//
+
+module ship
+
+    use thrusters, explosion, sound
+    
+    own dUpper, dLower, vUpper, vLower, idShip,
+        vX, vY, dX, dY, x, y,
+        gForce, moveY, moveX
+    
+    val dUpper  : int := 300
+        dLower  : int := -300
+        vUpper  : int := 128
+        vLower  : int := -128
+        idShip        := 0
+
+    var vX, vY, dX, dY : int
+        x, y           : word
+
+    fun gForce()
+        var tick : byte 
+        is  tick := tick + 1
+            if tick > 15 then
+                tick := 0
+                if vY < vUpper then vY := vY + 1 end
+            end
+
+    fun moveY() is
+        dY := dY + vY
+        if dY < dLower then dY := dY - dLower; y := y - 1 end
+        if dUpper < dY then dY := dY - dUpper; y := y + 1 end
+
+    fun moveX() is
+        dX := dX + vX
+        if dX < dLower then dX := dX - dLower; x := x - 1 end
+        if dUpper < dX then dX := dX - dUpper; x := x + 1 end
+
+
+
+    fun reset() is
+        vX(0).vY(0).dX(0).dY(0).x(40).y(70)
+        sprite.index(idShip).image(sprites.ship).color(color.white).show(true)
+        thrusters.reset()
+
+    fun hasCollided(): boolean is
+        sprite.index(idShip)
+        hasCollided := sprite.hasCollided()
+    
+    fun reachedGoal(): boolean is
+        reachedGoal := y > 228
+        
+    fun thrustDown() is
+        if vLower < vY then vY := vY - 10 end
+        thrusters.fireDown()
+        sound.playMainThrust()
+
+    fun thrustRight() is
+        if vLower < vX then vX := vX - 5 end
+        thrusters.fireRight()
+        sound.playThrust()
+
+    fun thrustLeft() is
+        if vX < vUpper then vX := vX + 5 end
+        thrusters.fireLeft()
+        sound.playThrust()
+        
+    fun move() is
+        gForce().moveY().moveX()
+        thrusters.burn()
+        
+    fun draw() 
+        var bY : byte
+        is  bY := (byte.lo)y
+            sprite.index(idShip).set(x, bY)
+            thrusters.draw(x, bY)
+            sprite.update()
+
+    fun terminate() is
+        sprite.index(idShip).show(false)
+        thrusters.hide()
+        if hasCollided() then 
+            sound.playExplosion()
+            explosion.show(x, (byte.lo)y) 
+        end
+        
+end

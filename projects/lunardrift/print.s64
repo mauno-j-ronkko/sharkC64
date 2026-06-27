@@ -1,0 +1,46 @@
+//
+// print
+// Print functions.
+//
+// This module is part of the lunardrift example. It is provided as a tutorial
+// on how to program with the sharkC64 language using multiple modules and sprites.
+//
+// Published under MIT License
+// Copyright (C) Mauno Rönkkö, 2023-2026
+// See more at: https://github.com/mauno-j-ronkko/sharkC64
+//
+
+module print
+
+    use screen, color
+
+    val blankChar := 32
+
+    var atRow, atColumn : byte
+        withChar, withColor : byte
+
+    fun home() is
+        atRow := 0; atColumn := 0
+
+    fun set() is
+        screen.char[atRow, atColumn] := withChar
+        screen.color[atRow, atColumn] := withColor
+
+    fun one(withChar: byte) is
+        print.withChar := withChar
+        set()
+        atColumn := atColumn + 1
+        if atColumn >= screen.columns then
+            atColumn := 0
+            atRow := atRow + 1
+            if atRow >= screen.rows then atRow := 0 end
+        end
+
+    fun clear() is
+        withChar := blankChar
+        for atRow :=0 to screen.lastRow do
+            for atColumn := 0 to screen.lastColumn do set() end
+        end
+        home()
+
+end

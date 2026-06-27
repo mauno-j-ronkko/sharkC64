@@ -1,0 +1,53 @@
+//
+// thrusters
+// Thruster animation functions.
+//
+// This module is part of the lunardrift example. It is provided as a tutorial
+// on how to program with the sharkC64 language using multiple modules and sprites.
+//
+// Published under MIT License
+// Copyright (C) Mauno Rönkkö, 2023-2026
+// See more at: https://github.com/mauno-j-ronkko/sharkC64
+//
+
+module thrusters
+
+    use sprite
+
+    own idDown, idLeft, idRight,
+        stDown, stLeft, stRight
+
+    val idDown    := 1
+        idLeft  := 2
+        idRight := 3
+
+    var stDown, stLeft, stRight : byte
+
+    fun reset() is
+        sprite.index(idLeft).image(sprites.leftThrust).color(color.gray)
+        sprite.index(idRight).image(sprites.rightThrust).color(color.gray)
+        sprite.index(idDown).image(sprites.downThrust).color(color.yellow)
+
+    fun fireDown() is stDown := 40
+    fun fireLeft() is stLeft := 40
+    fun fireRight() is stRight := 40
+
+    fun burnsDown(): boolean is burnsDown := stDown > 0
+    fun burnsLeft(): boolean is burnsLeft := stLeft > 0
+    fun burnsRight(): boolean is burnsRight := stRight > 0
+
+    fun burn() is
+        if burnsDown() then stDown := stDown - 1 end
+        if burnsLeft() then stLeft := stLeft - 1 end
+        if burnsRight() then stRight := stRight - 1 end
+
+    fun draw(x: word, y: byte) is
+            sprite.index(idDown).set(x, y + 7).show(stDown > 0)
+            sprite.index(idLeft).set(x - 6, y).show(stLeft > 0)
+            sprite.index(idRight).set(x + 6, y).show(stRight > 0)
+
+    fun hide() is
+         sprite.index(idDown).show(false)
+         sprite.index(idLeft).show(false)
+         sprite.index(idRight).show(false)
+end
