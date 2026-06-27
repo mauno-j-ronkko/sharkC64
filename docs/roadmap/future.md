@@ -1,7 +1,7 @@
 # Future plans
 
 ### Next release
-- Adding a new example project with sprites
+- Improving the project view 
 
 ### Backlog
 - Support for screen designs

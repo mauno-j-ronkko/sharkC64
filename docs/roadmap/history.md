@@ -1,5 +1,11 @@
 # Release history
 
+## version 2.4.1 published June 27, 2026
+- Added downloading of reference projects
+- Refined find/replace text fields
+- Optimized compiler to ignore unused functions, arrays, and variables
+- Showing program statistics after successful compilation
+
 ## version 2.4 published on June 11, 2026
 - Breaking change: "hide" is now "own"
 - Breaking change: "data" is now "dat"
