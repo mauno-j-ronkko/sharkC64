@@ -25,7 +25,7 @@ SharkC64 provides also entire reference projects to download and experiment with
 Each project consists of several modules.
 
 To download a reference project, select "Download Reference Project..." from the Help menu. 
-When you select it, a dialog is shown that lets you select the project to be downloaded. 
+When you select it, a dialog is shown that lets you select the project to be downloaded.
 
 ![Example project download dialog](../../images/dialog/download-project.png)
 

@@ -1,6 +1,16 @@
-# List of examples
+# List of reference projects and examples
 
-The following code snippets illustrate the use of specific SharkC64 language features.
+Below is the list of available reference projects for SharkC64.
+You can download a reference project by selecting "Download Reference Project..." from the Help menu.
+
+| Name       | Description                                                         | Added |
+|------------|---------------------------------------------------------------------|-------|
+| pingpong   | A classic breakout-like game demonstrating access to screen memory. | 1.0   |
+| lunardrift | A classic lander-like game demonstrating use of sprites.            | 2.4.1 |
+
+There are also short example code snippets available.
+Below is a lost of the code snippets illustrating the use of specific SharkC64 language features.
+You can download an example code snippet by seleting the "Download Example..." item from the Help menu.
 
 | Name                                           | How to ...                                    | Added  |
 |------------------------------------------------|-----------------------------------------------|--------|

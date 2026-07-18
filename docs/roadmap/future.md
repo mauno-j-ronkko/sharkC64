@@ -1,7 +1,7 @@
 # Future plans
 
 ### Next release
-- Improving the project view 
+- Improving more the project view 
 
 ### Backlog
 - Support for screen designs

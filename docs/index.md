@@ -49,7 +49,7 @@ The SharkC64 IDE is published under MIT license.
    2. Working with Examples
       1. [Downloading an example](ide/examples/download-example.md)
       2. [Running a downloaded example](ide/examples/run-example.md)
-      3. [List of examples](ide/examples/examples.md)
+      3. [List of reference projects and examples](ide/examples/examples.md)
    3. Working with Projects
       1. [Creating a new project](ide/projects/new-project.md)
       2. [Persisting a transient project](ide/projects/persist-project.md)

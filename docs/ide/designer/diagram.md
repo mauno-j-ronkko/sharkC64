@@ -7,7 +7,7 @@ You can open a module dependency diagram for a persisted project from the design
 To open the module dependency diagram for a persisted project, select the "Module Diagram" item.
 It first builds the entire project and then opens a dependency diagram based on the built information.
 The diagram is shown in the Editor view. 
-For instance, for the pingpong project, the module dependency diagram looks like this.
+For instance, for the lunardrift project, the module dependency diagram looks like this.
 
 ![Module dependency diagram](../../images/diagram/dependency-diagram.png)
 
@@ -27,9 +27,9 @@ This information helps in refining the implementation to minimize unwanted depen
 
 If you click an element in a highlighted module in the diagram, the corresponding module
 is opened in the editor with the element selected. For instance, in the image above,
-if you click the onPlayground element, it is shown in the editor.
+if you click the thrustDown element, it is shown in the editor.
 
-![Editor with select element](../../images/diagram/editor-onplayground.png)
+![Editor with select element](../../images/diagram/editor-thrustdown.png)
 
 
 

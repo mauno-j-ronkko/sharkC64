@@ -1,10 +1,17 @@
 # Release history
 
+## version 2.4.2 published July 18, 2026
+- Added artifact section to project tab in explorer view
+- Fixed issue with sprite synchronization
+- Breaking change: sprites are always stored into a module called "sprites"
+- Added artifact filter to module diagram
+
 ## version 2.4.1 published June 27, 2026
 - Added downloading of reference projects
 - Refined find/replace text fields
 - Optimized compiler to ignore unused functions, arrays, and variables
 - Showing program statistics after successful compilation
+- Added reference project: Lunar Drift
 
 ## version 2.4 published on June 11, 2026
 - Breaking change: "hide" is now "own"

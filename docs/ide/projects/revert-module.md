@@ -7,7 +7,7 @@ when you opened it. This can be done from the File menu.
 
 When you have changes in a module, the status bar indicates that with the state "Modified".
 
-![Some changes in a module](../../images/project/some-changes-in-module.png)
+![Some changes in a module](../../images/project/changes-in-module.png)
 
 To revert all the changes in a module, select the "Revert" item from the File menu.
 Then, a dialog is opened to confirm the revert action.

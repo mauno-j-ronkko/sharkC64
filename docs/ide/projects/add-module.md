@@ -11,7 +11,7 @@ The name must start with a letter, and it can contain only letters and numbers.
 ![New module dialog](../../images/dialog/new-module.png)
 
 Once, you give a valid module name, the module is created and added to the project.
-It shows in Project tab, in the explorer view. The new module is also opened in the editor view.
+It shows in Project tab, in the modules sections of the explorer view. The new module is also opened in the editor view.
 
 ![New module in the project](../../images/project/new-module.png)
 
