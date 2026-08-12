@@ -1,1 +1,1 @@
-{"mainModule":"lunardrift","modules":["color","explosion","key","lunardrift","playground","print","screen","ship","sound","sprite","sprites","thrusters","util"],"tabs":["lunardrift"],"focus":"lunardrift","hasSprites":true}
+{"mainModule":"lunardrift","modules":["color","explosion","key","lunardrift","playground","print","screen","ship","sound","sprite","sprites","thrusters","util"],"libModules":["color","print","screen","sprite"],"tabs":["lunardrift"],"focus":"lunardrift","hasSprites":true}
