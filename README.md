@@ -1,7 +1,7 @@
 # sharkC64
 
 SharkC64 is a programming language for the Commodore 64
-with a Nordic flavor. 
+with a Nordic flavor.
 It comes bundled with a compiler and an integrated development environment.
 It is published under [MIT License](LICENSE).
 
