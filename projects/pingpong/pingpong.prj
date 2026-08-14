@@ -1,1 +1,1 @@
-{"mainModule":"pingpong","modules":["ball","bat","collision","color","flash","key","pingpong","playground","print","score","screen","sound","tile","tiles"],"libModules":["color","print","screen"],"tabs":["pingpong"],"focus":"pingpong"}
+{"mainModule":"pingpong","modules":["ball","bat","collision","color","flash","key","pingpong","playground","print","score","screen","sound","tile","tiles"],"libraries":["color","print","screen"],"tabs":["pingpong"],"focus":"pingpong"}
