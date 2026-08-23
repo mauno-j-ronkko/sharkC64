@@ -1,5 +1,13 @@
 # Release history
 
+## version 2.4.3 published August 23, 2026
+- Added library section to project tab in explorer view
+- Added downloading and importing of libraries
+- Added libraries to module diagram
+- Renamed artifacts section in project tab as assets
+- Improved term recognition in "Jump to" action
+- Fixed bug when adding sprites to a project
+
 ## version 2.4.2 published July 18, 2026
 - Added artifact section to project tab in explorer view
 - Fixed issue with sprite synchronization

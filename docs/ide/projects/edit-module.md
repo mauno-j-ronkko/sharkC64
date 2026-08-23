@@ -39,17 +39,19 @@ You can replace the highlighted instance by clicking the "one" button.
 You can replace all the text instances by clicking the "all" button.
 You can close the entire replacement panel by clicking the cross button next to the "all" button.
 
+Note that you cannot replace items in a library module, such as the "screen" module in the image above.
+
 
 ## Jumping in source code
 
 Suppose you have cursor placed in a module source code over a term,
-like `block.height`, as in the image below.
+like `color.yellow`, as in the image below.
 
 ![Jump source module](../../images/editor/jump-source.png)
 
 If you then select the menu item "Jump To...", the SharkC64 IDE
-will automatically open the module `block` and locate the
-first occurrence of the term `height` in it.
+will automatically open the module `color` and locate the
+first occurrence of the term `yellow` in it.
 
 ![Jump target module](../../images/editor/jump-target.png)
 

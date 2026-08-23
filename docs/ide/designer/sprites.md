@@ -5,7 +5,7 @@ You can open the sprite editor for a persisted project from the designer menu.
 ![Designer menu](../../images/menu/designer.png)
 
 All sprites are always stored into a module called "sprites".
-It is an artifact module and shown among artifacts in the project tab.
+It is an asset module and shown among assets in the project tab.
 When you open the sprite editor for the first time in a project,
 the module is created automatically and a sprite editor shown in the editor view.
 

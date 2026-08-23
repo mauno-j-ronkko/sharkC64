@@ -3,6 +3,11 @@
 // An example illustrating data section.
 // This example shows how to define bitmaps for sprites using a data section.
 //
+// Instructions:
+// 1) make a persistent project: File > Persist Project
+// 2) download color module: Help > Download Reference Library
+// 3) run the project: Compiler > Run Project
+//
 
 module example12
 

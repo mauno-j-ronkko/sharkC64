@@ -6,7 +6,7 @@
 //
 // Instructions:
 // 1) make a persistent project: File > Persist Project
-// 2) download color module: Help > Download example > color
+// 2) download color module: Help > Download Reference Library > color
 // 3) open sprite editor : Designer > Sprite Editor
 // 4) draw a sprite as firstSprite
 // 5) run the project: Compiler > Run Project

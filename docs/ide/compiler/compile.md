@@ -15,7 +15,7 @@ You can locate the error in the source code by clicking it in the Compiler tab.
 
 After correcting all the errors, the Compiler tab shows a successful compilation result.
 
-![Corrected module](../../images/project/corrected-module.png)
+![Corrected module](../../images/project/built-result.png)
 
 It should be noted that the compilation does create any executable program.
 It merely compiles the active module to check, if it contains any errors.

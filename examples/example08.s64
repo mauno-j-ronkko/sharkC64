@@ -3,6 +3,11 @@
 // An example that refers to color module for color values.
 // This example paints the words "commodore" and "basic" with other colors.
 //
+// Instructions:
+// 1) make a persistent project: File > Persist Project
+// 2) download color module: Help > Download Reference Library > color
+// 3) run the project: Compiler > Run Project
+//
 
 module example08
     use color

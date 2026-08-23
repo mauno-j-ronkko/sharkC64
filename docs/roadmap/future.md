@@ -1,7 +1,7 @@
 # Future plans
 
 ### Next release
-- Improving more the project view 
+- Pointer data type 
 
 ### Backlog
 - Support for screen designs

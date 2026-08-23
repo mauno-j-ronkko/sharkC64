@@ -10,7 +10,7 @@ either from the Project tab or from the editor view.
 ![Module selected](../../images/project/new-module.png)
 
 Then, select the "Delete" item from the File menu.
-It opens a dialog asking fi you want to move the module to trash.
+It opens a dialog asking if you want to move the module to trash.
 
 ![Trash a module](../../images/dialog/trash-module.png)
 

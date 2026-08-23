@@ -82,13 +82,5 @@
   {
     "name": "block",
     "description": "Util module for drawing a block on the screen - used by example11b"
-  },
-  {
-    "name": "color",
-    "description": "Util module for defining color constants - used by example08, example09 and others"
-  },
-  {
-    "name": "screen",
-    "description": "Util module for defining screen memory access - used by example11b"
   }
 ]

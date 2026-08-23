@@ -1,16 +1,28 @@
-# List of reference projects and examples
+# List of reference projects, reference libraries, and examples
 
 Below is the list of available reference projects for SharkC64.
-You can download a reference project by selecting "Download Reference Project..." from the Help menu.
+You can download a reference project by selecting "Download Reference Project..." from Help menu.
 
 | Name       | Description                                                         | Added |
 |------------|---------------------------------------------------------------------|-------|
 | pingpong   | A classic breakout-like game demonstrating access to screen memory. | 1.0   |
 | lunardrift | A classic lander-like game demonstrating use of sprites.            | 2.4.1 |
 
+There are also reference library modules that are used by reference projects or examples.
+You can download a reference library to a persisted project by selecting 
+"Download Reference Library..." from Help menu.
+
+| Name                                    | Contains             | Added |
+|-----------------------------------------|----------------------|-------|
+| [color](../../../libraries/color.s64)   | color constants      | 2.4.3 |
+| [print](../../../libraries/print.s64)   | prinit functions     | 2.4.3 |
+| [screen](../../../libraries/screen.s64) | Screen memory access | 2.4.3 |
+| [sprite](../../../libraries/sprite.s64) | Sprite functions     | 2.4.3 |
+
+
 There are also short example code snippets available.
 Below is a lost of the code snippets illustrating the use of specific SharkC64 language features.
-You can download an example code snippet by seleting the "Download Example..." item from the Help menu.
+You can download an example code snippet by selecting "Download Example..." from Help menu.
 
 | Name                                           | How to ...                                    | Added  |
 |------------------------------------------------|-----------------------------------------------|--------|
@@ -36,14 +48,6 @@ You can download an example code snippet by seleting the "Download Example..." i
 | [example14](../../../examples/example14.s64)   | use int variables                             | 2.3    |                                                |                                              |        |
 
 
-The code snippets above use the following utility modules that can be downloaded
-along the code snippets.
-
-| Name                                | Purpose                     | Used by              |
-|-------------------------------------|-----------------------------|----------------------|
-| [block](../../../examples/block.s64)   | draws a block on the screen | example11b           |
-| [color](../../../examples/color.s64)   | defines color constants     | example8,9,11b,13,14 |
-| [screen](../../../examples/screen.s64) | screen memory access        | example11b,14        |
 
 
 <br /><br />

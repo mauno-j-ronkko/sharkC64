@@ -9,21 +9,21 @@ It first builds the entire project and then opens a dependency diagram based on 
 The diagram is shown in the Editor view. 
 For instance, for the lunardrift project, the module dependency diagram looks like this.
 
-![Module dependency diagram](../../images/diagram/dependency-diagram.png)
+![Module dependency diagram](../../images/diagram/diagram.png)
 
 You can click which details you wish to see in the diagram with the checkboxes. 
 The diagram is updated immediately with your choice.
 
-![Dependency diagram with details](../../images/diagram/dependency-diagram-with-details.png)
+![Dependency diagram with details](../../images/diagram/diagram-with-details.png)
 
 You can also zoom in and out the diagram, for instance to fit it entire in the view.
 
-![Dependency diagram zoomed](../../images/diagram/dependency-diagram-zoomed.png)
+![Dependency diagram zoomed](../../images/diagram/diagram-zoomed.png)
 
 If you click a module in the diagram, it is highlighted along with all its dependencies.
 This information helps in refining the implementation to minimize unwanted dependencies.
 
-![Dependency diagram clicked](../../images/diagram/dependency-diargam-module-clicked.png)
+![Dependency diagram clicked](../../images/diagram/diagram-module-clicked.png)
 
 If you click an element in a highlighted module in the diagram, the corresponding module
 is opened in the editor with the element selected. For instance, in the image above,
@@ -32,10 +32,16 @@ if you click the thrustDown element, it is shown in the editor.
 ![Editor with select element](../../images/diagram/editor-thrustdown.png)
 
 
+If you deselect assets and libraries from the module diagram, 
+you get to see just the program modules and their dependencies.
+This greatly helps in understanding the actual structure of the program.
+
+![Dependency diagram of program modules](../../images/diagram/diagram-with-program-modules.png)
+
 
 There are also two buttons "rebuild" and "save..." in the control panel.
 
-![Module dependency diagram](../../images/diagram/dependency-diagram.png)
+![Module dependency diagram](../../images/diagram/diagram.png)
 
 By clicking "rebuild", the integrated development environment rebuilds
 the project and then updates the diagram to match the built project.

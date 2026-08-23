@@ -5,6 +5,11 @@
 // A character with the biggest value is chosen first to be cleared.
 // The clearing is done by gradually changing the character value towards a blank value.
 //
+// Instructions:
+// 1) make a persistent project: File > Persist Project
+// 2) download screen module: Help > Download Reference Library
+// 3) run the project: Compiler > Run Project
+//
 
 module example11c
     use screen

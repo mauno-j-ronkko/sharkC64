@@ -10,8 +10,10 @@ It compiles the module, builds the executable program, and the runs it with
 the given emulator. You can read more about setting the emulator in the
 section [Setting the emulator for running a program](../starting-up/set-emulator.md).
 
-When the SharkC64 IDE has compiled the project successfully, it shows the result
-in the Compiler tab. It also indicates in the status line at the bottom of the window
+When the SharkC64 IDE has compiled the project successfully, it shows statistics
+in the Compiler tab. It shows, for instance, the number of included variables and functions.
+It also shows the maximum call depth in the project.
+SharkC64 also indicates in the status line at the bottom of the window
 that it has started running the emulator. Depending on which emulator and which
 operating system you use, starting the emulator may take some time, when you
 run the project for the first time.

@@ -3,6 +3,11 @@
 // An example illustrating the use of an int data type.
 // This example draws a wave on the screen.
 //
+// Instructions:
+// 1) make a persistent project: File > Persist Project
+// 2) download screen and color modules: Help > Download Reference Library
+// 3) run the project: Compiler > Run Project
+//
 
 module example14
 

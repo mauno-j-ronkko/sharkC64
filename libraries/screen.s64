@@ -22,4 +22,13 @@ module screen
         withBorder     : byte at $D020
         withBackground : byte at $D021
 
+    fun clear(char: byte, color: byte)
+        var row, column : byte
+        is  for row := 0 to lastRow do
+                for column := 0 to lastColumn do
+                    screen.char[row, column] := char
+                    screen.color[row, column] := color
+                end
+            end
+
 end
