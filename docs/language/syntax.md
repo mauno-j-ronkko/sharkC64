@@ -1,6 +1,6 @@
 # Language syntax
 
-The syntax of the SharkC64 language is as follows
+The syntax of the SharkC64 language is as follows 
 
 ```
 <module>                ::= "module" <LABEL> 
@@ -49,17 +49,19 @@ The syntax of the SharkC64 language is as follows
 <type-primitive>        ::= <type-boolean> |                                    (4) 
                             <type-byte> |                                       (5)
                             <type-word> |                                       (6)
-                            <type-int>                                          (7)
+                            <type-int>  |                                       (7)
+                            <type-pointer>                                      (8)
 <type-boolean>          ::= "boolean"
 <type-byte>             ::= "byte"
 <type-word>             ::= "word"
 <type-int>              ::= "int"
+<type-pointer>          ::= "pointer"
 
-<intial-value>          ::= ":=" <expression>                                   (8)
-<intial-1d-values>      ::= ":=" "{" <initial-1d-sequence> "}"                  (8)
-<intial-2d-values>      ::= ":=" "{" <initial-2d-sequence> "}"                  (8)
-<initial-1d-sequence>   ::= <expression> ["," <initial-1d-sequence>]            (8)
-<initial-2d-sequence>   ::= <initial-1d-sequence> [";" <initial-2d-sequence>]   (8)
+<intial-value>          ::= ":=" <expression>                                   (9)
+<intial-1d-values>      ::= ":=" "{" <initial-1d-sequence> "}"                  (9)
+<intial-2d-values>      ::= ":=" "{" <initial-2d-sequence> "}"                  (9)
+<initial-1d-sequence>   ::= <expression> ["," <initial-1d-sequence>]            (9)
+<initial-2d-sequence>   ::= <initial-1d-sequence> [";" <initial-2d-sequence>]   (9)
 
 <init>                  ::= "init" <statements> "end" | "end"
 <statements>            ::= <statement> [<statements>]
@@ -74,50 +76,58 @@ The syntax of the SharkC64 language is as follows
 <primitive-assignment>  ::= <var-name> ":=" <expression> 
 <array-modifiers>       ::= "(array.up)" | "(array.down)"
 
-<if-then-else>          ::= "if" <expression> "then" <statements>               (9)
+<if-then-else>          ::= "if" <expression> "then" <statements>               (10)
                             ["else" <statements>] "end"  
-<while-do>              ::= "while" <expression> "do" <statements> "end"        (9)
+<while-do>              ::= "while" <expression> "do" <statements> "end"        (10)
 <for-do>                ::= <for-to-do> | <for-downto-do> 
-<for-to-do>             ::= "for" <primitive-assignment> "to" <expression>      (10) 
+<for-to-do>             ::= "for" <primitive-assignment> "to" <expression>      (11) 
                             "do" <statements> "end" 
-<for-downto-do>         ::= "for" <primitive-assignment> "downto" <expression>  (10)
+<for-downto-do>         ::= "for" <primitive-assignment> "downto" <expression>  (11)
                             "do" <statements> "end" 
 <function-call>         ::= <function-name> "(" [function-arguments] ")"
-<function-arguments>    ::= <expression> ["," <function-arguments> ]            (11)                                
-<setter-call>           ::= <setter-name> "(" <expression> ")"                  (12)
+<function-arguments>    ::= <expression> ["," <function-arguments> ]            (12)                                
+<setter-call>           ::= <setter-name> "(" <expression> ")"                  (13)
 
 <expression>            ::= <operand> [<rhs-expression>]
 <rhs-expression>        ::= <binary-operator> <unary-expression> [<rhs-expression>]
 <unary-expression>      ::= "(" <expression> ")" | 
                             <unary-operator> <expression> | <operand> 
-<operand>               ::= <BOOLEAN-VALUE> | <BYTE-VALUE> |                    (13)
-                            <WORD-VALUE> | <INT-VALUE>                          (13)
-                            <val-name> | <var-name> | <byte-array-element> |    (13)
-                            <function-call>                                     (14)
+<operand>               ::= <BOOLEAN-VALUE> | <BYTE-VALUE> |                    (14)
+                            <WORD-VALUE> | <INT-VALUE>                          (14)
+                            <val-name> | <var-name> | <byte-array-element> |    (14)
+                            <typecast> | <function-call>                        (15)
 <byte-array-element>    ::= <1d-byte-array-element> | <2d-byte-array-element>
-<1d-byte-array-element> ::= <1d-array-name> "[" <expression> "]"                (15)
-<2d-byte-array-element> ::= <2d-array-name> "[" <expression>, <expression> "]"  (15)
-<binary-operator>       ::= "-"  | "+" | "and" | "or" | "xor" |                 (16)
-                            "<=" | "<" | "="   | "<>" | ">="  | ">"             (16) 
-<unary-operator>        ::= "-" | "not" |                                       (16)
-                            "(byte.lo)" | "(byte.hi)" |                         (16)
-                            "(word.lo)" | "(word.hi)" |                         (16)
-                            "(int)" | "(word)"                                  (16)
+<1d-byte-array-element> ::= <1d-array-name> "[" <expression> "]"                (16)
+<2d-byte-array-element> ::= <2d-array-name> "[" <expression>, <expression> "]"  (16)
+<typecast>              ::= "boolean(" <BYTE-VALUE> ")" |
+                            "byte(" <BOOLEAN-VALUE> ")" |
+                            "loByte(" <WORD-VALUE> ")" |
+                            "hiByte(" <WORD-VALUE> ")" |
+                            "loWord(" <BYTE-VALUE> ")" |
+                            "hiWord(" <BYTE-VALUE> ")" |
+                            "word(" <INT-VALUE> ")" | 
+                            "int(" <WORD-VALUE> ")" | 
+                            "word(" <POINTER-VALUE> ")" |      
+                            "pointer(" <WORD-VALUE> ")"  
+<binary-operator>       ::= "-"  | "+" | "and" | "or" | "xor" |                 (17)
+                            "<=" | "<" | "="   | "<>" | ">="  | ">"             (17) 
+<unary-operator>        ::= "-" | "not" | "@"                                   (17)
 
-<val-name>              ::= <name>                                              (17)
-<var-name>              ::= <name>                                              (18)
-<1d-array-name>         ::= <name>                                              (19)
-<2d-array-name>         ::= <name>                                              (20)
-<function-name>         ::= <name> | "." <LABEL>                                (21)
-<setter-name>           ::= <name> | "." <LABEL>                                (22)
+<val-name>              ::= <name>                                              (18)
+<var-name>              ::= <name>                                              (19)
+<1d-array-name>         ::= <name>                                              (20)
+<2d-array-name>         ::= <name>                                              (21)
+<function-name>         ::= <name> | "." <LABEL>                                (22)
+<setter-name>           ::= <name> | "." <LABEL>                                (23)
 <name>                  ::= <LABEL> ["." <LABEL>] 
 
     
-<LABEL>         is a letter followed by a sequence of letters and digits        (23) 
+<LABEL>         is a letter followed by a sequence of letters and digits        (24) 
 <BOOLEAN-VALUE> is a binary truth value {false, true}
 <BYTE-VALUE>    is an 8-bit unsigned value in the range [0..255]    
 <WORD-VAULUE>   is a 16-bit unsigned value in the range [0..65535]
 <INT-VALUE>     is a 16-bit signed value in the range [-32768..32767]
+<POINTER-VALUE> is a pointer typed 16-bit unsigned value in the range [0..65535]
 ```
 
 1. `<LABEL>` must refer to an existing module with that name
@@ -127,23 +137,24 @@ The syntax of the SharkC64 language is as follows
 5. `<type-byte>` evaluates to a fixed `<BYTE-VALUE>`. 
 6. `<type-word>` evaluates to a fixed `<WORD-VALUE>`. 
 7. `<type-int>` evaluates to a fixed `<INT-VALUE>`.
-8. `expression` must match with the contextual type. 
+8. `<type-pointer>` evaluates to a fixed `<POINTER-VALUE>`.
+9. `expression` must match with the contextual type. 
    For instance, if the contextual type is `byte`, the expression must evaluate to a fixed `<BYTE-VALUE>`.
-9. `expression` must be of `<type-boolean>` type.
-10. `primitive-assignment` and `expression` must be of the same numeric type.
-11. `expression` must be of the same type as corresponding function parameter.
-12. `expression` must be of the same type as corresponding primitive variable for the setter.
-13. `operand` type must match with the contextual type.
-14. `<function-call>` return type must match with the contextual type.
-15. `expression` must be of `<type-byte>` type.
-16. `operator` type must match with the contextual type. 
-17. `<name>` must denote a constant.
-18. `<name>` must denote a variable; not an array.
-19. `<name>` must denote a one dimensional array.
-20. `<name>` must denote a two-dimensional array.
-21. `<name>` or a chained `<LABEL>` must denote a function 
-22. `<name>` or a chained `<LABEL>` must denote a primitive variable
-23. Context may limit possible `<LABEL>` values. For instance, in variable declaration,  
+10. `expression` must be of `<type-boolean>` type.
+11. `primitive-assignment` and `expression` must be of the same numeric type.
+12. `expression` must be of the same type as corresponding function parameter.
+13. `expression` must be of the same type as corresponding primitive variable for the setter.
+14. `operand` type must match with the contextual type.
+15. `<typecast>` or `<function-call>` return type must match with the contextual type.
+16. `expression` must be of `<type-byte>` type.
+17. `operator` type must match with the contextual type. 
+18. `<name>` must denote a constant.
+19. `<name>` must denote a variable; not an array.
+20. `<name>` must denote a one dimensional array.
+21. `<name>` must denote a two-dimensional array.
+22. `<name>` or a chained `<LABEL>` must denote a function 
+23. `<name>` or a chained `<LABEL>` must denote a primitive variable
+24. Context may limit possible `<LABEL>` values. For instance, in variable declaration,  
     each `<LABEL>` must be unique within the defining scope. Also, a `<LABEL>` denoting a variable
     in an expression must refer to a variable that matches with the contextual type. 
 

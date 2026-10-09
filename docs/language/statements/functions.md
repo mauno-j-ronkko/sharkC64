@@ -11,7 +11,7 @@ The statements for the body of the function are then given after the `is` keywor
 fun hello(first: byte, second: word) : byte
     var c := 12 
     is  c := c + a
-        difference := first - (byte.lo)second
+        difference := first - loByte(second)
         hello := difference + c
 ```
 

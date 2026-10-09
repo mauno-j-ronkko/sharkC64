@@ -5,8 +5,8 @@ You can download a reference project by selecting "Download Reference Project...
 
 | Name       | Description                                                         | Added |
 |------------|---------------------------------------------------------------------|-------|
-| pingpong   | A classic breakout-like game demonstrating access to screen memory. | 1.0   |
-| lunardrift | A classic lander-like game demonstrating use of sprites.            | 2.4.1 |
+| [pingpong](../../../projects/pingpong/README.md)   | A classic breakout-like game demonstrating access to screen memory. | 1.0   |
+| [lunardrift](../../../projects/lunardrift/README.md) | A classic lander-like game demonstrating use of sprites.            | 2.4.1 |
 
 There are also reference library modules that are used by reference projects or examples.
 You can download a reference library to a persisted project by selecting 
@@ -45,7 +45,8 @@ You can download an example code snippet by selecting "Download Example..." from
 | [example11c](../../../examples/example11c.s64) | use function return values                    | 0.11.3 |
 | [example12](../../../examples/example12.s64)   | use a data section                            | 1.2    |
 | [example13](../../../examples/example13.s64)   | use sprites drawn with the sprite editor      | 2.2    |
-| [example14](../../../examples/example14.s64)   | use int variables                             | 2.3    |                                                |                                              |        |
+| [example14](../../../examples/example14.s64)   | use int variables                             | 2.3    |
+| [example15](../../../examples/example15.s64)   | use byte pointers                             | 2.5    |
 
 
 

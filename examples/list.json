@@ -80,7 +80,7 @@
     "description": "Shows how to use int variables"
   },
   {
-    "name": "block",
-    "description": "Util module for drawing a block on the screen - used by example11b"
+    "name": "example15",
+    "description": "Shows how to use pointers (bouncing variable text)"
   }
 ]

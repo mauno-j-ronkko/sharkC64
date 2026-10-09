@@ -1,5 +1,11 @@
 # Release history
 
+## version 2.5 published October 10, 2026
+- New data type: pointer
+- Breaking change: replaced typecast modifiers with typecast functions
+- New typecast functions: boolean, byte, word, int, pointer
+- New @ operator to get a pointer to a variable
+
 ## version 2.4.3 published August 23, 2026
 - Added library section to project tab in explorer view
 - Added downloading and importing of libraries

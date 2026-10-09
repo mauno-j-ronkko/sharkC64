@@ -33,7 +33,7 @@ module example13
         var highX : byte
         is  if x > 255 then highX := spriteHighX or $01 else highX := spriteHighX and $FE end
             spriteY := y
-            spriteX := (byte.lo)x
+            spriteX := loByte(x)
             spriteHighX := highX
 
     fun move() is

@@ -80,7 +80,7 @@ module ship
         
     fun draw() 
         var bY : byte
-        is  bY := (byte.lo)y
+        is  bY := loByte(y)
             sprite.index(idShip).set(x, bY)
             thrusters.draw(x, bY)
             sprite.update()
@@ -90,7 +90,7 @@ module ship
         thrusters.hide()
         if hasCollided() then 
             sound.playExplosion()
-            explosion.show(x, (byte.lo)y) 
+            explosion.show(x, loByte(y))
         end
         
 end

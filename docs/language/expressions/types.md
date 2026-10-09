@@ -1,4 +1,4 @@
-# Types
+# Primitive data types
 
 These are the currently available data types:
 

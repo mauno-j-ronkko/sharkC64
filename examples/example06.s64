@@ -15,7 +15,7 @@ module example06
         letters     : word at $400   // character memory location for the top left corner of the screen
 
 init
-    letters := (word.lo)letterH + (word.hi)letterI
-    foreground1 := (byte.lo)colors
-    foreground2 := (byte.hi)colors
+    letters := loWord(letterH) + hiWord(letterI)
+    foreground1 := loByte(colors)
+    foreground2 := hiByte(colors)
 end

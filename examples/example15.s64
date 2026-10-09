@@ -1,0 +1,61 @@
+//
+// example15
+// Illustrating use of pointers.
+// This example moves a changing text on the screen and bounces it from the borders.
+//
+
+module example15
+
+    val rows   := 25
+        cols   := 40
+        length := 5
+
+    var screen :  byte[rows, cols] at $400
+        hello  := {  8,  5, 12, 12, 15 }
+        world  := { 23, 15, 18, 12,  4 }
+        empty  := { 32, 32, 32, 32, 32 }
+        row    := 10
+        col    := 21
+        rMove  := 1
+        cMove  := 1
+        text   : pointer
+
+
+    fun wait()
+        val maxDelay := 3000
+        var delay    :  word
+        is  delay := 0
+            while delay < maxDelay do delay := delay +1 end
+
+    fun toggle()
+        var first := true
+        is  first := not first
+            if first then text := @hello else text := @world end
+                      
+    fun checkBounce()
+        val maxCol := cols - length
+        var nextRow, nextCol : byte
+        is  nextRow := row + rMove
+            nextCol := col + cMove
+            if nextRow < 0 or nextRow >= rows  then rMove := -rMove; toggle() end
+            if nextCol < 0 or nextCol > maxCol then cMove := -cMove; toggle() end
+
+    fun print(text: pointer)
+        val max := length - 1
+        var i : byte
+        is  for i := 0 to max do screen[row, col + i] := text[i] end
+        
+    fun move()
+        is  print(@empty)
+            row := row + rMove
+            col := col + cMove
+            print(text)
+
+init
+    toggle()
+    while true do
+        wait()
+        checkBounce()
+        move()
+    end
+end

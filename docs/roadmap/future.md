@@ -1,7 +1,7 @@
 # Future plans
 
 ### Next release
-- Pointer data type 
+- Implementation clean up 
 
 ### Backlog
 - Support for screen designs
