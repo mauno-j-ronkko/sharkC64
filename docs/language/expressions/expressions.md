@@ -85,17 +85,21 @@ Lastly, (operand) means that the result data type is the same as the operand dat
 The SharkC64 compiler has a bottom-up type inference.
 You can read more about the type inference in [Types](types.md) section.
 The SharkC64 compiler does not perform any type casting automatically. It must be given 
-explicitly by the programmer. For this purpose, there are the following unary operators.
+explicitly by the programmer. For this purpose, there are the following unary functions.
 
 
-| Operator    | Description                               | Precedence | Operand type | Result type |
-|:------------|-------------------------------------------|:-----------|:-------------|:------------|
-| `loByte()`  | Cast low byte of `word` value to `byte`   | 4          | `word`       | `byte`      |
-| `hiByte()`  | Cast high byte of `word` value to `byte`  | 4          | `word`       | `byte`      |
-| `loWord()`  | Cast `byte` value to low value of `word`  | 4          | `byte`       | `word`      |
-| `hiWord()`  | Cast `byte` value to high value of `word` | 4          | `byte`       | `word`      |
-| `word()`    | Cast `int` value to `word`                | 4          | `int`        | `word`      |
-| `int()`     | Cast `word` value to `int`                | 4          | `word`       | `int`       |
+| Typecast function | Description                               | Precedence | Operand type | Result type |
+|:------------------|:------------------------------------------|:-----------|:-------------|:------------|
+| `boolean(byte)`   | Cast `byte` value to `boolean`            | 4          | `byte`       | `boolean`   |
+| `byte(boolean)`   | Cast `boolean` value to `byte`            | 4          | `boolean`    | `byte`      |
+| `loByte(word)`    | Cast low byte of `word` value to `byte`   | 4          | `word`       | `byte`      |
+| `hiByte(word)`    | Cast high byte of `word` value to `byte`  | 4          | `word`       | `byte`      |
+| `loWord(byte)`    | Cast `byte` value to low value of `word`  | 4          | `byte`       | `word`      |
+| `hiWord(byte)`    | Cast `byte` value to high value of `word` | 4          | `byte`       | `word`      |
+| `word(int)`       | Cast `int` value to `word`                | 4          | `int`        | `word`      |
+| `int(word)`       | Cast `word` value to `int`                | 4          | `word`       | `int`       |
+| `word(pointer)`   | Cast `pointer` value to `word`            | 4          | `pointer`    | `word`      |
+| `pointer(word)`   | Cast `word` value to `pointer`            | 4          | `word`       | `pointer`   |
 
 
 ### Evaluation order
@@ -120,7 +124,7 @@ that computed using a strict left-to-right evaluation order.
 The goal of the SharkC64 compiler is to produce compact and efficient bytecode.
 To do this, it first tries to simplify the expression by using fixed values and constants.
 With fixed values and constants, the SharkC64 compiler can precompute the expression at 
-compile time. Then, the resulting fixed value is used directly in the bytecode.
+compile time. Then, the resulting fixed value us used directly in the bytecode.
 After that, the compiler compiles bytecode instructions for the right-hand side expression 
 before the left-hand side expression. This produces fewer instructions in general, 
 as intermediate results can be used more effectively.
