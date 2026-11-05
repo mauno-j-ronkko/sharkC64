@@ -1,0 +1,16 @@
+//
+// HelloWorld
+// The classic first program. Prints Hello World at row 10 column 10
+// Print allows you to print petscii characters to the screen and is available in the libraries section. 
+// It can be cconsidered the standard output library
+//
+
+module HelloWorld
+use print  // use another module to allow you to use it's values, variables, and functions
+
+
+fun helloWorld() is // Define the function
+        print.atRow(10).atColumn(10).withColor(8).one(8).one(5).one(12).one(12).one(15).one(32).one(23).one(15).one(18).one(12).one(4).one(32)  //32 is the blank character code. 
+init
+helloWorld() //Call the function inside the main loop
+end

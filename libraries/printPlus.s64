@@ -1,0 +1,69 @@
+//
+// printplus
+//
+// My extended version of print
+// Functions for printing on screen. You can change the name to print and use this instead of default print. 
+// It is 100% compatible with any project that uses print
+//
+// This is a reference library module for the sharkC64 language. It can be expanded as necessary for your project
+//
+
+module printplus
+
+    use screen, color
+
+    val blank := 32
+
+    var atRow, atColumn : byte
+        withChar, withColor : byte
+        withBorder : byte at $D020 // Change border color
+        withBackground : byte at $D021 // Change background color
+        screen : byte[25, 40] at $0400 // for full screen
+        colors : byte[25, 40] at $D800 // for all / random colors
+        seed   : byte := $37  // random
+    
+    fun delay(duration: word)
+        var tick : word
+        is  for tick := 0 to duration do end
+
+    fun withBG(color : byte) is
+        withBackground  :=  color
+
+    fun home() is
+        atRow := 0; atColumn := 0
+
+    fun set() is 
+        screen.char[atRow, atColumn] := withChar
+        screen.color[atRow, atColumn] := withColor
+
+    fun one(char: byte) is  // prints one character, can be chained to form patterns, words etc.
+        withChar := char
+        set()
+        atColumn := atColumn + 1
+        if atColumn >= screen.columns then
+            atColumn := 0
+            atRow := atRow + 1
+            if atRow >= screen.rows then atRow := 0 end
+        end
+
+    fun clear() is
+        withChar := blank
+        for atRow :=0 to screen.lastRow do
+            for atColumn := 0 to screen.lastColumn do set() end
+        end
+        home()
+
+    fun here(row:byte, column: byte) is
+        atRow:= row; atColumn:= column
+
+    fun fillScreenWithColors() is
+       for atRow := 0 to 24 do
+           for atColumn := 0 to 39 do
+               screen[atRow, atColumn] := $A0
+               seed := (seed + $1D) and $0F
+               colors[atRow, atColumn] := seed
+            end
+        end
+
+
+end
